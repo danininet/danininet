@@ -55,3 +55,17 @@ next-env.d.ts
 # build/cache
 .next
 node_modules
+
+# local env / secrets
+.env
+.env.local
+.env.*.local
+
+# backups
+*.BACKUP_*
+*.backup
+*.bak
+
+# build/cache
+.next
+node_modules
