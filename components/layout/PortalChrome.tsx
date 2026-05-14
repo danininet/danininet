@@ -59,8 +59,8 @@ export function PortalChrome({
               />
               <p className="mt-5 max-w-3xl">
                 DaniniNet je informativno-prodajni portal za digitalni marketing, affiliate marketing,
-                AI dijalog, digitalne proizvode, zdrav stil života i vodu — bez prompt kulture i bez
-                lažnih obećanja.
+                AI dijalog, digitalne proizvode, zdrav stil života i vodu kao svakodnevnu rutinu.
+                Sadržaj je organizovan kroz jasnoću, dokaz, poverenje i odgovoran odnos prema publici.
               </p>
             </div>
             <div className="grid gap-2">
