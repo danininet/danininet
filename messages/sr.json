@@ -1,0 +1,15 @@
+{
+  "nav": {
+    "home": "Početna",
+    "method": "DaniniHub metod",
+    "affiliate": "Affiliate marketing",
+    "seo": "SEO",
+    "projects": "Digitalni projekti",
+    "products": "Proizvodi",
+    "guestbook": "Knjiga utisaka"
+  },
+  "home": {
+    "title": "DaniniNet — od ideje do digitalnog artifacta.",
+    "subtitle": "Affiliate marketing, SEO, digitalni proizvodi, AI dijalog i realni case study projekti zasnovani na DaniniHub metodu."
+  }
+}

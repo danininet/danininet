@@ -1,0 +1,15 @@
+{
+  "nav": {
+    "home": "Home",
+    "method": "DaniniHub Method",
+    "affiliate": "Affiliate Marketing",
+    "seo": "SEO",
+    "projects": "Digital Projects",
+    "products": "Products",
+    "guestbook": "Guestbook"
+  },
+  "home": {
+    "title": "DaniniNet — from idea to digital artifact.",
+    "subtitle": "Affiliate marketing, SEO, digital products, AI dialogue and real case-study projects based on the DaniniHub method."
+  }
+}
