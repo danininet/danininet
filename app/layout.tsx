@@ -1,17 +1,29 @@
 import type { Metadata } from "next";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteHeader } from "@/components/SiteHeader";
+import { site } from "@/data/site";
 import "./globals.css";
-import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: site.name,
-  description: "DaniniNet multilingual product site.",
-  metadataBase: new URL(site.url)
+  title: {
+    default: `${site.name} — ${site.tagline}`,
+    template: `%s · ${site.name}`,
+  },
+  description: site.description,
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="sr" suppressHydrationWarning>
-      <body>{children}</body>
+    <html lang="sr">
+      <body>
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+      </body>
     </html>
   );
 }

@@ -1,0 +1,51 @@
+import Link from "next/link";
+
+type ContentPageProps = {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  sections?: Array<{
+    title: string;
+    text: string;
+    items?: string[];
+  }>;
+};
+
+export function ContentPage({
+  eyebrow = "DaniniNet",
+  title,
+  description,
+  sections = [],
+}: ContentPageProps) {
+  return (
+    <main className="page">
+      <section className="section">
+        <p className="eyebrow">{eyebrow}</p>
+        <h1>{title}</h1>
+        {description ? <p className="lead">{description}</p> : null}
+
+        <div className="grid">
+          {sections.map((section) => (
+            <article key={section.title} className="card">
+              <strong>{eyebrow}</strong>
+              <h3>{section.title}</h3>
+              <p>{section.text}</p>
+              {section.items?.length ? (
+                <ul>
+                  {section.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              ) : null}
+            </article>
+          ))}
+        </div>
+
+        <div className="actions">
+          <Link href="/proizvodi" className="button">Proizvodi</Link>
+          <Link href="/kontakt" className="button button--ghost">Kontakt</Link>
+        </div>
+      </section>
+    </main>
+  );
+}

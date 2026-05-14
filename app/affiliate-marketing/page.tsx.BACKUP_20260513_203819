@@ -1,0 +1,24 @@
+import { ContentPage } from "@/components/content-page";
+import { getPage } from "@/lib/content";
+
+export default function AffiliateMarketingPage() {
+  const page = getPage("affiliate-marketing");
+
+  return (
+    <ContentPage
+      {...page}
+      sections={page.sections.map((section) => ({
+        title: section.title,
+        text:
+          "text" in section
+            ? section.text
+            : "description" in section
+              ? section.description
+              : "content" in section
+                ? section.content
+                : "",
+        items: "items" in section ? section.items : undefined,
+      }))}
+    />
+  );
+}
