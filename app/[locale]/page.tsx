@@ -91,7 +91,7 @@ export default async function HomePage({
           Portal koji povezuje digitalni marketing, affiliate model, AI dijalog, digitalne proizvode i odgovoran health/water pravac.
         </h2>
         <p className="mt-6 max-w-3xl leading-8 text-[var(--muted)]">
-          DaniniNet nije sajt za jedan PDF, prompt pack prodavnica, hype affiliate blog ili health guru projekat. To je javni kanal DaniniHub filozofije i prostor gde se ideje pretvaraju u strukturisane digitalne ponude.
+          DaniniNet je javni kanal DaniniHub filozofije i prostor gde se ideje, znanje, lokacije, navike i proizvodi pretvaraju u strukturisane digitalne ponude sa jasnim granicama, dokazima i poverenjem.
         </p>
       </section>
 
