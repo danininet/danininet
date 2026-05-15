@@ -54,6 +54,17 @@ export function normalizeLocale(locale: string): Locale {
   return locale === "de" || locale === "en" ? locale : "sr";
 }
 
+function switchLocalePath(currentLocale: Locale, targetLocale: Locale, pathname?: string) {
+  const clean = pathname?.replace(/^\//, "") || "";
+  if (!clean) return `/${targetLocale}`;
+  const parts = clean.split("/");
+  if (parts[0] === currentLocale || parts[0] === "sr" || parts[0] === "de" || parts[0] === "en") {
+    parts[0] = targetLocale;
+    return `/${parts.join("/")}`;
+  }
+  return `/${targetLocale}/${clean}`;
+}
+
 export function BrandMark({ compact = false }: { compact?: boolean }) {
   return (
     <span className="flex items-center gap-3">
@@ -76,9 +87,11 @@ export function BrandMark({ compact = false }: { compact?: boolean }) {
 
 export function SiteShell({
   locale,
+  currentPath,
   children,
 }: {
   locale: string;
+  currentPath?: string;
   children: React.ReactNode;
 }) {
   const lang = normalizeLocale(locale);
@@ -98,9 +111,9 @@ export function SiteShell({
               </Link>
             ))}
             <span className="mx-1 h-4 w-px bg-white/15" />
-            <Link href="/sr" hrefLang="sr">SR</Link>
-            <Link href="/de" hrefLang="de">DE</Link>
-            <Link href="/en" hrefLang="en">EN</Link>
+            <Link href={switchLocalePath(lang, "sr", currentPath)} hrefLang="sr">SR</Link>
+            <Link href={switchLocalePath(lang, "de", currentPath)} hrefLang="de">DE</Link>
+            <Link href={switchLocalePath(lang, "en", currentPath)} hrefLang="en">EN</Link>
           </nav>
         </div>
       </header>
