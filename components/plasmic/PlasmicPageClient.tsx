@@ -5,10 +5,11 @@ import {
   initPlasmicLoader,
   PlasmicComponent,
   PlasmicRootProvider,
+  type ComponentRenderData,
 } from "@plasmicapp/loader-nextjs";
 
 type PlasmicPageClientProps = {
-  plasmicData: unknown;
+  plasmicData: ComponentRenderData;
   component: string;
   projectId: string;
   projectToken: string;
