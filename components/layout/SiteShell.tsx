@@ -1,6 +1,16 @@
 import Link from "next/link";
 
 type Locale = "sr" | "de" | "en";
+type RouteKey =
+  | "home"
+  | "method"
+  | "products"
+  | "dpl"
+  | "blog"
+  | "guestbook"
+  | "support"
+  | "legal"
+  | "health";
 
 type ShellCopy = {
   nav: string[];
@@ -11,14 +21,49 @@ type ShellCopy = {
   disclosure: string;
 };
 
-const navHrefs = [
-  "daninihub-metod",
-  "proizvodi",
-  "blog",
-  "knjiga-utisaka",
-  "support",
-  "legal",
-];
+const navRouteKeys: RouteKey[] = ["method", "products", "blog", "guestbook", "support", "legal"];
+
+const paths: Record<Locale, Record<RouteKey, string>> = {
+  sr: {
+    home: "",
+    method: "daninihub-metod",
+    products: "proizvodi",
+    dpl: "proizvodi/digitalna-prodaja-lokacije",
+    blog: "blog",
+    guestbook: "knjiga-utisaka",
+    support: "support",
+    legal: "legal",
+    health: "zdrav-stil-zivota",
+  },
+  de: {
+    home: "",
+    method: "methode",
+    products: "produkte",
+    dpl: "produkte/digitaler-verkauf-von-standorten",
+    blog: "blog",
+    guestbook: "gaestebuch",
+    support: "support",
+    legal: "legal",
+    health: "gesund-leben-wasser",
+  },
+  en: {
+    home: "",
+    method: "method",
+    products: "products",
+    dpl: "products/digital-location-sales",
+    blog: "blog",
+    guestbook: "guestbook",
+    support: "support",
+    legal: "legal",
+    health: "healthy-lifestyle-water",
+  },
+};
+
+const slugToRouteKey: Record<string, RouteKey> = Object.fromEntries(
+  Object.values(paths).flatMap((localePaths) =>
+    Object.entries(localePaths).map(([key, value]) => [value, key as RouteKey]),
+  ),
+) as Record<string, RouteKey>;
 
 const copy: Record<Locale, ShellCopy> = {
   sr: {
@@ -54,15 +99,25 @@ export function normalizeLocale(locale: string): Locale {
   return locale === "de" || locale === "en" ? locale : "sr";
 }
 
-function switchLocalePath(currentLocale: Locale, targetLocale: Locale, pathname?: string) {
+export function localizedPath(locale: Locale, routeKey: RouteKey) {
+  const path = paths[locale][routeKey];
+  return path ? `/${locale}/${path}` : `/${locale}`;
+}
+
+function routeKeyFromPath(currentLocale: Locale, pathname?: string): RouteKey {
   const clean = pathname?.replace(/^\//, "") || "";
-  if (!clean) return `/${targetLocale}`;
+  if (!clean) return "home";
+
   const parts = clean.split("/");
-  if (parts[0] === currentLocale || parts[0] === "sr" || parts[0] === "de" || parts[0] === "en") {
-    parts[0] = targetLocale;
-    return `/${parts.join("/")}`;
-  }
-  return `/${targetLocale}/${clean}`;
+  const rest = parts[0] === currentLocale || parts[0] === "sr" || parts[0] === "de" || parts[0] === "en"
+    ? parts.slice(1).join("/")
+    : parts.join("/");
+
+  return slugToRouteKey[rest] || "home";
+}
+
+function switchLocalePath(currentLocale: Locale, targetLocale: Locale, pathname?: string) {
+  return localizedPath(targetLocale, routeKeyFromPath(currentLocale, pathname));
 }
 
 export function BrandMark({ compact = false }: { compact?: boolean }) {
@@ -101,12 +156,12 @@ export function SiteShell({
     <main className="min-h-screen bg-[#f4efe5] text-[#15130f]">
       <header className="bg-[#07142b] text-[#f7fbff]">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-6 py-7">
-          <Link href={`/${lang}`} aria-label="DaniniNet home">
+          <Link href={localizedPath(lang, "home")} aria-label="DaniniNet home">
             <BrandMark />
           </Link>
           <nav className="flex flex-wrap items-center gap-4 text-sm text-slate-300" aria-label="Main navigation">
             {t.nav.map((label, index) => (
-              <Link key={label} href={`/${lang}/${navHrefs[index]}`}>
+              <Link key={label} href={localizedPath(lang, navRouteKeys[index])}>
                 {label}
               </Link>
             ))}
@@ -125,12 +180,12 @@ export function SiteShell({
             <p className="mt-5 max-w-3xl leading-8">{t.footerText}</p>
           </div>
           <div className="grid content-start gap-2 text-sm leading-7">
-            <Link href={`/${lang}/legal`}>{t.legal}</Link>
-            <Link href={`/${lang}/proizvodi`}>{t.nav[1]}</Link>
-            <Link href={`/${lang}/blog`}>Blog</Link>
-            <Link href={`/${lang}/knjiga-utisaka`}>{t.guestbook}</Link>
-            <Link href={`/${lang}/support`}>{t.support}</Link>
-            <Link href={`/${lang}/zdrav-stil-zivota`}>Health / Water</Link>
+            <Link href={localizedPath(lang, "legal")}>{t.legal}</Link>
+            <Link href={localizedPath(lang, "products")}>{t.nav[1]}</Link>
+            <Link href={localizedPath(lang, "blog")}>Blog</Link>
+            <Link href={localizedPath(lang, "guestbook")}>{t.guestbook}</Link>
+            <Link href={localizedPath(lang, "support")}>{t.support}</Link>
+            <Link href={localizedPath(lang, "health")}>Health / Water</Link>
             <p className="pt-2 text-slate-400">{t.disclosure}</p>
           </div>
         </div>
