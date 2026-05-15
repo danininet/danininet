@@ -48,7 +48,7 @@ export default async function DaniniHubMetodPage({ params }: { params: Promise<{
   const t = copy[lang];
 
   return (
-    <SiteShell locale={lang}>
+    <SiteShell locale={lang} currentPath={`/${lang}/daninihub-metod`}>
       <SectionIntro eyebrow={t.eyebrow} title={t.title} text={t.text} />
       <section className="mx-auto grid max-w-7xl gap-6 px-6 pb-16 md:grid-cols-2">
         {t.blocks.map(([title, text]) => (
