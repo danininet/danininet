@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 type Locale = "sr" | "de" | "en";
 
@@ -452,13 +453,13 @@ function SectionShell({
   children,
   className = "",
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }) {
   return <section className={`relative overflow-hidden ${className}`}>{children}</section>;
 }
 
-function IconDisc({ children }: { children: React.ReactNode }) {
+function IconDisc({ children }: { children: ReactNode }) {
   return (
     <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-[#d2b46f]/35 bg-[#071326] text-sm font-semibold tracking-[0.08em] text-[#ead7a1] shadow-[0_12px_28px_rgba(7,19,38,0.14)]">
       {children}
