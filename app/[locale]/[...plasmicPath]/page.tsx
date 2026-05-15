@@ -1,6 +1,11 @@
 import { notFound } from "next/navigation";
-import { PlasmicComponent, PlasmicRootProvider } from "@plasmicapp/loader-nextjs";
-import { PLASMIC } from "@/lib/plasmic";
+import {
+  PLASMIC,
+  PLASMIC_PREVIEW,
+  PLASMIC_PROJECT_ID,
+  PLASMIC_PROJECT_TOKEN,
+} from "@/lib/plasmic";
+import { PlasmicPageClient } from "@/components/plasmic/PlasmicPageClient";
 
 type Params = {
   locale: string;
@@ -26,7 +31,7 @@ export default async function PlasmicCatchAllPage({
   const { locale, plasmicPath } = await params;
   const path = getPlasmicPath(locale, plasmicPath);
 
-  if (!PLASMIC) {
+  if (!PLASMIC || !PLASMIC_PROJECT_ID || !PLASMIC_PROJECT_TOKEN) {
     notFound();
   }
 
@@ -39,8 +44,12 @@ export default async function PlasmicCatchAllPage({
   const pageMeta = plasmicData.entryCompMetas[0];
 
   return (
-    <PlasmicRootProvider loader={PLASMIC} prefetchedData={plasmicData}>
-      <PlasmicComponent component={pageMeta.displayName} />
-    </PlasmicRootProvider>
+    <PlasmicPageClient
+      plasmicData={plasmicData}
+      component={pageMeta.displayName}
+      projectId={PLASMIC_PROJECT_ID}
+      projectToken={PLASMIC_PROJECT_TOKEN}
+      preview={PLASMIC_PREVIEW}
+    />
   );
 }
