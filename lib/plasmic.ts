@@ -1,4 +1,4 @@
-import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
+import { initPlasmicLoader } from "@plasmicapp/loader-nextjs/react-server";
 
 const projectId = process.env.PLASMIC_PROJECT_ID;
 const projectToken = process.env.PLASMIC_PROJECT_TOKEN;
