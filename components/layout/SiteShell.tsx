@@ -13,7 +13,7 @@ type ShellCopy = {
 
 const navHrefs = [
   "daninihub-metod",
-  "proizvodi/digitalna-prodaja-lokacije",
+  "proizvodi",
   "blog",
   "knjiga-utisaka",
   "support",
@@ -22,27 +22,27 @@ const navHrefs = [
 
 const copy: Record<Locale, ShellCopy> = {
   sr: {
-    nav: ["Metoda", "Proizvod", "Blog", "Utisci", "Support", "Legal"],
+    nav: ["Metoda", "Proizvodi", "Blog", "Utisci", "Support", "Legal"],
     footerText:
-      "DaniniNet povezuje digitalni marketing, affiliate modele, AI dijalog, digitalne proizvode i odgovoran health/water pravac kroz jasnoću, dokaz i poverenje.",
+      "DaniniNet je krovna platforma za digitalni, affiliate, content i SEO marketing — povezana sa DaniniHub OS metodom, realnim case study projektima i budućim health/water pravcem.",
     legal: "Legal & Trust",
     guestbook: "Knjiga utisaka",
     support: "Support",
     disclosure: "Affiliate napomena · AI transparentnost · GDPR/kolačići · Health disclaimer",
   },
   de: {
-    nav: ["Methode", "Produkt", "Blog", "Gästebuch", "Support", "Legal"],
+    nav: ["Methode", "Produkte", "Blog", "Gästebuch", "Support", "Legal"],
     footerText:
-      "DaniniNet verbindet digitales Marketing, Affiliate-Modelle, KI-Dialog, digitale Produkte und verantwortliche Health/Water-Themen durch Klarheit, Belege und Vertrauen.",
+      "DaniniNet ist die Dachplattform für Digital-, Affiliate-, Content- und SEO-Marketing — verbunden mit DaniniHub OS, realen Case Studies und dem späteren Health/Water-Bereich.",
     legal: "Legal & Trust",
     guestbook: "Gästebuch",
     support: "Support",
     disclosure: "Affiliate-Hinweis · KI-Transparenz · DSGVO/Cookies · Health Disclaimer",
   },
   en: {
-    nav: ["Method", "Product", "Blog", "Guestbook", "Support", "Legal"],
+    nav: ["Method", "Products", "Blog", "Guestbook", "Support", "Legal"],
     footerText:
-      "DaniniNet connects digital marketing, affiliate models, AI dialogue, digital products and responsible health/water topics through clarity, evidence and trust.",
+      "DaniniNet is the umbrella platform for digital, affiliate, content and SEO marketing — connected with DaniniHub OS, real case studies and the future health/water direction.",
     legal: "Legal & Trust",
     guestbook: "Guestbook",
     support: "Support",
@@ -58,7 +58,8 @@ export function BrandMark({ compact = false }: { compact?: boolean }) {
   return (
     <span className="flex items-center gap-3">
       <span className="relative grid h-12 w-12 place-items-center overflow-hidden rounded-2xl border border-[#8db6d8]/40 bg-white/5 text-sm font-bold text-[#e7f3ff] shadow-[0_0_24px_rgba(34,107,191,0.18)]">
-        <span className="absolute inset-x-2 bottom-2 h-px bg-[#b8944d]" />
+        <span className="absolute left-2 top-3 h-px w-8 rotate-[-18deg] bg-[#b8944d]" />
+        <span className="absolute bottom-3 left-2 h-px w-8 rotate-[18deg] bg-[#7db7e8]" />
         DN
       </span>
       {!compact && (
@@ -112,6 +113,8 @@ export function SiteShell({
           </div>
           <div className="grid content-start gap-2 text-sm leading-7">
             <Link href={`/${lang}/legal`}>{t.legal}</Link>
+            <Link href={`/${lang}/proizvodi`}>{t.nav[1]}</Link>
+            <Link href={`/${lang}/blog`}>Blog</Link>
             <Link href={`/${lang}/knjiga-utisaka`}>{t.guestbook}</Link>
             <Link href={`/${lang}/support`}>{t.support}</Link>
             <Link href={`/${lang}/zdrav-stil-zivota`}>Health / Water</Link>
