@@ -96,65 +96,65 @@ export default async function HomePage({
   const t = copy[lang];
 
   return (
-    <main className="min-h-screen bg-[#06101f] text-[#f7fbff]">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(0,210,255,0.24),transparent_34%),radial-gradient(circle_at_78%_8%,rgba(56,115,255,0.20),transparent_30%),linear-gradient(180deg,#07142b_0%,#06101f_52%,#f4efe5_52%,#f4efe5_100%)]" />
+    <main className="min-h-screen bg-[#f4efe5] text-[#15130f]">
+      <section className="bg-[#07142b] text-[#f7fbff]">
+        <div className="mx-auto max-w-7xl px-6 py-8">
+          <header className="flex flex-wrap items-center justify-between gap-6 border-b border-white/10 pb-6">
+            <Link href={`/${lang}`} className="flex items-center gap-3" aria-label="DaniniNet home">
+              <span className="grid h-12 w-12 place-items-center rounded-2xl border border-[#7db7e8]/40 bg-white/5 text-sm font-bold text-[#d9ecff] shadow-[0_0_24px_rgba(34,107,191,0.18)]">
+                DN
+              </span>
+              <span>
+                <span className="block text-2xl font-semibold tracking-tight">DaniniNet</span>
+                <span className="block text-[11px] uppercase tracking-[0.26em] text-[#b9d7f0]">Income · Intelligence · Health</span>
+              </span>
+            </Link>
 
-      <section className="mx-auto max-w-7xl px-6 py-8">
-        <header className="flex flex-wrap items-center justify-between gap-6 border-b border-white/10 pb-6">
-          <Link href={`/${lang}`} className="flex items-center gap-3" aria-label="DaniniNet home">
-            <span className="grid h-12 w-12 place-items-center rounded-2xl border border-cyan-300/40 bg-white/5 text-sm font-bold text-cyan-200 shadow-[0_0_30px_rgba(0,210,255,0.18)]">
-              DN
-            </span>
-            <span>
-              <span className="block text-2xl font-semibold tracking-tight">DaniniNet</span>
-              <span className="block text-[11px] uppercase tracking-[0.26em] text-cyan-200/80">Income · Intelligence · Health</span>
-            </span>
-          </Link>
+            <nav className="flex flex-wrap items-center gap-4 text-sm text-slate-300" aria-label="Main navigation">
+              {t.nav.map((label, index) => (
+                <Link key={label} href={`/${lang}/${hrefs[index]}`}>
+                  {label}
+                </Link>
+              ))}
+              <span className="mx-1 h-4 w-px bg-white/15" />
+              <Link href="/sr" hrefLang="sr">SR</Link>
+              <Link href="/de" hrefLang="de">DE</Link>
+              <Link href="/en" hrefLang="en">EN</Link>
+            </nav>
+          </header>
 
-          <nav className="flex flex-wrap items-center gap-4 text-sm text-slate-300" aria-label="Main navigation">
-            {t.nav.map((label, index) => (
-              <Link key={label} href={`/${lang}/${hrefs[index]}`}>
-                {label}
-              </Link>
-            ))}
-            <span className="mx-1 h-4 w-px bg-white/15" />
-            <Link href="/sr" hrefLang="sr">SR</Link>
-            <Link href="/de" hrefLang="de">DE</Link>
-            <Link href="/en" hrefLang="en">EN</Link>
-          </nav>
-        </header>
-
-        <section className="grid gap-12 py-20 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
-          <div>
-            <p className="mb-6 inline-flex rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-100">
-              DaniniHub OS · proof-driven portal
-            </p>
-            <h1 className="max-w-5xl text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl">
-              {t.hero}
-            </h1>
-            <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-300">{t.sub}</p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link href={`/${lang}/proizvodi/digitalna-prodaja-lokacije`} className="rounded-full bg-cyan-300 px-6 py-3 text-sm font-semibold text-[#06101f] shadow-[0_12px_40px_rgba(0,210,255,0.22)]">
-                {t.primary}
-              </Link>
-              <Link href={`/${lang}/daninihub-metod`} className="rounded-full border border-white/15 px-6 py-3 text-sm font-medium text-white">
-                {t.secondary}
-              </Link>
+          <section className="grid gap-12 py-20 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+            <div>
+              <p className="mb-6 inline-flex rounded-full border border-[#7db7e8]/30 bg-white/[0.06] px-4 py-2 text-sm text-[#d9ecff]">
+                DaniniHub OS · proof-driven portal
+              </p>
+              <h1 className="max-w-5xl text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl">
+                {t.hero}
+              </h1>
+              <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-300">{t.sub}</p>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link href={`/${lang}/proizvodi/digitalna-prodaja-lokacije`} className="rounded-full bg-[#d9ecff] px-6 py-3 text-sm font-semibold text-[#07142b] shadow-[0_12px_34px_rgba(34,107,191,0.20)]">
+                  {t.primary}
+                </Link>
+                <Link href={`/${lang}/daninihub-metod`} className="rounded-full border border-white/15 px-6 py-3 text-sm font-medium text-white">
+                  {t.secondary}
+                </Link>
+              </div>
             </div>
-          </div>
 
-          <aside className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.06] p-8 shadow-2xl backdrop-blur">
-            <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-cyan-300/20 blur-3xl" />
-            <p className="text-sm uppercase tracking-[0.24em] text-cyan-200">{t.signal}</p>
-            <h2 className="mt-6 text-3xl font-semibold leading-tight">AI kao partner za pitanja, ne kao zamena za odluku.</h2>
-            <p className="mt-6 leading-8 text-slate-300">{t.signalText}</p>
-            <div className="mt-8 grid grid-cols-3 gap-3 text-center text-xs text-slate-300">
-              <span className="rounded-full border border-white/10 bg-white/5 py-2">Facts</span>
-              <span className="rounded-full border border-white/10 bg-white/5 py-2">Risk</span>
-              <span className="rounded-full border border-white/10 bg-white/5 py-2">Next</span>
-            </div>
-          </aside>
-        </section>
+            <aside className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.05] p-8 shadow-2xl backdrop-blur">
+              <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-[#226bbf]/20 blur-3xl" />
+              <p className="text-sm uppercase tracking-[0.24em] text-[#b9d7f0]">{t.signal}</p>
+              <h2 className="mt-6 text-3xl font-semibold leading-tight">AI kao partner za pitanja, ne kao zamena za odluku.</h2>
+              <p className="mt-6 leading-8 text-slate-300">{t.signalText}</p>
+              <div className="mt-8 grid grid-cols-3 gap-3 text-center text-xs text-slate-300">
+                <span className="rounded-full border border-white/10 bg-white/5 py-2">Facts</span>
+                <span className="rounded-full border border-white/10 bg-white/5 py-2">Risk</span>
+                <span className="rounded-full border border-white/10 bg-white/5 py-2">Next</span>
+              </div>
+            </aside>
+          </section>
+        </div>
       </section>
 
       <section className="bg-[#f4efe5] text-[#15130f]">
@@ -174,7 +174,7 @@ export default async function HomePage({
               <p className="text-sm uppercase tracking-[0.22em] text-[#226bbf]">Proof product</p>
               <h2 className="mt-4 text-4xl font-semibold">{t.dpl}</h2>
               <p className="mt-5 leading-8 text-[#706a5d]">{t.dplText}</p>
-              <Link href={`/${lang}/proizvodi/digitalna-prodaja-lokacije`} className="mt-8 inline-flex rounded-full bg-[#06101f] px-6 py-3 text-sm font-medium text-white">
+              <Link href={`/${lang}/proizvodi/digitalna-prodaja-lokacije`} className="mt-8 inline-flex rounded-full bg-[#07142b] px-6 py-3 text-sm font-medium text-white">
                 {t.primary}
               </Link>
             </article>
@@ -200,8 +200,8 @@ export default async function HomePage({
           </section>
 
           <section className="grid gap-6 py-16 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="rounded-[2rem] bg-[#06101f] p-8 text-white">
-              <p className="text-sm uppercase tracking-[0.22em] text-cyan-200">Newsletter</p>
+            <div className="rounded-[2rem] bg-[#07142b] p-8 text-white">
+              <p className="text-sm uppercase tracking-[0.22em] text-[#b9d7f0]">Newsletter</p>
               <h2 className="mt-4 text-3xl font-semibold">{t.newsletter}</h2>
               <p className="mt-5 leading-8 text-slate-300">{t.newsletterText}</p>
             </div>
