@@ -15,7 +15,8 @@ const copy = {
       ["Case studies", "Calije Park Residence i Digitalna prodaja lokacije kao dokazni artifacti."],
       ["Health / Water", "Placeholder za budući poddomen o vodi, rutinama i zdravom stilu života."],
     ],
-    cta: "Pogledaj prvi proizvod",
+    cta: "Pogledaj proizvode",
+    funnelTitle: "DaniniNet blog vodi ka proizvodu, poverenju i sledećem koraku.",
   },
   de: {
     eyebrow: "DaniniNet Blog",
@@ -28,7 +29,8 @@ const copy = {
       ["Case Studies", "Calije Park Residence und Digitaler Verkauf von Standorten als Proof Artifacts."],
       ["Health / Water", "Placeholder für spätere Inhalte zu Wasser, Routinen und gesundem Lebensstil."],
     ],
-    cta: "Erstes Produkt ansehen",
+    cta: "Produkte ansehen",
+    funnelTitle: "Der DaniniNet Blog führt zu Produkt, Vertrauen und nächstem Schritt.",
   },
   en: {
     eyebrow: "DaniniNet Blog",
@@ -41,7 +43,8 @@ const copy = {
       ["Case studies", "Calije Park Residence and Digital Location Sales as proof artifacts."],
       ["Health / Water", "Placeholder for future content on water, routines and healthy lifestyle."],
     ],
-    cta: "View first product",
+    cta: "View products",
+    funnelTitle: "DaniniNet blog leads toward product, trust and the next step.",
   },
 } as const;
 
@@ -51,7 +54,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
   const t = copy[lang];
 
   return (
-    <SiteShell locale={lang}>
+    <SiteShell locale={lang} currentPath={`/${lang}/blog`}>
       <SectionIntro eyebrow={t.eyebrow} title={t.title} text={t.text} />
       <section className="mx-auto grid max-w-7xl gap-6 px-6 pb-16 md:grid-cols-2 lg:grid-cols-3">
         {t.items.map(([title, text]) => (
@@ -64,8 +67,8 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
       <section className="bg-[#07142b] text-white">
         <div className="mx-auto max-w-7xl px-6 py-14">
           <p className="text-sm uppercase tracking-[0.22em] text-[#b9d7f0]">Editorial funnel</p>
-          <h2 className="mt-4 text-4xl font-semibold">DaniniNet blog vodi ka proizvodu, poverenju i sledećem koraku.</h2>
-          <Link href={`/${lang}/proizvodi/digitalna-prodaja-lokacije`} className="mt-8 inline-flex rounded-full bg-[#d9ecff] px-6 py-3 text-sm font-semibold text-[#07142b]">
+          <h2 className="mt-4 text-4xl font-semibold">{t.funnelTitle}</h2>
+          <Link href={`/${lang}/proizvodi`} className="mt-8 inline-flex rounded-full bg-[#d9ecff] px-6 py-3 text-sm font-semibold text-[#07142b]">
             {t.cta}
           </Link>
         </div>
