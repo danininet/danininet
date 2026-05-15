@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SectionIntro, SiteShell, normalizeLocale } from "@/components/layout/SiteShell";
+import { SystemMap } from "@/components/visual/SystemMap";
 
 type Locale = "sr" | "de" | "en";
 
@@ -57,7 +58,7 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
   const t = copy[lang];
 
   return (
-    <SiteShell locale={lang}>
+    <SiteShell locale={lang} currentPath={`/${lang}/proizvodi`}>
       <SectionIntro eyebrow={t.eyebrow} title={t.title} text={t.text} />
 
       <section className="mx-auto max-w-7xl px-6 pb-16">
@@ -70,17 +71,7 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
               {t.dplCta}
             </Link>
           </div>
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-6">
-            <p className="text-sm uppercase tracking-[0.22em] text-[#b9d7f0]">System flow</p>
-            <div className="mt-6 grid gap-3">
-              {["Idea", "AI Dialogue", "Content / SEO", "Product", "Trust / Conversion"].map((item, index) => (
-                <div key={item} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.05] p-4">
-                  <span className="grid h-8 w-8 place-items-center rounded-full bg-[#d9ecff] text-sm font-semibold text-[#07142b]">{index + 1}</span>
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          <SystemMap />
         </article>
       </section>
 
