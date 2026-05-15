@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { PlasmicComponent, PlasmicRootProvider } from "@plasmicapp/loader-nextjs/react-server";
+import { PlasmicComponent, PlasmicRootProvider } from "@plasmicapp/loader-nextjs";
 import { PLASMIC } from "@/lib/plasmic";
 
 type Params = {
