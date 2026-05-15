@@ -68,7 +68,7 @@ export default async function SupportPage({ params }: { params: Promise<{ locale
   const t = copy[lang];
 
   return (
-    <SiteShell locale={lang}>
+    <SiteShell locale={lang} currentPath={`/${lang}/support`}>
       <SectionIntro eyebrow={t.eyebrow} title={t.title} text={t.text} />
       <section className="mx-auto grid max-w-7xl gap-6 px-6 pb-16 lg:grid-cols-[0.95fr_1.05fr]">
         <aside className="rounded-[2rem] bg-[#07142b] p-8 text-white">
