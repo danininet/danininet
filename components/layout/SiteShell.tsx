@@ -12,18 +12,13 @@ type RouteKey =
   | "legal"
   | "health";
 
-type FooterLink = { label: string; route: RouteKey; note?: string };
-
 type ShellCopy = {
   nav: string[];
   footerText: string;
-  footerClaim: string;
-  columns: {
-    title: string;
-    links: FooterLink[];
-  }[];
+  legal: string;
+  guestbook: string;
+  support: string;
   disclosure: string;
-  bottom: string;
 };
 
 const navRouteKeys: RouteKey[] = ["method", "products", "blog", "guestbook", "support", "legal"];
@@ -74,110 +69,29 @@ const copy: Record<Locale, ShellCopy> = {
   sr: {
     nav: ["Metoda", "Proizvodi", "Blog", "Utisci", "Support", "Legal"],
     footerText:
-      "DaniniNet povezuje digitalne proizvode, SEO sadržaj, affiliate preporuke i DaniniHub metodu u jedan uredan sistem: ideja, pitanja, dokaz, granica, isporuka i tržišni signal.",
-    footerClaim:
-      "Platforma nije zamišljena kao katalog linkova. Svaka stranica mora imati jasan razlog, sledeći korak i pošteno objašnjenje šta se ne obećava.",
-    columns: [
-      {
-        title: "Platforma",
-        links: [
-          { label: "DaniniHub metoda", route: "method", note: "Pitaj AI — AI pita tebe" },
-          { label: "Blog / editorial hub", route: "blog", note: "problemi, dokazi, case study" },
-          { label: "Knjiga utisaka", route: "guestbook", note: "pitanja, signali, predlozi" },
-        ],
-      },
-      {
-        title: "Proizvodi i tokovi",
-        links: [
-          { label: "Svi proizvodi", route: "products", note: "digitalni proizvodi i roadmap" },
-          { label: "Digitalna prodaja lokacije", route: "dpl", note: "PDF vodič + Bonus Pack" },
-          { label: "Health / Water pravac", route: "health", note: "odgovoran roadmap" },
-        ],
-      },
-      {
-        title: "Trust & support",
-        links: [
-          { label: "Legal & Trust", route: "legal", note: "disclaimeri, AI, affiliate, GDPR" },
-          { label: "Support", route: "support", note: "Gumroad delivery i pitanja" },
-        ],
-      },
-    ],
-    disclosure:
-      "Edukativni sadržaj · Digitalni proizvodi · Affiliate napomena · AI transparentnost · GDPR/kolačići · Health disclaimer",
-    bottom:
-      "Sadržaj ne predstavlja pravni, finansijski, poreski, urbanistički, tehnički, zdravstveni ili investicioni savet. Digitalni proizvodi ne garantuju prodaju, profit, izvodljivost, investitora ili rezultate.",
+      "DaniniNet je krovna platforma za digitalni, affiliate, content i SEO marketing — povezana sa DaniniHub OS metodom, realnim case study projektima i budućim health/water pravcem.",
+    legal: "Legal & Trust",
+    guestbook: "Knjiga utisaka",
+    support: "Support",
+    disclosure: "Affiliate napomena · AI transparentnost · GDPR/kolačići · Health disclaimer",
   },
   de: {
     nav: ["Methode", "Produkte", "Blog", "Gästebuch", "Support", "Legal"],
     footerText:
-      "DaniniNet verbindet digitale Produkte, SEO-Inhalte, Affiliate-Empfehlungen und die DaniniHub Methode zu einem geordneten System: Idee, Fragen, Beleg, Grenze, Auslieferung und Marktsignal.",
-    footerClaim:
-      "Die Plattform ist kein Link-Katalog. Jede Seite braucht einen klaren Grund, einen nächsten Schritt und ehrliche Grenzen dessen, was nicht versprochen wird.",
-    columns: [
-      {
-        title: "Plattform",
-        links: [
-          { label: "DaniniHub Methode", route: "method", note: "Frag die KI — die KI fragt dich" },
-          { label: "Blog / Editorial Hub", route: "blog", note: "Probleme, Belege, Case Study" },
-          { label: "Gästebuch", route: "guestbook", note: "Fragen, Signale, Vorschläge" },
-        ],
-      },
-      {
-        title: "Produkte und Flows",
-        links: [
-          { label: "Alle Produkte", route: "products", note: "digitale Produkte und Roadmap" },
-          { label: "Digitaler Verkauf von Standorten", route: "dpl", note: "PDF-Leitfaden + Bonus Pack" },
-          { label: "Health / Water Richtung", route: "health", note: "verantwortliche Roadmap" },
-        ],
-      },
-      {
-        title: "Trust & Support",
-        links: [
-          { label: "Legal & Trust", route: "legal", note: "Disclaimer, KI, Affiliate, DSGVO" },
-          { label: "Support", route: "support", note: "Gumroad Delivery und Fragen" },
-        ],
-      },
-    ],
-    disclosure:
-      "Bildungsinhalt · Digitale Produkte · Affiliate-Hinweis · KI-Transparenz · DSGVO/Cookies · Health Disclaimer",
-    bottom:
-      "Inhalte sind keine Rechts-, Finanz-, Steuer-, Planungs-, Technik-, Gesundheits- oder Anlageberatung. Digitale Produkte garantieren keine Verkäufe, Gewinne, Machbarkeit, Investoren oder Ergebnisse.",
+      "DaniniNet ist die Dachplattform für Digital-, Affiliate-, Content- und SEO-Marketing — verbunden mit DaniniHub OS, realen Case Studies und dem späteren Health/Water-Bereich.",
+    legal: "Legal & Trust",
+    guestbook: "Gästebuch",
+    support: "Support",
+    disclosure: "Affiliate-Hinweis · KI-Transparenz · DSGVO/Cookies · Health Disclaimer",
   },
   en: {
     nav: ["Method", "Products", "Blog", "Guestbook", "Support", "Legal"],
     footerText:
-      "DaniniNet connects digital products, SEO content, affiliate recommendations and the DaniniHub method into one structured system: idea, questions, proof, boundary, delivery and market signal.",
-    footerClaim:
-      "The platform is not a catalog of links. Every page must have a clear reason, a next step and an honest boundary around what is not promised.",
-    columns: [
-      {
-        title: "Platform",
-        links: [
-          { label: "DaniniHub method", route: "method", note: "Ask AI — AI asks you" },
-          { label: "Blog / editorial hub", route: "blog", note: "problems, proof, case study" },
-          { label: "Guestbook", route: "guestbook", note: "questions, signals, suggestions" },
-        ],
-      },
-      {
-        title: "Products and flows",
-        links: [
-          { label: "All products", route: "products", note: "digital products and roadmap" },
-          { label: "Digital Location Sales", route: "dpl", note: "PDF guide + Bonus Pack" },
-          { label: "Health / Water direction", route: "health", note: "responsible roadmap" },
-        ],
-      },
-      {
-        title: "Trust & support",
-        links: [
-          { label: "Legal & Trust", route: "legal", note: "disclaimers, AI, affiliate, GDPR" },
-          { label: "Support", route: "support", note: "Gumroad delivery and questions" },
-        ],
-      },
-    ],
-    disclosure:
-      "Educational content · Digital products · Affiliate disclosure · AI transparency · GDPR/Cookies · Health disclaimer",
-    bottom:
-      "Content is not legal, financial, tax, planning, technical, health or investment advice. Digital products do not guarantee sales, profit, feasibility, investors or results.",
+      "DaniniNet is the umbrella platform for digital, affiliate, content and SEO marketing — connected with DaniniHub OS, real case studies and the future health/water direction.",
+    legal: "Legal & Trust",
+    guestbook: "Guestbook",
+    support: "Support",
+    disclosure: "Affiliate disclosure · AI transparency · GDPR/Cookies · Health disclaimer",
   },
 };
 
@@ -259,37 +173,20 @@ export function SiteShell({
         </div>
       </header>
       {children}
-      <footer className="border-t border-white/10 bg-[#07142b] text-slate-300">
-        <div className="mx-auto max-w-7xl px-6 py-12">
-          <div className="grid gap-10 lg:grid-cols-[1.05fr_1.55fr]">
-            <div>
-              <BrandMark />
-              <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300">{t.footerText}</p>
-              <p className="mt-5 max-w-3xl rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-sm leading-7 text-slate-400">
-                {t.footerClaim}
-              </p>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-3">
-              {t.columns.map((column) => (
-                <div key={column.title}>
-                  <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d7b46a]">{column.title}</h2>
-                  <div className="mt-4 grid gap-3">
-                    {column.links.map((item) => (
-                      <Link key={item.label} href={localizedPath(lang, item.route)} className="group rounded-2xl border border-white/10 bg-white/[0.035] p-4 transition hover:bg-white/[0.07]">
-                        <span className="block text-sm font-semibold text-[#f7fbff] group-hover:text-white">{item.label}</span>
-                        {item.note ? <span className="mt-1 block text-xs leading-5 text-slate-400">{item.note}</span> : null}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
+      <footer className="bg-[#07142b] text-slate-300">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <BrandMark />
+            <p className="mt-5 max-w-3xl leading-8">{t.footerText}</p>
           </div>
-
-          <div className="mt-10 grid gap-4 border-t border-white/10 pt-6 text-sm leading-7 text-slate-400 lg:grid-cols-[1fr_1.2fr]">
-            <p>{t.disclosure}</p>
-            <p className="lg:text-right">{t.bottom}</p>
+          <div className="grid content-start gap-2 text-sm leading-7">
+            <Link href={localizedPath(lang, "legal")}>{t.legal}</Link>
+            <Link href={localizedPath(lang, "products")}>{t.nav[1]}</Link>
+            <Link href={localizedPath(lang, "blog")}>Blog</Link>
+            <Link href={localizedPath(lang, "guestbook")}>{t.guestbook}</Link>
+            <Link href={localizedPath(lang, "support")}>{t.support}</Link>
+            <Link href={localizedPath(lang, "health")}>Health / Water</Link>
+            <p className="pt-2 text-slate-400">{t.disclosure}</p>
           </div>
         </div>
       </footer>
