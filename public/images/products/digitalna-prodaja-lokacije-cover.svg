@@ -1,0 +1,27 @@
+<svg width="900" height="1272" viewBox="0 0 900 1272" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Digitalna prodaja lokacije — DaniniNet cover</title>
+  <desc id="desc">Premium DaniniNet product cover based on the real Drive cover direction: black background, muted gold accents, Swiss editorial layout and abstract gateway architecture motif.</desc>
+  <rect width="900" height="1272" fill="#05070A"/>
+  <rect x="46" y="46" width="808" height="1180" rx="34" stroke="#C5A35A" stroke-width="2" opacity="0.72"/>
+  <rect x="76" y="76" width="748" height="1120" rx="24" stroke="#C5A35A" stroke-width="1" opacity="0.22"/>
+  <path d="M168 374H732" stroke="#C5A35A" stroke-width="2" opacity="0.7"/>
+  <path d="M168 904H732" stroke="#C5A35A" stroke-width="2" opacity="0.7"/>
+  <path d="M210 750V558L450 418L690 558V750" stroke="#C5A35A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M294 750V605L450 515L606 605V750" stroke="#F8F3E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.92"/>
+  <path d="M382 750V650L450 611L518 650V750" stroke="#C5A35A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+  <path d="M450 418V750" stroke="#C5A35A" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="450" cy="418" r="6" fill="#C5A35A"/>
+  <circle cx="210" cy="750" r="5" fill="#C5A35A"/>
+  <circle cx="690" cy="750" r="5" fill="#C5A35A"/>
+  <text x="168" y="168" fill="#F8F3E8" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" letter-spacing="5">DANININET</text>
+  <text x="168" y="235" fill="#C5A35A" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500" letter-spacing="4">PROPERTY PROMOTION &amp; INVESTOR GATEWAY STUDIO</text>
+  <text x="168" y="470" fill="#F8F3E8" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="650">Digitalna</text>
+  <text x="168" y="556" fill="#F8F3E8" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="650">prodaja</text>
+  <text x="168" y="642" fill="#F8F3E8" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="650">lokacije</text>
+  <text x="168" y="826" fill="#F8F3E8" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="450">Od običnog oglasa do</text>
+  <text x="168" y="868" fill="#F8F3E8" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="450">digitalnog gateway-a</text>
+  <text x="168" y="982" fill="#C5A35A" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="2">PDF VODIČ · DANININET</text>
+  <text x="168" y="1048" fill="#B8C4D0" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="400">DaniniHub metoda · Calije Park Residence artifact</text>
+  <text x="168" y="1112" fill="#F8F3E8" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="500">Launch 29 € · Regular 49 €</text>
+  <path d="M168 1160H304" stroke="#C5A35A" stroke-width="6" stroke-linecap="round"/>
+</svg>
