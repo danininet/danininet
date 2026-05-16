@@ -3,11 +3,17 @@ import { SectionIntro, SiteShell, normalizeLocale, localizedPath } from "@/compo
 
 type Locale = "sr" | "de" | "en";
 
+const articleSlug = "kako-se-lokacija-pretvara-u-investitorski-argument";
+
 const copy = {
   sr: {
     eyebrow: "DaniniNet Blog",
     title: "Sadržaj koji gradi poverenje pre prodaje.",
     text: "Blog je editorial i SEO centar DaniniNet-a: ne služi za gomilanje tekstova, nego za objašnjavanje problema, povezivanje proizvoda, uvođenje čitaoca u funnel i čuvanje poverenja pre CTA-a.",
+    featuredLabel: "Novo · Evergreen case study",
+    featuredTitle: "Kako se lokacija pretvara u investitorski argument: Calije Park Residence case study",
+    featuredText: "Calije Park Residence pokazuje kako se građevinska lokacija u Nišu može predstaviti kroz javni gateway, video uvod, višejezični sadržaj i zatvoreni Investor Brief — kao investitorski argument, a ne običan oglas.",
+    featuredCta: "Čitaj članak",
     funnel: ["Problem", "Objašnjenje", "Dokaz", "Proizvod", "Trust"],
     items: [
       ["Zašto običan oglas nije dovoljan", "Ulazni članak za vlasnike lokacija: objašnjava razliku između oglasa i digitalnog gateway-a."],
@@ -25,6 +31,10 @@ const copy = {
     eyebrow: "DaniniNet Blog",
     title: "Inhalte, die Vertrauen vor dem Verkauf aufbauen.",
     text: "Der Blog ist das Editorial- und SEO-Zentrum von DaniniNet: Er erklärt Probleme, verbindet Produkte, führt Leser in den Funnel und schützt Vertrauen vor dem CTA.",
+    featuredLabel: "Neu · Evergreen Case Study",
+    featuredTitle: "Wie ein Standort zum Investorenargument wird: Calije Park Residence Case Study",
+    featuredText: "Calije Park Residence zeigt, wie ein Standort in Niš über einen öffentlichen Gateway, Video, mehrsprachige Inhalte und einen geschlossenen Investor Brief präsentiert werden kann.",
+    featuredCta: "Artikel lesen",
     funnel: ["Problem", "Erklärung", "Beleg", "Produkt", "Trust"],
     items: [
       ["Warum eine normale Anzeige nicht reicht", "Einstiegsartikel für Eigentümer: Unterschied zwischen Anzeige und digitalem Gateway."],
@@ -42,6 +52,10 @@ const copy = {
     eyebrow: "DaniniNet Blog",
     title: "Content that builds trust before the sale.",
     text: "The blog is DaniniNet's editorial and SEO center: it explains problems, connects products, guides readers into the funnel and protects trust before the CTA.",
+    featuredLabel: "New · Evergreen case study",
+    featuredTitle: "How a location becomes an investor argument: Calije Park Residence case study",
+    featuredText: "Calije Park Residence shows how a location in Niš can be presented through a public gateway, video, multilingual content and a closed Investor Brief.",
+    featuredCta: "Read article",
     funnel: ["Problem", "Explanation", "Proof", "Product", "Trust"],
     items: [
       ["Why a standard listing is not enough", "Entry article for owners: the difference between a listing and a digital gateway."],
@@ -65,6 +79,16 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
   return (
     <SiteShell locale={lang} currentPath={localizedPath(lang, "blog")}>
       <SectionIntro eyebrow={t.eyebrow} title={t.title} text={t.text} />
+      <section className="mx-auto max-w-7xl px-6 pb-16">
+        <article className="rounded-[2.5rem] bg-[#07142b] p-8 text-white shadow-[0_24px_70px_rgba(7,20,43,0.18)]">
+          <p className="text-sm uppercase tracking-[0.22em] text-[#d7b46a]">{t.featuredLabel}</p>
+          <h2 className="mt-4 max-w-4xl text-4xl font-semibold leading-tight md:text-5xl">{t.featuredTitle}</h2>
+          <p className="mt-5 max-w-3xl leading-8 text-slate-300">{t.featuredText}</p>
+          <Link href={`/${lang}/blog/${articleSlug}`} className="mt-8 inline-flex rounded-full bg-[#d9ecff] px-6 py-3 text-sm font-semibold text-[#07142b]">
+            {t.featuredCta}
+          </Link>
+        </article>
+      </section>
       <section className="mx-auto max-w-7xl px-6 pb-16">
         <div className="rounded-[2.5rem] bg-[#07142b] p-6 text-white shadow-[0_24px_70px_rgba(7,20,43,0.18)]">
           <p className="text-sm uppercase tracking-[0.22em] text-[#d7b46a]">Editorial funnel</p>
