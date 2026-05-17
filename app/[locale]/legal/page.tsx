@@ -25,6 +25,7 @@ const copy: Record<Locale, {
     title: "Transparentan okvir za AI, affiliate, digitalne proizvode i odgovornu komunikaciju.",
     text: "DaniniNet ne krije način rada. AI se koristi kao sofisticiran radni alat u DaniniHub metodi, ali ne kao autoritet koji zamenjuje ljudsku odluku, stručnu proveru ili odgovornost korisnika.",
     cards: [
+      { title: "Impressum", text: "Identitet projekta, kontakt okvir i poslovne informacije koje se dopunjuju stvarnim podacima pre finalne javne upotrebe.", href: "impressum", label: "Contact" },
       { title: "AI transparentnost", text: "Kako koristimo AI kroz metodu Pitaj AI — AI pita tebe: pitanja, dokazi, granice, nacrti i artifacti.", href: "ai-transparentnost", label: "AI use" },
       { title: "Glavni disclaimer", text: "Edukativni karakter sadržaja, digitalnih proizvoda, lokacija, case study materijala i rezultata.", href: "disclaimer", label: "Boundaries" },
       { title: "Affiliate disclosure", text: "Kako označavamo affiliate linkove, preporuke, provizije i granice odgovornosti.", href: "affiliate-disclosure", label: "Affiliate" },
@@ -43,6 +44,7 @@ const copy: Record<Locale, {
     title: "Transparenter Rahmen für KI, Affiliate, digitale Produkte und verantwortliche Kommunikation.",
     text: "DaniniNet versteckt die Arbeitsweise nicht. KI wird in der DaniniHub Methode als anspruchsvolles Arbeitswerkzeug eingesetzt, aber nicht als Autorität, die menschliche Entscheidung, Fachprüfung oder Nutzerverantwortung ersetzt.",
     cards: [
+      { title: "Impressum", text: "Projektidentität, Kontaktstruktur und Geschäftsinformationen, die vor der endgültigen öffentlichen Nutzung mit realen Daten ergänzt werden.", href: "impressum", label: "Kontakt" },
       { title: "KI-Transparenz", text: "Wie KI in der Methode Frag die KI — die KI fragt dich eingesetzt wird: Fragen, Belege, Grenzen, Entwürfe und Artefakte.", href: "ai-transparentnost", label: "KI" },
       { title: "Haupt-Disclaimer", text: "Bildungscharakter von Inhalten, digitalen Produkten, Standortmaterialien, Case Studies und Ergebnissen.", href: "disclaimer", label: "Grenzen" },
       { title: "Affiliate Disclosure", text: "Wie Affiliate-Links, Empfehlungen, Provisionen und Verantwortungsgrenzen gekennzeichnet werden.", href: "affiliate-disclosure", label: "Affiliate" },
@@ -61,6 +63,7 @@ const copy: Record<Locale, {
     title: "A transparent framework for AI, affiliate, digital products and responsible communication.",
     text: "DaniniNet does not hide its working method. AI is used inside the DaniniHub method as a sophisticated working tool, but not as an authority that replaces human decisions, professional review or user responsibility.",
     cards: [
+      { title: "Impressum", text: "Project identity, contact structure and business information to be completed with real details before final public use.", href: "impressum", label: "Contact" },
       { title: "AI transparency", text: "How AI is used through the Ask AI — AI asks you method: questions, proof, boundaries, drafts and artifacts.", href: "ai-transparentnost", label: "AI use" },
       { title: "Main disclaimer", text: "Educational nature of content, digital products, location materials, case studies and outcomes.", href: "disclaimer", label: "Boundaries" },
       { title: "Affiliate disclosure", text: "How affiliate links, recommendations, commissions and responsibility boundaries are disclosed.", href: "affiliate-disclosure", label: "Affiliate" },
