@@ -43,7 +43,7 @@ const copy: Record<Locale, {
     title: "Transparenter Rahmen für KI, Affiliate, digitale Produkte und verantwortliche Kommunikation.",
     text: "DaniniNet versteckt die Arbeitsweise nicht. KI wird in der DaniniHub Methode als anspruchsvolles Arbeitswerkzeug eingesetzt, aber nicht als Autorität, die menschliche Entscheidung, Fachprüfung oder Nutzerverantwortung ersetzt.",
     cards: [
-      { title: "KI-Transparenz", text: "Wie KI in der Methode Frag die KI — die KI fragt dich eingesetzt wird: Fragen, Belege, Grenzen, Entwürfe und Artefakte.", href: "ai-transparenz", label: "KI" },
+      { title: "KI-Transparenz", text: "Wie KI in der Methode Frag die KI — die KI fragt dich eingesetzt wird: Fragen, Belege, Grenzen, Entwürfe und Artefakte.", href: "ai-transparentnost", label: "KI" },
       { title: "Haupt-Disclaimer", text: "Bildungscharakter von Inhalten, digitalen Produkten, Standortmaterialien, Case Studies und Ergebnissen.", href: "disclaimer", label: "Grenzen" },
       { title: "Affiliate Disclosure", text: "Wie Affiliate-Links, Empfehlungen, Provisionen und Verantwortungsgrenzen gekennzeichnet werden.", href: "affiliate-disclosure", label: "Affiliate" },
       { title: "Privacy / DSGVO", text: "Grundprinzipien der Datenverarbeitung: Minimierung, Zweck, Transparenz, Gumroad/Brevo/Support-Flows.", href: "privacy", label: "Daten" },
@@ -61,7 +61,7 @@ const copy: Record<Locale, {
     title: "A transparent framework for AI, affiliate, digital products and responsible communication.",
     text: "DaniniNet does not hide its working method. AI is used inside the DaniniHub method as a sophisticated working tool, but not as an authority that replaces human decisions, professional review or user responsibility.",
     cards: [
-      { title: "AI transparency", text: "How AI is used through the Ask AI — AI asks you method: questions, proof, boundaries, drafts and artifacts.", href: "ai-transparency", label: "AI use" },
+      { title: "AI transparency", text: "How AI is used through the Ask AI — AI asks you method: questions, proof, boundaries, drafts and artifacts.", href: "ai-transparentnost", label: "AI use" },
       { title: "Main disclaimer", text: "Educational nature of content, digital products, location materials, case studies and outcomes.", href: "disclaimer", label: "Boundaries" },
       { title: "Affiliate disclosure", text: "How affiliate links, recommendations, commissions and responsibility boundaries are disclosed.", href: "affiliate-disclosure", label: "Affiliate" },
       { title: "Privacy / GDPR", text: "Core data principles: minimization, purpose, transparency, Gumroad/Brevo/support flows.", href: "privacy", label: "Data" },
@@ -84,7 +84,6 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
   return (
     <SiteShell locale={lang} currentPath={`/${lang}/legal`}>
       <SectionIntro eyebrow={t.eyebrow} title={t.title} text={t.text} />
-
       <section className="mx-auto max-w-7xl px-6 pb-16">
         <div className="rounded-[2.5rem] bg-[#07142b] p-8 text-white shadow-[0_24px_70px_rgba(7,20,43,0.18)]">
           <p className="text-sm uppercase tracking-[0.22em] text-[#d7b46a]">DaniniHub method layer</p>
@@ -92,7 +91,6 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
           <p className="mt-5 max-w-4xl leading-8 text-slate-300">{t.aiText}</p>
         </div>
       </section>
-
       <section className="mx-auto grid max-w-7xl gap-6 px-6 pb-16 md:grid-cols-2 lg:grid-cols-3">
         {t.cards.map((card) => (
           <Link key={card.href} href={`/${lang}/legal/${card.href}`} className="group rounded-[2rem] border border-black/10 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(7,20,43,0.12)]">
@@ -103,7 +101,6 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
           </Link>
         ))}
       </section>
-
       <section className="bg-[#07142b] text-white">
         <div className="mx-auto max-w-7xl px-6 py-14">
           <p className="text-sm uppercase tracking-[0.22em] text-[#b9d7f0]">Trust layer</p>
