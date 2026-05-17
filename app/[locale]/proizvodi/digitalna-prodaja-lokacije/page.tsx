@@ -216,7 +216,7 @@ export default async function ProductPage({ params }: { params: Promise<{ locale
   const { locale } = await params;
   const lang: Locale = normalizeLocale(locale);
   const t = copy[lang];
-  const checkoutUrl = process.env.NEXT_PUBLIC_GUMROAD_DPL_URL || "https://danininet.gumroad.com/";
+  const checkoutUrl = process.env.NEXT_PUBLIC_GUMROAD_DPL_URL || "https://danininet.gumroad.com/l/nnxnwu";
 
   return (
     <SiteShell locale={lang} currentPath={localizedPath(lang, "dpl")}>
