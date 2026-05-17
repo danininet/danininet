@@ -1,54 +1,80 @@
+import Link from "next/link";
 import { SectionIntro, SiteShell, normalizeLocale } from "@/components/layout/SiteShell";
 
 type Locale = "sr" | "de" | "en";
 
-const copy = {
+type LegalCard = {
+  title: string;
+  text: string;
+  href: string;
+  label: string;
+};
+
+const copy: Record<Locale, {
+  eyebrow: string;
+  title: string;
+  text: string;
+  cards: LegalCard[];
+  principleTitle: string;
+  principleText: string;
+  aiTitle: string;
+  aiText: string;
+}> = {
   sr: {
-    eyebrow: "Legal & Trust",
-    title: "Jasne granice za edukaciju, AI, affiliate i digitalne proizvode.",
-    text: "Ova stranica objašnjava kako DaniniNet komunicira edukativni sadržaj, affiliate preporuke, AI transparentnost, digitalnu isporuku, GDPR/kolačiće i ograničenja odgovornosti.",
-    sections: [
-      ["Edukativni karakter", "Sadržaj na DaniniNet-u je informativan i edukativan. Ne predstavlja pravni, finansijski, investicioni, urbanistički, tehnički, zdravstveni ili profesionalni savet."],
-      ["AI transparentnost", "AI se koristi kao pomoćni alat za strukturisanje pitanja, ideja, rizika, nacrta i sledećih koraka. AI nije autoritet koji donosi odluke umesto korisnika."],
-      ["Affiliate napomena", "Pojedini linkovi mogu biti affiliate linkovi. To znači da DaniniNet može ostvariti proviziju ako korisnik kupi preko takvog linka, bez dodatnog troška za korisnika."],
-      ["Digitalni proizvodi", "Digitalni proizvodi mogu biti isporučeni preko eksternog checkout/delivery provajdera. Uslovi kupovine, povraćaja i pristupa zavise od konkretne ponude i provajdera."],
-      ["Health / Water disclaimer", "Sadržaj o vodi, navikama, rutinama i zdravom stilu života je informativan. Ne zamenjuje lekara, nutricionistu ili kvalifikovanog zdravstvenog stručnjaka."],
-      ["Privatnost i kolačići", "DaniniNet treba da koristi samo neophodne podatke za formu, isporuku, support i analitiku u skladu sa GDPR principima: minimizacija, transparentnost i svrha obrade."],
+    eyebrow: "Legal & Trust Center",
+    title: "Transparentan okvir za AI, affiliate, digitalne proizvode i odgovornu komunikaciju.",
+    text: "DaniniNet ne krije način rada. AI se koristi kao sofisticiran radni alat u DaniniHub metodi, ali ne kao autoritet koji zamenjuje ljudsku odluku, stručnu proveru ili odgovornost korisnika.",
+    cards: [
+      { title: "AI transparentnost", text: "Kako koristimo AI kroz metodu Pitaj AI — AI pita tebe: pitanja, dokazi, granice, nacrti i artifacti.", href: "ai-transparentnost", label: "AI use" },
+      { title: "Glavni disclaimer", text: "Edukativni karakter sadržaja, digitalnih proizvoda, lokacija, case study materijala i rezultata.", href: "disclaimer", label: "Boundaries" },
+      { title: "Affiliate disclosure", text: "Kako označavamo affiliate linkove, preporuke, provizije i granice odgovornosti.", href: "affiliate-disclosure", label: "Affiliate" },
+      { title: "Privacy / GDPR", text: "Osnovni principi obrade podataka: minimizacija, svrha, transparentnost, Gumroad/Brevo/support tokovi.", href: "privacy", label: "Data" },
+      { title: "Cookies", text: "Kolačići, analitika, tehnička funkcionalnost i budući tracking bez nepotrebnog prikupljanja podataka.", href: "cookies", label: "Tracking" },
+      { title: "Terms", text: "Uslovi korišćenja sajta, digitalnih proizvoda, komunikacije i eksternih checkout/delivery kanala.", href: "terms", label: "Terms" },
+      { title: "Health disclaimer", text: "Posebne granice za budući health/water pravac: edukacija, navike, affiliate, bez medicinskih obećanja.", href: "health-disclaimer", label: "Health" },
     ],
-    finalTitle: "Princip poverenja",
-    finalText: "Ako nešto nije provereno, ne predstavlja se kao činjenica. Ako postoji affiliate odnos, mora biti jasno označen. Ako tema zahteva stručnjaka, korisnik se ne sme gurati u neosnovanu odluku.",
+    principleTitle: "Princip poverenja",
+    principleText: "Ako nešto nije provereno, ne predstavlja se kao činjenica. Ako postoji affiliate odnos, jasno se označava. Ako tema zahteva stručnjaka, korisnik se ne gura u neosnovanu odluku. Ako je AI pomogao u strukturi, to se ne krije — objašnjava se normalno i profesionalno.",
+    aiTitle: "Zašto je AI ovde važan",
+    aiText: "DaniniHub metoda je deo identiteta DaniniNet-a. AI pomaže da se postave bolja pitanja, razdvoje činjenice od pretpostavki, prepoznaju rupe u argumentu i pretvore ideje u proverljive digitalne artifacte. Upravo zato AI transparentnost nije dodatak, nego deo trust sloja.",
   },
   de: {
-    eyebrow: "Legal & Trust",
-    title: "Klare Grenzen für Bildung, KI, Affiliate und digitale Produkte.",
-    text: "Diese Seite erklärt, wie DaniniNet edukative Inhalte, Affiliate-Empfehlungen, KI-Transparenz, digitale Lieferung, DSGVO/Cookies und Haftungsgrenzen kommuniziert.",
-    sections: [
-      ["Edukative Inhalte", "Die Inhalte auf DaniniNet dienen Informations- und Bildungszwecken. Sie sind keine Rechts-, Finanz-, Anlage-, Bau-, Planungs-, Gesundheits- oder professionelle Beratung."],
-      ["KI-Transparenz", "KI wird als Hilfswerkzeug zur Strukturierung von Fragen, Ideen, Risiken, Entwürfen und nächsten Schritten eingesetzt. KI trifft keine Entscheidungen für Nutzer."],
-      ["Affiliate-Hinweis", "Einige Links können Affiliate-Links sein. DaniniNet kann eine Provision erhalten, wenn Nutzer über solche Links kaufen, ohne zusätzliche Kosten für Nutzer."],
-      ["Digitale Produkte", "Digitale Produkte können über externe Checkout-/Delivery-Anbieter bereitgestellt werden. Kauf-, Erstattungs- und Zugangsbedingungen hängen vom konkreten Angebot und Anbieter ab."],
-      ["Health / Water Disclaimer", "Inhalte zu Wasser, Routinen und gesundem Lebensstil sind informativ. Sie ersetzen keinen Arzt, Ernährungsberater oder qualifizierten Gesundheitsexperten."],
-      ["Datenschutz und Cookies", "DaniniNet sollte nur notwendige Daten für Formulare, Lieferung, Support und Analyse nach DSGVO-Grundsätzen nutzen: Minimierung, Transparenz und Zweckbindung."],
+    eyebrow: "Legal & Trust Center",
+    title: "Transparenter Rahmen für KI, Affiliate, digitale Produkte und verantwortliche Kommunikation.",
+    text: "DaniniNet versteckt die Arbeitsweise nicht. KI wird in der DaniniHub Methode als anspruchsvolles Arbeitswerkzeug eingesetzt, aber nicht als Autorität, die menschliche Entscheidung, Fachprüfung oder Nutzerverantwortung ersetzt.",
+    cards: [
+      { title: "KI-Transparenz", text: "Wie KI in der Methode Frag die KI — die KI fragt dich eingesetzt wird: Fragen, Belege, Grenzen, Entwürfe und Artefakte.", href: "ai-transparenz", label: "KI" },
+      { title: "Haupt-Disclaimer", text: "Bildungscharakter von Inhalten, digitalen Produkten, Standortmaterialien, Case Studies und Ergebnissen.", href: "disclaimer", label: "Grenzen" },
+      { title: "Affiliate Disclosure", text: "Wie Affiliate-Links, Empfehlungen, Provisionen und Verantwortungsgrenzen gekennzeichnet werden.", href: "affiliate-disclosure", label: "Affiliate" },
+      { title: "Privacy / DSGVO", text: "Grundprinzipien der Datenverarbeitung: Minimierung, Zweck, Transparenz, Gumroad/Brevo/Support-Flows.", href: "privacy", label: "Daten" },
+      { title: "Cookies", text: "Cookies, Analytics, technische Funktionen und künftiges Tracking ohne unnötige Datenerhebung.", href: "cookies", label: "Tracking" },
+      { title: "Terms", text: "Nutzungsbedingungen für Website, digitale Produkte, Kommunikation und externe Checkout-/Delivery-Kanäle.", href: "terms", label: "Terms" },
+      { title: "Health Disclaimer", text: "Grenzen für den künftigen Health/Water-Bereich: Bildung, Routinen, Affiliate, keine medizinischen Versprechen.", href: "health-disclaimer", label: "Health" },
     ],
-    finalTitle: "Vertrauensprinzip",
-    finalText: "Was nicht geprüft ist, wird nicht als Tatsache dargestellt. Affiliate-Beziehungen werden klar markiert. Wenn ein Thema Fachleute erfordert, wird der Nutzer nicht zu unbegründeten Entscheidungen gedrängt.",
+    principleTitle: "Vertrauensprinzip",
+    principleText: "Was nicht geprüft ist, wird nicht als Tatsache dargestellt. Affiliate-Beziehungen werden klar gekennzeichnet. Wenn ein Thema Fachleute erfordert, wird der Nutzer nicht zu unbegründeten Entscheidungen gedrängt. Wenn KI bei der Struktur geholfen hat, wird das nicht versteckt, sondern professionell erklärt.",
+    aiTitle: "Warum KI hier wichtig ist",
+    aiText: "Die DaniniHub Methode gehört zur Identität von DaniniNet. KI hilft, bessere Fragen zu stellen, Fakten von Annahmen zu trennen, Argumentationslücken zu erkennen und Ideen in überprüfbare digitale Artefakte zu verwandeln. Deshalb ist KI-Transparenz kein Zusatz, sondern Teil der Vertrauensebene.",
   },
   en: {
-    eyebrow: "Legal & Trust",
-    title: "Clear boundaries for education, AI, affiliate and digital products.",
-    text: "This page explains how DaniniNet communicates educational content, affiliate recommendations, AI transparency, digital delivery, GDPR/cookies and liability boundaries.",
-    sections: [
-      ["Educational nature", "Content on DaniniNet is informational and educational. It is not legal, financial, investment, planning, technical, health or professional advice."],
-      ["AI transparency", "AI is used as an assistive tool for structuring questions, ideas, risks, drafts and next steps. AI does not make decisions for users."],
-      ["Affiliate disclosure", "Some links may be affiliate links. DaniniNet may earn a commission if users buy through such links, at no additional cost to the user."],
-      ["Digital products", "Digital products may be delivered through external checkout/delivery providers. Purchase, refund and access terms depend on the specific offer and provider."],
-      ["Health / Water disclaimer", "Content about water, routines and healthy lifestyle is informational. It does not replace a doctor, nutritionist or qualified health professional."],
-      ["Privacy and cookies", "DaniniNet should use only necessary data for forms, delivery, support and analytics under GDPR principles: minimization, transparency and purpose limitation."],
+    eyebrow: "Legal & Trust Center",
+    title: "A transparent framework for AI, affiliate, digital products and responsible communication.",
+    text: "DaniniNet does not hide its working method. AI is used inside the DaniniHub method as a sophisticated working tool, but not as an authority that replaces human decisions, professional review or user responsibility.",
+    cards: [
+      { title: "AI transparency", text: "How AI is used through the Ask AI — AI asks you method: questions, proof, boundaries, drafts and artifacts.", href: "ai-transparency", label: "AI use" },
+      { title: "Main disclaimer", text: "Educational nature of content, digital products, location materials, case studies and outcomes.", href: "disclaimer", label: "Boundaries" },
+      { title: "Affiliate disclosure", text: "How affiliate links, recommendations, commissions and responsibility boundaries are disclosed.", href: "affiliate-disclosure", label: "Affiliate" },
+      { title: "Privacy / GDPR", text: "Core data principles: minimization, purpose, transparency, Gumroad/Brevo/support flows.", href: "privacy", label: "Data" },
+      { title: "Cookies", text: "Cookies, analytics, technical functionality and future tracking without unnecessary data collection.", href: "cookies", label: "Tracking" },
+      { title: "Terms", text: "Terms for site use, digital products, communication and external checkout/delivery channels.", href: "terms", label: "Terms" },
+      { title: "Health disclaimer", text: "Boundaries for the future health/water direction: education, routines, affiliate, no medical promises.", href: "health-disclaimer", label: "Health" },
     ],
-    finalTitle: "Trust principle",
-    finalText: "If something is not verified, it is not presented as fact. Affiliate relationships must be clearly marked. If a topic requires a professional, users should not be pushed into unsupported decisions.",
+    principleTitle: "Trust principle",
+    principleText: "If something is not verified, it is not presented as fact. If an affiliate relationship exists, it is clearly disclosed. If a topic requires a professional, users are not pushed into unsupported decisions. If AI helped structure the work, that is not hidden — it is explained clearly and professionally.",
+    aiTitle: "Why AI matters here",
+    aiText: "The DaniniHub method is part of DaniniNet's identity. AI helps ask better questions, separate facts from assumptions, identify gaps in an argument and turn ideas into verifiable digital artifacts. That is why AI transparency is not an add-on; it is part of the trust layer.",
   },
-} as const;
+};
 
 export default async function LegalPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -56,21 +82,33 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
   const t = copy[lang];
 
   return (
-    <SiteShell locale={lang}>
+    <SiteShell locale={lang} currentPath={`/${lang}/legal`}>
       <SectionIntro eyebrow={t.eyebrow} title={t.title} text={t.text} />
-      <section className="mx-auto grid max-w-7xl gap-6 px-6 pb-16 md:grid-cols-2">
-        {t.sections.map(([title, text]) => (
-          <article key={title} className="rounded-[2rem] border border-black/10 bg-white p-8">
-            <h2 className="text-2xl font-semibold">{title}</h2>
-            <p className="mt-4 leading-8 text-[#706a5d]">{text}</p>
-          </article>
+
+      <section className="mx-auto max-w-7xl px-6 pb-16">
+        <div className="rounded-[2.5rem] bg-[#07142b] p-8 text-white shadow-[0_24px_70px_rgba(7,20,43,0.18)]">
+          <p className="text-sm uppercase tracking-[0.22em] text-[#d7b46a]">DaniniHub method layer</p>
+          <h2 className="mt-4 text-4xl font-semibold">{t.aiTitle}</h2>
+          <p className="mt-5 max-w-4xl leading-8 text-slate-300">{t.aiText}</p>
+        </div>
+      </section>
+
+      <section className="mx-auto grid max-w-7xl gap-6 px-6 pb-16 md:grid-cols-2 lg:grid-cols-3">
+        {t.cards.map((card) => (
+          <Link key={card.href} href={`/${lang}/legal/${card.href}`} className="group rounded-[2rem] border border-black/10 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(7,20,43,0.12)]">
+            <p className="text-sm uppercase tracking-[0.22em] text-[#226bbf]">{card.label}</p>
+            <h2 className="mt-4 text-2xl font-semibold text-[#15130f]">{card.title}</h2>
+            <p className="mt-4 leading-8 text-[#706a5d]">{card.text}</p>
+            <span className="mt-6 inline-flex text-sm font-semibold text-[#07142b]">→</span>
+          </Link>
         ))}
       </section>
+
       <section className="bg-[#07142b] text-white">
         <div className="mx-auto max-w-7xl px-6 py-14">
           <p className="text-sm uppercase tracking-[0.22em] text-[#b9d7f0]">Trust layer</p>
-          <h2 className="mt-4 text-4xl font-semibold">{t.finalTitle}</h2>
-          <p className="mt-5 max-w-3xl leading-8 text-slate-300">{t.finalText}</p>
+          <h2 className="mt-4 text-4xl font-semibold">{t.principleTitle}</h2>
+          <p className="mt-5 max-w-4xl leading-8 text-slate-300">{t.principleText}</p>
         </div>
       </section>
     </SiteShell>
