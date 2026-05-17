@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
-    "@plasmicapp/loader-nextjs": "^2.0.4",
     "@prisma/client": "^7.8.0",
     "clsx": "^2.1.1",
     "cookie": "^1.1.1",
@@ -27,7 +26,6 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@plasmicapp/cli": "^0.1.361",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
