@@ -26,6 +26,27 @@ const copy = {
     cta: "Pogledaj proizvod",
     secondary: "Kako radi metoda",
     funnelTitle: "Editorial funnel vodi čitaoca od problema do sledećeg logičnog koraka.",
+    categoriesTitle: "SEO kategorije",
+    categoriesText: "Kategorije drže blog čistim: svaka tema ima svoju ulogu, interni link i jasnu vezu sa proizvodom, metodom ili trust slojem.",
+    categories: [
+      ["Digitalni marketing", "Landing stranice, SEO, email tokovi, lead forme i struktura ponude."],
+      ["Affiliate marketing", "Preporuke, disclosure, izbor proizvoda i odgovorna komunikacija bez lažnih obećanja."],
+      ["AI u praksi", "Pitaj AI — AI pita tebe, pitanja pre sadržaja, dokaz pre tvrdnje i artifact pre kampanje."],
+      ["Digitalni proizvodi", "PDF vodiči, bonus paketi, isporuka, Gumroad tok i post-purchase iskustvo."],
+      ["Case studies", "Realni projekti, javni gateway, privatni brief, vizuelni dokaz i granice tvrdnji."],
+      ["Legal & Trust", "GDPR, cookies, affiliate disclosure, AI transparentnost i disclaimer biblioteka."],
+      ["Zdrav stil života", "Rutine, navike, voda i odgovoran sadržaj bez medicinskih tvrdnji."],
+      ["Voda i zdravlje", "Edukativni sadržaj o vodi, hidrataciji i svakodnevnim navikama uz jasan health disclaimer."],
+    ],
+    plannedTitle: "Prvih 5 SEO članaka",
+    plannedText: "Ovi članci grade osnovu za indeksiranje, interno linkovanje i budući newsletter sadržaj.",
+    plannedArticles: [
+      ["Šta je affiliate marketing i kako početi bez lažnih obećanja", "Affiliate marketing"],
+      ["Pitaj AI — AI pita tebe: kako koristiti AI kroz dijalog", "AI u praksi"],
+      ["Šta je digitalni proizvod i zašto mu treba poverenje", "Digitalni proizvodi"],
+      ["Digitalna prodaja lokacije: zašto običan oglas nije dovoljan", "Digitalni marketing"],
+      ["Voda i zdrav stil života: kako pisati odgovoran sadržaj bez medicinskih tvrdnji", "Zdrav stil života"],
+    ],
   },
   de: {
     eyebrow: "DaniniNet Blog",
@@ -47,6 +68,27 @@ const copy = {
     cta: "Produkt ansehen",
     secondary: "Methode ansehen",
     funnelTitle: "Der Editorial Funnel führt vom Problem zum nächsten logischen Schritt.",
+    categoriesTitle: "SEO-Kategorien",
+    categoriesText: "Kategorien halten den Blog sauber: jedes Thema hat eine Rolle, interne Verlinkung und Verbindung zu Produkt, Methode oder Trust-Ebene.",
+    categories: [
+      ["Digitales Marketing", "Landingpages, SEO, E-Mail-Flows, Lead-Formulare und Angebotsstruktur."],
+      ["Affiliate Marketing", "Empfehlungen, Disclosure, Produktauswahl und verantwortliche Kommunikation ohne falsche Versprechen."],
+      ["KI in der Praxis", "Frag die KI — die KI fragt dich, Fragen vor Inhalt, Beleg vor Aussage und Artifact vor Kampagne."],
+      ["Digitale Produkte", "PDF-Leitfäden, Bonus Packs, Lieferung, Gumroad-Flow und Post-Purchase-Erfahrung."],
+      ["Case Studies", "Reale Projekte, öffentliche Gateways, private Briefs, visuelle Belege und Claim-Grenzen."],
+      ["Legal & Trust", "DSGVO, Cookies, Affiliate Disclosure, KI-Transparenz und Disclaimer-Bibliothek."],
+      ["Gesund leben", "Routinen, Gewohnheiten, Wasser und verantwortlicher Content ohne medizinische Behauptungen."],
+      ["Wasser & Gesundheit", "Edukative Inhalte zu Wasser, Hydration und Alltagsroutinen mit Health Disclaimer."],
+    ],
+    plannedTitle: "Die ersten 5 SEO-Artikel",
+    plannedText: "Diese Artikel bilden die Grundlage für Indexierung, interne Verlinkung und künftige Newsletter-Inhalte.",
+    plannedArticles: [
+      ["Was ist Affiliate Marketing und wie beginnt man ohne falsche Versprechen", "Affiliate Marketing"],
+      ["Frag die KI — die KI fragt dich: KI als Dialog nutzen", "KI in der Praxis"],
+      ["Was ist ein digitales Produkt und warum braucht es Vertrauen", "Digitale Produkte"],
+      ["Digitaler Standortverkauf: warum eine normale Anzeige nicht reicht", "Digitales Marketing"],
+      ["Wasser und gesund leben: verantwortliche Inhalte ohne medizinische Claims", "Gesund leben"],
+    ],
   },
   en: {
     eyebrow: "DaniniNet Blog",
@@ -68,6 +110,27 @@ const copy = {
     cta: "View product",
     secondary: "See method",
     funnelTitle: "The editorial funnel leads from problem to the next logical step.",
+    categoriesTitle: "SEO categories",
+    categoriesText: "Categories keep the blog clean: each topic has a role, internal link logic and a connection to product, method or trust layer.",
+    categories: [
+      ["Digital marketing", "Landing pages, SEO, email flows, lead forms and offer structure."],
+      ["Affiliate marketing", "Recommendations, disclosure, product selection and responsible communication without false promises."],
+      ["AI in practice", "Ask AI — AI asks you, questions before content, proof before claim and artifact before campaign."],
+      ["Digital products", "PDF guides, bonus packs, delivery, Gumroad flow and post-purchase experience."],
+      ["Case studies", "Real projects, public gateways, private briefs, visual proof and claim boundaries."],
+      ["Legal & Trust", "GDPR, cookies, affiliate disclosure, AI transparency and disclaimer library."],
+      ["Healthy lifestyle", "Routines, habits, water and responsible content without medical claims."],
+      ["Water & health", "Educational content on water, hydration and daily routines with a clear health disclaimer."],
+    ],
+    plannedTitle: "First 5 SEO articles",
+    plannedText: "These articles create the base for indexing, internal linking and future newsletter content.",
+    plannedArticles: [
+      ["What affiliate marketing is and how to start without false promises", "Affiliate marketing"],
+      ["Ask AI — AI asks you: using AI through dialogue", "AI in practice"],
+      ["What a digital product is and why it needs trust", "Digital products"],
+      ["Digital location sales: why a standard listing is not enough", "Digital marketing"],
+      ["Water and healthy lifestyle: responsible content without medical claims", "Healthy lifestyle"],
+    ],
   },
 } as const;
 
@@ -102,6 +165,46 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
           </div>
         </div>
       </section>
+      <section className="mx-auto max-w-7xl px-6 pb-16">
+        <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+          <div className="rounded-[2rem] border border-black/10 bg-white p-8 shadow-sm">
+            <p className="text-sm uppercase tracking-[0.22em] text-[#226bbf]">{t.categoriesTitle}</p>
+            <h2 className="mt-4 text-4xl font-semibold leading-tight">{t.title}</h2>
+            <p className="mt-5 leading-8 text-[#706a5d]">{t.categoriesText}</p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {t.categories.map(([title, text], index) => (
+              <article key={title} className="rounded-[1.5rem] border border-black/10 bg-white p-6 shadow-sm">
+                <p className="text-sm font-semibold text-[#226bbf]">0{index + 1}</p>
+                <h3 className="mt-2 text-xl font-semibold">{title}</h3>
+                <p className="mt-3 leading-7 text-[#706a5d]">{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-16">
+        <div className="rounded-[2rem] border border-black/10 bg-white p-8 shadow-sm">
+          <div className="grid gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+            <div>
+              <p className="text-sm uppercase tracking-[0.22em] text-[#226bbf]">{t.plannedTitle}</p>
+              <h2 className="mt-4 text-4xl font-semibold leading-tight">{t.plannedTitle}</h2>
+              <p className="mt-5 leading-8 text-[#706a5d]">{t.plannedText}</p>
+            </div>
+            <div className="grid gap-3">
+              {t.plannedArticles.map(([title, category], index) => (
+                <article key={title} className="grid gap-3 rounded-2xl bg-[#f5efe3] p-5 md:grid-cols-[auto_1fr_auto] md:items-center">
+                  <span className="text-sm font-semibold text-[#226bbf]">0{index + 1}</span>
+                  <h3 className="text-lg font-semibold">{title}</h3>
+                  <span className="rounded-full border border-black/10 bg-white px-3 py-1 text-xs text-[#706a5d]">{category}</span>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto grid max-w-7xl gap-6 px-6 pb-16 md:grid-cols-2 lg:grid-cols-3">
         {t.items.map(([title, text], index) => (
           <article key={title} className="rounded-[2rem] border border-black/10 bg-white p-8 shadow-sm">
