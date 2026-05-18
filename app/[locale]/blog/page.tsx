@@ -9,20 +9,12 @@ const copy = {
   sr: {
     eyebrow: "DaniniNet Blog",
     title: "Sadržaj koji gradi poverenje pre prodaje.",
-    text: "Blog je editorial i SEO centar DaniniNet-a: ne služi za gomilanje tekstova, nego za objašnjavanje problema, povezivanje proizvoda, uvođenje čitaoca u funnel i čuvanje poverenja pre CTA-a.",
+    text: "Blog je editorial i SEO centar DaniniNet-a: objašnjava probleme, povezuje proizvode, uvodi čitaoca u funnel i čuva poverenje pre CTA-a.",
     featuredLabel: "Novo · Evergreen case study",
     featuredTitle: "Kako se lokacija pretvara u investitorski argument: Calije Park Residence case study",
-    featuredText: "Calije Park Residence pokazuje kako se građevinska lokacija u Nišu može predstaviti kroz javni gateway, video uvod, višejezični sadržaj i zatvoreni Investor Brief — kao investitorski argument, a ne običan oglas.",
+    featuredText: "Calije Park Residence pokazuje kako se lokacija može predstaviti kroz javni gateway, video uvod, višejezični sadržaj i zatvoreni Investor Brief — kao investitorski argument, a ne običan oglas.",
     featuredCta: "Čitaj članak",
     funnel: ["Problem", "Objašnjenje", "Dokaz", "Proizvod", "Trust"],
-    items: [
-      ["Zašto običan oglas nije dovoljan", "Ulazni članak za vlasnike lokacija: objašnjava razliku između oglasa i digitalnog gateway-a."],
-      ["Javna stranica vs zatvoreni brief", "Editorial most ka proizvodu: šta sme javno, šta ide samo ozbiljnijim interesentima."],
-      ["Šta investitor želi da vidi", "Case-study pristup bez obećanja: kontekst, dokaz, rizik, granice i sledeći korak."],
-      ["Affiliate preporuka bez pritiska", "DaniniNet standard za preporuke: kontekst, disclosure, realna upotreba i bez garancija."],
-      ["AI dijalog u praksi", "Pitaj AI — AI pita tebe kao metoda za pitanja, dokaze, rizike i konkretan artifact."],
-      ["Health / Water pravac", "Budući editorial sloj o vodi, rutinama i zdravom stilu života, odvojen od medicinskih obećanja."],
-    ],
     cta: "Pogledaj proizvod",
     secondary: "Kako radi metoda",
     funnelTitle: "Editorial funnel vodi čitaoca od problema do sledećeg logičnog koraka.",
@@ -30,13 +22,13 @@ const copy = {
     categoriesText: "Kategorije drže blog čistim: svaka tema ima svoju ulogu, interni link i jasnu vezu sa proizvodom, metodom ili trust slojem.",
     categories: [
       ["Digitalni marketing", "Landing stranice, SEO, email tokovi, lead forme i struktura ponude."],
-      ["Affiliate marketing", "Preporuke, disclosure, izbor proizvoda i odgovorna komunikacija bez lažnih obećanja."],
+      ["Affiliate marketing", "Preporuke, disclosure, izbor proizvoda i komunikacija bez lažnih obećanja."],
       ["AI u praksi", "Pitaj AI — AI pita tebe, pitanja pre sadržaja, dokaz pre tvrdnje i artifact pre kampanje."],
       ["Digitalni proizvodi", "PDF vodiči, bonus paketi, isporuka, Gumroad tok i post-purchase iskustvo."],
       ["Case studies", "Realni projekti, javni gateway, privatni brief, vizuelni dokaz i granice tvrdnji."],
       ["Legal & Trust", "GDPR, cookies, affiliate disclosure, AI transparentnost i disclaimer biblioteka."],
       ["Zdrav stil života", "Rutine, navike, voda i odgovoran sadržaj bez medicinskih tvrdnji."],
-      ["Voda i zdravlje", "Edukativni sadržaj o vodi, hidrataciji i svakodnevnim navikama uz jasan health disclaimer."],
+      ["Voda i zdravlje", "Edukativni sadržaj o vodi, hidrataciji i navikama uz jasan health disclaimer."],
     ],
     plannedTitle: "Prvih 5 SEO članaka",
     plannedText: "Ovi članci grade osnovu za indeksiranje, interno linkovanje i budući newsletter sadržaj.",
@@ -45,7 +37,7 @@ const copy = {
       ["Pitaj AI — AI pita tebe: kako koristiti AI kroz dijalog", "AI u praksi"],
       ["Šta je digitalni proizvod i zašto mu treba poverenje", "Digitalni proizvodi"],
       ["Digitalna prodaja lokacije: zašto običan oglas nije dovoljan", "Digitalni marketing"],
-      ["Voda i zdrav stil života: kako pisati odgovoran sadržaj bez medicinskih tvrdnji", "Zdrav stil života"],
+      ["Voda i zdrav stil života: odgovoran sadržaj bez medicinskih tvrdnji", "Zdrav stil života"],
     ],
   },
   de: {
@@ -54,17 +46,9 @@ const copy = {
     text: "Der Blog ist das Editorial- und SEO-Zentrum von DaniniNet: Er erklärt Probleme, verbindet Produkte, führt Leser in den Funnel und schützt Vertrauen vor dem CTA.",
     featuredLabel: "Neu · Evergreen Case Study",
     featuredTitle: "Wie ein Standort zum Investorenargument wird: Calije Park Residence Case Study",
-    featuredText: "Calije Park Residence zeigt, wie ein Standort in Niš über einen öffentlichen Gateway, Video, mehrsprachige Inhalte und einen geschlossenen Investor Brief präsentiert werden kann.",
+    featuredText: "Calije Park Residence zeigt, wie ein Standort über öffentlichen Gateway, Video, mehrsprachige Inhalte und geschlossenen Investor Brief präsentiert werden kann.",
     featuredCta: "Artikel lesen",
     funnel: ["Problem", "Erklärung", "Beleg", "Produkt", "Trust"],
-    items: [
-      ["Warum eine normale Anzeige nicht reicht", "Einstiegsartikel für Eigentümer: Unterschied zwischen Anzeige und digitalem Gateway."],
-      ["Öffentliche Seite vs. geschlossener Brief", "Was öffentlich sein darf und was nur ernstere Interessenten sehen."],
-      ["Was Investoren sehen möchten", "Case-Study-Ansatz ohne Versprechen: Kontext, Beleg, Risiko, Grenzen und nächster Schritt."],
-      ["Affiliate Empfehlung ohne Druck", "DaniniNet Standard: Kontext, Disclosure, reale Nutzung und keine Garantien."],
-      ["KI-Dialog in der Praxis", "Frag die KI — die KI fragt dich als Methode für Fragen, Belege, Risiken und Artifact."],
-      ["Health / Water Bereich", "Künftiger Editorial-Bereich zu Wasser, Routinen und gesundem Lebensstil ohne medizinische Versprechen."],
-    ],
     cta: "Produkt ansehen",
     secondary: "Methode ansehen",
     funnelTitle: "Der Editorial Funnel führt vom Problem zum nächsten logischen Schritt.",
@@ -72,7 +56,7 @@ const copy = {
     categoriesText: "Kategorien halten den Blog sauber: jedes Thema hat eine Rolle, interne Verlinkung und Verbindung zu Produkt, Methode oder Trust-Ebene.",
     categories: [
       ["Digitales Marketing", "Landingpages, SEO, E-Mail-Flows, Lead-Formulare und Angebotsstruktur."],
-      ["Affiliate Marketing", "Empfehlungen, Disclosure, Produktauswahl und verantwortliche Kommunikation ohne falsche Versprechen."],
+      ["Affiliate Marketing", "Empfehlungen, Disclosure, Produktauswahl und Kommunikation ohne falsche Versprechen."],
       ["KI in der Praxis", "Frag die KI — die KI fragt dich, Fragen vor Inhalt, Beleg vor Aussage und Artifact vor Kampagne."],
       ["Digitale Produkte", "PDF-Leitfäden, Bonus Packs, Lieferung, Gumroad-Flow und Post-Purchase-Erfahrung."],
       ["Case Studies", "Reale Projekte, öffentliche Gateways, private Briefs, visuelle Belege und Claim-Grenzen."],
@@ -96,17 +80,9 @@ const copy = {
     text: "The blog is DaniniNet's editorial and SEO center: it explains problems, connects products, guides readers into the funnel and protects trust before the CTA.",
     featuredLabel: "New · Evergreen case study",
     featuredTitle: "How a location becomes an investor argument: Calije Park Residence case study",
-    featuredText: "Calije Park Residence shows how a location in Niš can be presented through a public gateway, video, multilingual content and a closed Investor Brief.",
+    featuredText: "Calije Park Residence shows how a location can be presented through a public gateway, video, multilingual content and a closed Investor Brief.",
     featuredCta: "Read article",
     funnel: ["Problem", "Explanation", "Proof", "Product", "Trust"],
-    items: [
-      ["Why a standard listing is not enough", "Entry article for owners: the difference between a listing and a digital gateway."],
-      ["Public page vs. closed brief", "What can be public and what belongs only to serious prospects."],
-      ["What investors want to see", "Case-study approach without promises: context, proof, risk, boundaries and next step."],
-      ["Affiliate recommendation without pressure", "DaniniNet standard: context, disclosure, real use and no guarantees."],
-      ["AI dialogue in practice", "Ask AI — AI asks you as a method for questions, proof, risks and artifact."],
-      ["Health / Water direction", "Future editorial layer on water, routines and healthy lifestyle without medical promises."],
-    ],
     cta: "View product",
     secondary: "See method",
     funnelTitle: "The editorial funnel leads from problem to the next logical step.",
@@ -183,7 +159,6 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
           </div>
         </div>
       </section>
-
       <section className="mx-auto max-w-7xl px-6 pb-16">
         <div className="rounded-[2rem] border border-black/10 bg-white p-8 shadow-sm">
           <div className="grid gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
@@ -203,56 +178,6 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 pb-16">
-        <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
-          <div className="rounded-[2rem] border border-black/10 bg-white p-8 shadow-sm">
-            <p className="text-sm uppercase tracking-[0.22em] text-[#226bbf]">{t.categoriesTitle}</p>
-            <h2 className="mt-4 text-4xl font-semibold leading-tight">{t.title}</h2>
-            <p className="mt-5 leading-8 text-[#706a5d]">{t.categoriesText}</p>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2">
-            {t.categories.map(([title, text], index) => (
-              <article key={title} className="rounded-[1.5rem] border border-black/10 bg-white p-6 shadow-sm">
-                <p className="text-sm font-semibold text-[#226bbf]">0{index + 1}</p>
-                <h3 className="mt-2 text-xl font-semibold">{title}</h3>
-                <p className="mt-3 leading-7 text-[#706a5d]">{text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 pb-16">
-        <div className="rounded-[2rem] border border-black/10 bg-white p-8 shadow-sm">
-          <div className="grid gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
-            <div>
-              <p className="text-sm uppercase tracking-[0.22em] text-[#226bbf]">{t.plannedTitle}</p>
-              <h2 className="mt-4 text-4xl font-semibold leading-tight">{t.plannedTitle}</h2>
-              <p className="mt-5 leading-8 text-[#706a5d]">{t.plannedText}</p>
-            </div>
-            <div className="grid gap-3">
-              {t.plannedArticles.map(([title, category], index) => (
-                <article key={title} className="grid gap-3 rounded-2xl bg-[#f5efe3] p-5 md:grid-cols-[auto_1fr_auto] md:items-center">
-                  <span className="text-sm font-semibold text-[#226bbf]">0{index + 1}</span>
-                  <h3 className="text-lg font-semibold">{title}</h3>
-                  <span className="rounded-full border border-black/10 bg-white px-3 py-1 text-xs text-[#706a5d]">{category}</span>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto grid max-w-7xl gap-6 px-6 pb-16 md:grid-cols-2 lg:grid-cols-3">
-        {t.items.map(([title, text], index) => (
-          <article key={title} className="rounded-[2rem] border border-black/10 bg-white p-8 shadow-sm">
-            <p className="text-sm font-semibold text-[#226bbf]">0{index + 1}</p>
-            <h2 className="mt-3 text-2xl font-semibold">{title}</h2>
-            <p className="mt-4 leading-8 text-[#706a5d]">{text}</p>
-          </article>
-        ))}
       </section>
       <section className="bg-[#07142b] text-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-14 md:flex-row md:items-center md:justify-between">
