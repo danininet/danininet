@@ -143,12 +143,52 @@ export function SiteShell({ locale, currentPath, children }: { locale: string; c
       </header>
       {children}
       <footer className="bg-[#07142b] text-slate-300">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-12 lg:grid-cols-[1.05fr_1.95fr]">
-          <div>
-            <BrandMark />
-            <p className="mt-5 max-w-xl leading-8 text-slate-300">{t.footerText}</p>
-            <p className="mt-5 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-sm leading-7 text-slate-400">{t.disclosure}</p>
-            <div className="mt-6">
+        <div className="mx-auto max-w-7xl px-6 py-12">
+          <div className="grid gap-8 border-b border-white/10 pb-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <div>
+              <BrandMark />
+              <p className="mt-5 max-w-2xl leading-8 text-slate-300">{t.footerText}</p>
+            </div>
+            <p className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-sm leading-7 text-slate-400 lg:justify-self-end">
+              {t.disclosure}
+            </p>
+          </div>
+
+          <div className="grid gap-8 py-10 sm:grid-cols-2 lg:grid-cols-4">
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b9d7f0]">{t.platform}</h3>
+              <div className="mt-4 grid gap-3 text-sm">
+                <Link href={localizedPath(lang, "method")}>{t.nav[0]}</Link>
+                <Link href={localizedPath(lang, "blog")}>Blog</Link>
+                <Link href={localizedPath(lang, "guestbook")}>{t.guestbook}</Link>
+                <Link href={localizedPath(lang, "support")}>{t.support}</Link>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b9d7f0]">{t.products}</h3>
+              <div className="mt-4 grid gap-3 text-sm">
+                <Link href={localizedPath(lang, "products")}>{t.products}</Link>
+                <Link href={localizedPath(lang, "dpl")}>{t.dpl}</Link>
+                <Link href={localizedPath(lang, "health")}>{t.health}</Link>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b9d7f0]">{t.trust}</h3>
+              <div className="mt-4 grid gap-3 text-sm">
+                <Link href={localizedPath(lang, "legal")}>{t.legal}</Link>
+                <Link href={legalPath(lang, "impressum")}>{t.impressum}</Link>
+                <Link href={legalPath(lang, "privacy")}>{t.privacy}</Link>
+                <Link href={legalPath(lang, "cookies")}>{t.cookies}</Link>
+                <Link href={legalPath(lang, "terms")}>{t.terms}</Link>
+                <Link href={legalPath(lang, "disclaimer")}>{t.disclaimer}</Link>
+                <Link href={legalPath(lang, "affiliate-disclosure")}>{t.affiliate}</Link>
+                <Link href={legalPath(lang, "ai-transparentnost")}>{t.ai}</Link>
+              </div>
+            </div>
+
+            <div>
               <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b9d7f0]">Social</h3>
               <div className="mt-4 flex flex-wrap gap-2">
                 {socialLinks.map((item) => (
@@ -166,13 +206,13 @@ export function SiteShell({ locale, currentPath, children }: { locale: string; c
               </div>
             </div>
           </div>
-          <div className="grid gap-8 sm:grid-cols-3">
-            <div><h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b9d7f0]">{t.platform}</h3><div className="mt-4 grid gap-3 text-sm"><Link href={localizedPath(lang, "method")}>{t.nav[0]}</Link><Link href={localizedPath(lang, "blog")}>Blog</Link><Link href={localizedPath(lang, "guestbook")}>{t.guestbook}</Link><Link href={localizedPath(lang, "support")}>{t.support}</Link></div></div>
-            <div><h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b9d7f0]">{t.products}</h3><div className="mt-4 grid gap-3 text-sm"><Link href={localizedPath(lang, "products")}>{t.products}</Link><Link href={localizedPath(lang, "dpl")}>{t.dpl}</Link><Link href={localizedPath(lang, "health")}>{t.health}</Link></div></div>
-            <div><h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b9d7f0]">{t.trust}</h3><div className="mt-4 grid gap-3 text-sm"><Link href={localizedPath(lang, "legal")}>{t.legal}</Link><Link href={legalPath(lang, "impressum")}>{t.impressum}</Link><Link href={legalPath(lang, "privacy")}>{t.privacy}</Link><Link href={legalPath(lang, "cookies")}>{t.cookies}</Link><Link href={legalPath(lang, "terms")}>{t.terms}</Link><Link href={legalPath(lang, "disclaimer")}>{t.disclaimer}</Link><Link href={legalPath(lang, "affiliate-disclosure")}>{t.affiliate}</Link><Link href={legalPath(lang, "ai-transparentnost")}>{t.ai}</Link></div></div>
+        </div>
+        <div className="border-t border-white/10">
+          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-6 py-5 text-xs text-slate-500">
+            <span>© DaniniNet</span>
+            <span>Income · Intelligence · Health</span>
           </div>
         </div>
-        <div className="border-t border-white/10"><div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-6 py-5 text-xs text-slate-500"><span>© DaniniNet</span><span>Income · Intelligence · Health</span></div></div>
       </footer>
     </main>
   );
