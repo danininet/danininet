@@ -98,12 +98,39 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#08090B] text-[#F8F3E8]">
-      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_18%_10%,rgba(197,163,90,0.18),transparent_32%),radial-gradient(circle_at_82%_18%,rgba(45,91,141,0.20),transparent_34%),linear-gradient(180deg,#05070A_0%,#071326_72%,#EDE1CE_72%,#EFE6D6_100%)]">
+      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_18%_10%,rgba(197,163,90,0.18),transparent_32%),radial-gradient(circle_at_82%_18%,rgba(45,91,141,0.20),transparent_34%),linear-gradient(180deg,#05070A_0%,#071326_100%)]">
         <div className="mx-auto max-w-7xl px-6 py-7 md:px-8">
           <header className="flex flex-wrap items-center justify-between gap-5 border-b border-white/10 pb-6"><Link href={`/${lang}`} className="flex items-center gap-3"><span className="grid h-12 w-12 place-items-center rounded-2xl border border-[#C5A35A]/45 bg-white/[0.04] text-sm font-semibold tracking-[0.16em]">DN</span><span><span className="block text-2xl font-semibold">DaniniNet</span><span className="block text-[11px] uppercase tracking-[0.28em] text-[#B8C4D0]">Income · Intelligence · Health</span></span></Link><nav className="flex flex-wrap items-center gap-4 text-sm text-[#D9E2EA]" aria-label="Main navigation">{t.nav.map((item, i) => <Link key={item} href={path(lang, navHrefs[i])}>{item}</Link>)}<span className="h-4 w-px bg-white/15" /><Link href="/sr">SR</Link><Link href="/de">DE</Link><Link href="/en">EN</Link></nav></header>
-          <div className="grid gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-start lg:py-16">
-            <div><p className="mb-6 inline-flex rounded-full border border-[#C5A35A]/35 bg-white/[0.05] px-4 py-2 text-sm text-[#E9D8A8]">{t.hero.eyebrow}</p><h1 className="max-w-4xl text-4xl font-semibold leading-[1.04] tracking-tight md:text-6xl lg:text-[4.8rem]">{t.hero.title}</h1><p className="mt-8 max-w-3xl text-lg leading-8 text-[#D9E2EA]">{t.hero.subtitle}</p><div className="mt-10 flex flex-wrap gap-4"><Link href={path(lang, t.routes.products)} className="rounded-full bg-[#F8F3E8] px-6 py-3 text-sm font-semibold text-[#071326]">{t.hero.primary}</Link><Link href={path(lang, t.routes.method)} className="rounded-full border border-white/18 px-6 py-3 text-sm font-medium text-white">{t.hero.secondary}</Link></div><div className="mt-10 grid max-w-3xl gap-3 sm:grid-cols-2 lg:grid-cols-4">{t.hero.signals.map((signal) => <span key={signal} className="rounded-2xl border border-white/10 bg-white/[0.055] px-4 py-3 text-sm text-[#D9E2EA]">{signal}</span>)}</div></div>
-            <Card className="relative min-w-0 overflow-hidden p-5 lg:sticky lg:top-6"><div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[#C5A35A]/20 blur-3xl" /><div className="relative grid gap-5"><div className="mx-auto w-full max-w-[300px] overflow-hidden rounded-[1.6rem] border border-[#C5A35A]/25 bg-[#05070A] p-3"><Image src="/images/products/digitalna-prodaja-lokacije-cover.svg" alt="Digitalna prodaja lokacije — DaniniNet PDF vodič" width={900} height={1272} priority className="h-auto w-full rounded-[1.2rem]" /></div><div className="rounded-[1.5rem] border border-white/10 bg-white/[0.055] p-5"><p className="text-xs uppercase tracking-[0.22em] text-[#C5A35A]">{t.hero.proof}</p><h2 className="mt-4 text-2xl font-semibold leading-tight text-white">{t.hero.panelTitle}</h2><p className="mt-3 text-sm leading-7 text-[#D9E2EA]">{t.hero.panelText}</p><div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-2">{t.hero.panelSteps.map(([num, label]) => <div key={num} className="rounded-2xl border border-white/10 bg-[#071326] p-4"><span className="text-xs text-[#C5A35A]">{num}</span><p className="mt-1 text-sm font-semibold text-white">{label}</p></div>)}</div></div></div></Card>
+          <div className="grid gap-12 py-14 lg:grid-cols-[minmax(0,1.08fr)_minmax(360px,0.92fr)] lg:items-center lg:py-20">
+            <div className="min-w-0">
+              <p className="mb-6 inline-flex rounded-full border border-[#C5A35A]/35 bg-white/[0.05] px-4 py-2 text-sm text-[#E9D8A8]">{t.hero.eyebrow}</p>
+              <h1 className="max-w-4xl text-4xl font-semibold leading-[1.04] tracking-tight md:text-6xl lg:text-[4.6rem]">{t.hero.title}</h1>
+              <p className="mt-7 max-w-3xl text-lg leading-8 text-[#D9E2EA]">{t.hero.subtitle}</p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link href={path(lang, t.routes.products)} className="rounded-full bg-[#F8F3E8] px-6 py-3 text-sm font-semibold text-[#071326]">{t.hero.primary}</Link>
+                <Link href={path(lang, t.routes.method)} className="rounded-full border border-white/18 px-6 py-3 text-sm font-medium text-white">{t.hero.secondary}</Link>
+              </div>
+              <div className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                {t.hero.signals.map((signal) => <span key={signal} className="rounded-2xl border border-white/10 bg-white/[0.055] px-4 py-3 text-sm text-[#D9E2EA]">{signal}</span>)}
+              </div>
+            </div>
+
+            <Card className="relative min-w-0 overflow-hidden p-7">
+              <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-[#C5A35A]/20 blur-3xl" />
+              <div className="relative">
+                <p className="text-xs uppercase tracking-[0.22em] text-[#C5A35A]">{t.hero.proof}</p>
+                <h2 className="mt-4 text-3xl font-semibold leading-tight text-white">{t.hero.panelTitle}</h2>
+                <p className="mt-4 text-base leading-8 text-[#D9E2EA]">{t.hero.panelText}</p>
+                <div className="mt-7 grid gap-3">
+                  {t.hero.panelSteps.map(([num, label]) => (
+                    <div key={num} className="flex items-center gap-4 rounded-2xl border border-white/10 bg-[#071326] p-4">
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-[#C5A35A]/35 text-xs text-[#C5A35A]">{num}</span>
+                      <p className="text-sm font-semibold text-white">{label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
