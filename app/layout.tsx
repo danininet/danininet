@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "DaniniNet",
     title: "DaniniNet — digitalni sistem za ideje koje zaslužuju tržište",
     description:
-      "Digitalni, affiliate, content i SEO marketing kroz DaniniHub OS, AI dijalog, proizvode i dokazne projekte.",
+      "Digitalni, affiliate, content i SEO marketing kroz DaniniNet AI dijalog, proizvode i dokazne projekte.",
   },
   twitter: {
     card: "summary_large_image",
