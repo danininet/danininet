@@ -101,6 +101,17 @@ function switchLocalePath(currentLocale: Locale, targetLocale: Locale, pathname?
 
 function legalPath(lang: Locale, sub: string) { return `/${lang}/legal/${sub}`; }
 
+const socialLinks = [
+  { label: "YouTube", href: "https://www.youtube.com/@NutriLansDigiVerdienst" },
+  { label: "Facebook", href: "https://www.facebook.com/Affiligaga" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/dragan-zdravkovic/" },
+  { label: "Instagram", href: "https://www.instagram.com/dragangaganet/" },
+  { label: "Pinterest", href: "https://de.pinterest.com/dragangaganet/" },
+  { label: "TikTok", href: "https://www.tiktok.com/@danininet0803" },
+  { label: "X/Twitter", href: "https://x.com/zdravkovicgaga" },
+  { label: "Email", href: "mailto:dragangaganet@gmail.com" },
+];
+
 export function BrandMark({ compact = false }: { compact?: boolean }) {
   return (
     <span className="flex items-center gap-3">
@@ -137,6 +148,23 @@ export function SiteShell({ locale, currentPath, children }: { locale: string; c
             <BrandMark />
             <p className="mt-5 max-w-xl leading-8 text-slate-300">{t.footerText}</p>
             <p className="mt-5 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-sm leading-7 text-slate-400">{t.disclosure}</p>
+            <div className="mt-6">
+              <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b9d7f0]">Social</h3>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {socialLinks.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target={item.href.startsWith("mailto:") ? undefined : "_blank"}
+                    rel={item.href.startsWith("mailto:") ? undefined : "me noopener noreferrer"}
+                    aria-label={`DaniniNet ${item.label}`}
+                    className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-xs text-slate-300 transition hover:border-[#b9d7f0]/50 hover:text-white"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
           <div className="grid gap-8 sm:grid-cols-3">
             <div><h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b9d7f0]">{t.platform}</h3><div className="mt-4 grid gap-3 text-sm"><Link href={localizedPath(lang, "method")}>{t.nav[0]}</Link><Link href={localizedPath(lang, "blog")}>Blog</Link><Link href={localizedPath(lang, "guestbook")}>{t.guestbook}</Link><Link href={localizedPath(lang, "support")}>{t.support}</Link></div></div>
