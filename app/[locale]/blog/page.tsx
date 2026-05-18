@@ -205,6 +205,46 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-6 pb-16">
+        <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+          <div className="rounded-[2rem] border border-black/10 bg-white p-8 shadow-sm">
+            <p className="text-sm uppercase tracking-[0.22em] text-[#226bbf]">{t.categoriesTitle}</p>
+            <h2 className="mt-4 text-4xl font-semibold leading-tight">{t.title}</h2>
+            <p className="mt-5 leading-8 text-[#706a5d]">{t.categoriesText}</p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {t.categories.map(([title, text], index) => (
+              <article key={title} className="rounded-[1.5rem] border border-black/10 bg-white p-6 shadow-sm">
+                <p className="text-sm font-semibold text-[#226bbf]">0{index + 1}</p>
+                <h3 className="mt-2 text-xl font-semibold">{title}</h3>
+                <p className="mt-3 leading-7 text-[#706a5d]">{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-16">
+        <div className="rounded-[2rem] border border-black/10 bg-white p-8 shadow-sm">
+          <div className="grid gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+            <div>
+              <p className="text-sm uppercase tracking-[0.22em] text-[#226bbf]">{t.plannedTitle}</p>
+              <h2 className="mt-4 text-4xl font-semibold leading-tight">{t.plannedTitle}</h2>
+              <p className="mt-5 leading-8 text-[#706a5d]">{t.plannedText}</p>
+            </div>
+            <div className="grid gap-3">
+              {t.plannedArticles.map(([title, category], index) => (
+                <article key={title} className="grid gap-3 rounded-2xl bg-[#f5efe3] p-5 md:grid-cols-[auto_1fr_auto] md:items-center">
+                  <span className="text-sm font-semibold text-[#226bbf]">0{index + 1}</span>
+                  <h3 className="text-lg font-semibold">{title}</h3>
+                  <span className="rounded-full border border-black/10 bg-white px-3 py-1 text-xs text-[#706a5d]">{category}</span>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto grid max-w-7xl gap-6 px-6 pb-16 md:grid-cols-2 lg:grid-cols-3">
         {t.items.map(([title, text], index) => (
           <article key={title} className="rounded-[2rem] border border-black/10 bg-white p-8 shadow-sm">
