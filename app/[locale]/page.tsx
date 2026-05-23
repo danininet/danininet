@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { BrandMark } from "@/components/layout/SiteShell";
 
 type Locale = "sr" | "de" | "en";
 type VisualKey = "digital" | "affiliate" | "dialogue" | "proof" | "water";
@@ -153,7 +154,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     <main className="min-h-screen overflow-x-hidden bg-[#08090B] text-[#F8F3E8]">
       <section className="relative overflow-hidden bg-[radial-gradient(circle_at_18%_10%,rgba(197,163,90,0.18),transparent_32%),radial-gradient(circle_at_82%_18%,rgba(45,91,141,0.20),transparent_34%),linear-gradient(180deg,#05070A_0%,#071326_100%)]">
         <div className="mx-auto max-w-7xl px-6 py-7 md:px-8">
-          <header className="flex flex-wrap items-center justify-between gap-5 border-b border-white/10 pb-6"><Link href={`/${lang}`} className="flex items-center gap-3"><span className="grid h-12 w-12 place-items-center rounded-2xl border border-[#C5A35A]/45 bg-white/[0.04] text-sm font-semibold tracking-[0.16em]">DN</span><span><span className="block text-2xl font-semibold">DaniniNet</span><span className="block text-[11px] uppercase tracking-[0.28em] text-[#B8C4D0]">Income · Intelligence · Health</span></span></Link><nav className="flex flex-wrap items-center gap-4 text-sm text-[#D9E2EA]" aria-label="Main navigation">{t.nav.map((item, i) => <Link key={item} href={path(lang, navHrefs[i])}>{item}</Link>)}<span className="h-4 w-px bg-white/15" /><Link href="/sr">SR</Link><Link href="/de">DE</Link><Link href="/en">EN</Link></nav></header>
+          <header className="flex flex-wrap items-center justify-between gap-5 border-b border-white/10 pb-6"><Link href={`/${lang}`} aria-label="DaniniNet home"><BrandMark /></Link><nav className="flex flex-wrap items-center gap-4 text-sm text-[#D9E2EA]" aria-label="Main navigation">{t.nav.map((item, i) => <Link key={item} href={path(lang, navHrefs[i])}>{item}</Link>)}<span className="h-4 w-px bg-white/15" /><Link href="/sr">SR</Link><Link href="/de">DE</Link><Link href="/en">EN</Link></nav></header>
           <div className="grid gap-12 py-14 lg:grid-cols-[minmax(0,1.08fr)_minmax(360px,0.92fr)] lg:items-center lg:py-20">
             <div className="min-w-0">
               <p className="mb-6 inline-flex rounded-full border border-[#C5A35A]/35 bg-white/[0.05] px-4 py-2 text-sm text-[#E9D8A8]">{t.hero.eyebrow}</p>
