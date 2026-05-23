@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SiteShell, normalizeLocale, localizedPath } from "@/components/layout/SiteShell";
@@ -31,12 +32,24 @@ type PageCopy = {
   methodSteps: string[];
   proofTitle: string;
   proofText: string;
+  upsellTitle: string;
+  upsellText: string;
+  upsellPrimary: string;
+  upsellSecondary: string;
+  trustLinksTitle: string;
+  trustLinks: { label: string; href: string }[];
   purchaseTitle: string;
   purchaseSteps: string[];
   faqTitle: string;
   faq: [string, string][];
   finalTitle: string;
   disclaimer: string;
+};
+
+const productRoutes: Record<Locale, string> = {
+  sr: "/sr/proizvodi/digitalna-prodaja-lokacije",
+  de: "/de/produkte/digitaler-verkauf-von-standorten",
+  en: "/en/products/digital-location-sales",
 };
 
 const copy: Record<Locale, PageCopy> = {
@@ -73,6 +86,17 @@ const copy: Record<Locale, PageCopy> = {
     methodSteps: ["Ideja", "Pitanja", "Dokazi", "Struktura", "Artifact", "Tržišna provera"],
     proofTitle: "Zasnovano na realnom slučaju: Calije Park Residence",
     proofText: "Proizvod je izveden iz realnog DaniniHub artifact-a: javni gateway, zatvoreni brief, vizuelni sloj, SEO/legal osnova i lead logika. Privatni materijali i pregovarački detalji ne idu javno.",
+    upsellTitle: "Kada vodič otvori pitanja, sledeći korak je Mini Audit.",
+    upsellText: "Ako već imate parcelu, stan, kuću, lokaciju, projekat ili oglas, Mini Audit pretvara opštu ideju u kratku procenu: šta je javno, šta ide u brief, šta fali, koje tvrdnje su rizične i koji je prvi prodajni tok.",
+    upsellPrimary: "Zatraži Mini Audit",
+    upsellSecondary: "Vidi DaniniHub metodu",
+    trustLinksTitle: "Povezani trust sloj",
+    trustLinks: [
+      { label: "AI transparentnost", href: "/sr/legal/ai-transparentnost" },
+      { label: "Affiliate disclosure", href: "/sr/legal/affiliate-disclosure" },
+      { label: "Health disclaimer", href: "/sr/legal/health-disclaimer" },
+      { label: "Calije case study", href: "/sr/case-studies/calije-park-residence" },
+    ],
     purchaseTitle: "Kako funkcioniše kupovina",
     purchaseSteps: ["Klik na Gumroad dugme.", "Plaćanje i isporuka idu preko Gumroad-a.", "PDF i Bonus Pack stižu na email korišćen pri kupovini.", "Ako email ne stigne, proverava se spam/promotions i Gumroad library."],
     faqTitle: "FAQ",
@@ -113,6 +137,17 @@ const copy: Record<Locale, PageCopy> = {
     methodSteps: ["Idee", "Fragen", "Belege", "Struktur", "Artifact", "Marktprüfung"],
     proofTitle: "Basierend auf dem realen Fall Calije Park Residence",
     proofText: "Das Produkt kommt aus einem realen DaniniHub Artifact: öffentlicher Gateway, geschlossener Brief, visuelle Ebene, SEO/Legal-Basis und Lead-Logik. Private Materialien bleiben privat.",
+    upsellTitle: "Wenn der Leitfaden Fragen öffnet, ist der nächste Schritt ein Mini-Audit.",
+    upsellText: "Wenn bereits ein Grundstück, Objekt, Projekt oder Inserat existiert, übersetzt der Mini-Audit die Idee in eine kurze Einschätzung: was öffentlich ist, was in einen Brief gehört, was fehlt, welche Aussagen riskant sind und welcher Verkaufsfluss zuerst kommt.",
+    upsellPrimary: "Mini-Audit anfragen",
+    upsellSecondary: "DaniniHub Methode ansehen",
+    trustLinksTitle: "Verbundene Trust-Ebene",
+    trustLinks: [
+      { label: "KI-Transparenz", href: "/de/legal/ki-transparenz" },
+      { label: "Affiliate Disclosure", href: "/de/legal/affiliate-disclosure" },
+      { label: "Health Disclaimer", href: "/de/legal/health-disclaimer" },
+      { label: "Calije Case Study", href: "/de/case-studies/calije-park-residence" },
+    ],
     purchaseTitle: "So funktioniert der Kauf",
     purchaseSteps: ["Klick auf den Gumroad Button.", "Zahlung und Lieferung laufen über Gumroad.", "PDF und Bonus Pack kommen per E-Mail.", "Bei Problemen Spam/Promotions und Gumroad Library prüfen."],
     faqTitle: "FAQ",
@@ -153,6 +188,17 @@ const copy: Record<Locale, PageCopy> = {
     methodSteps: ["Idea", "Questions", "Proof", "Structure", "Artifact", "Market check"],
     proofTitle: "Based on a real case: Calije Park Residence",
     proofText: "The product comes from a real DaniniHub artifact: public gateway, closed brief, visual layer, SEO/legal base and lead logic. Private materials and negotiation details stay private.",
+    upsellTitle: "When the guide opens questions, the next step is a Mini Audit.",
+    upsellText: "If you already have land, a property, a project or a listing, the Mini Audit turns the idea into a short assessment: what should be public, what belongs in a brief, what is missing, which claims are risky and what sales flow should come first.",
+    upsellPrimary: "Request Mini Audit",
+    upsellSecondary: "See DaniniHub method",
+    trustLinksTitle: "Connected trust layer",
+    trustLinks: [
+      { label: "AI transparency", href: "/en/legal/ai-transparency" },
+      { label: "Affiliate disclosure", href: "/en/legal/affiliate-disclosure" },
+      { label: "Health disclaimer", href: "/en/legal/health-disclaimer" },
+      { label: "Calije case study", href: "/en/case-studies/calije-park-residence" },
+    ],
     purchaseTitle: "How purchase works",
     purchaseSteps: ["Click the Gumroad button.", "Payment and delivery are handled by Gumroad.", "PDF and Bonus Pack arrive to the checkout email.", "If needed, check spam/promotions and Gumroad library."],
     faqTitle: "FAQ",
@@ -162,8 +208,53 @@ const copy: Record<Locale, PageCopy> = {
   },
 };
 
-function path(lang: Locale, route: "blog" | "support") {
+const metadataCopy: Record<Locale, { title: string; description: string }> = {
+  sr: {
+    title: "Digitalna prodaja lokacije | DaniniNet",
+    description: "PDF vodič i Bonus Pack za pretvaranje lokacije, parcele, stana, kuće ili projekta u ozbiljniji digitalni prodajni gateway sa javnim sajtom, briefom, lead logikom i trust slojem.",
+  },
+  de: {
+    title: "Digitaler Verkauf von Standorten | DaniniNet",
+    description: "PDF-Leitfaden und Bonus Pack für einen digitalen Gateway rund um Standort, Immobilie oder Projekt: öffentliche Seite, Brief, Lead-Logik und Trust-Ebene.",
+  },
+  en: {
+    title: "Digital Location Sales | DaniniNet",
+    description: "PDF guide and Bonus Pack for turning land, a property, a location or a project into a more serious digital sales gateway with public page, brief, lead logic and trust layer.",
+  },
+};
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const lang: Locale = normalizeLocale(locale);
+  const meta = metadataCopy[lang];
+  return {
+    title: meta.title,
+    description: meta.description,
+    alternates: {
+      canonical: productRoutes[lang],
+      languages: {
+        sr: productRoutes.sr,
+        de: productRoutes.de,
+        en: productRoutes.en,
+      },
+    },
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      type: "website",
+      locale: lang === "sr" ? "sr_RS" : lang === "de" ? "de_DE" : "en_US",
+      url: productRoutes[lang],
+    },
+  };
+}
+
+function path(lang: Locale, route: "blog" | "support" | "method") {
+  if (route === "method") return lang === "sr" ? "/sr/daninihub-metod" : lang === "de" ? "/de/methode" : "/en/method";
   return localizedPath(lang, route);
+}
+
+function miniAuditPath(lang: Locale) {
+  return lang === "sr" ? "/sr/usluge/mini-audit" : lang === "de" ? "/de/services/mini-audit" : "/en/services/mini-audit";
 }
 
 function Section({ children, tone = "light" }: { children: React.ReactNode; tone?: "light" | "cream" | "dark" }) {
@@ -219,7 +310,7 @@ export default async function ProductPage({ params }: { params: Promise<{ locale
   const checkoutUrl = process.env.NEXT_PUBLIC_GUMROAD_DPL_URL || "https://danininet.gumroad.com/l/nnxnwu";
 
   return (
-    <SiteShell locale={lang} currentPath={localizedPath(lang, "dpl")}>
+    <SiteShell locale={lang} currentPath={productRoutes[lang]}>
       <section className="relative overflow-hidden bg-[#07142b] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_8%,rgba(215,180,106,0.18),transparent_32%),radial-gradient(circle_at_84%_14%,rgba(68,130,190,0.20),transparent_34%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
@@ -230,6 +321,7 @@ export default async function ProductPage({ params }: { params: Promise<{ locale
             <div className="mt-9 flex flex-wrap gap-4">
               <Link href={checkoutUrl} className="rounded-full bg-[#f7fbff] px-7 py-4 text-sm font-semibold text-[#07142b]">{t.buy}</Link>
               <a href="#inside" className="rounded-full border border-white/15 px-7 py-4 text-sm font-medium text-white">{t.inside}</a>
+              <Link href={miniAuditPath(lang)} className="rounded-full border border-[#d7b46a]/45 px-7 py-4 text-sm font-medium text-[#f4d58a]">{t.upsellPrimary}</Link>
             </div>
             <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {t.heroBadges.map((badge) => <span key={badge} className="rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3 text-sm text-slate-300">{badge}</span>)}
@@ -255,13 +347,15 @@ export default async function ProductPage({ params }: { params: Promise<{ locale
 
       <Section tone="cream"><div id="inside"><h2 className="text-4xl font-semibold">{t.includesTitle}</h2><div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{t.includes.map((x) => <article key={x.title} className="rounded-[2rem] border border-black/10 bg-white p-6 shadow-sm"><LineIcon type={x.key} /><h3 className="mt-5 text-2xl font-semibold">{x.title}</h3><p className="mt-3 leading-7 text-[#706a5d]">{x.text}</p></article>)}</div></div></Section>
 
-      <Section><div className="grid gap-8 lg:grid-cols-[0.88fr_1.12fr]"><article><h2 className="text-4xl font-semibold">{t.methodTitle}</h2><p className="mt-5 leading-8 text-[#706a5d]">{t.methodText}</p></article><div className="rounded-[2rem] border border-black/10 bg-white p-5"><div className="grid gap-3 md:grid-cols-3">{t.methodSteps.map((x, i) => <div key={x} className="rounded-2xl border border-black/10 bg-[#fffaf1] p-5 text-center"><span className="text-sm text-[#226bbf]">0{i + 1}</span><p className="mt-2 font-semibold">{x}</p></div>)}</div></div></div></Section>
+      <Section><div className="grid gap-8 lg:grid-cols-[0.88fr_1.12fr]"><article><h2 className="text-4xl font-semibold">{t.methodTitle}</h2><p className="mt-5 leading-8 text-[#706a5d]">{t.methodText}</p><Link href={path(lang, "method")} className="mt-6 inline-flex rounded-full bg-[#07142b] px-6 py-3 text-sm font-semibold text-white">{t.upsellSecondary}</Link></article><div className="rounded-[2rem] border border-black/10 bg-white p-5"><div className="grid gap-3 md:grid-cols-3">{t.methodSteps.map((x, i) => <div key={x} className="rounded-2xl border border-black/10 bg-[#fffaf1] p-5 text-center"><span className="text-sm text-[#226bbf]">0{i + 1}</span><p className="mt-2 font-semibold">{x}</p></div>)}</div></div></div></Section>
 
-      <Section tone="cream"><div className="grid gap-6 lg:grid-cols-2"><article className="rounded-[2rem] bg-white p-8 shadow-sm"><h2 className="text-3xl font-semibold">{t.proofTitle}</h2><p className="mt-5 leading-8 text-[#706a5d]">{t.proofText}</p></article><article className="rounded-[2rem] bg-white p-8 shadow-sm"><h2 className="text-3xl font-semibold">{t.purchaseTitle}</h2><ol className="mt-6 grid gap-3">{t.purchaseSteps.map((x, i) => <li key={x} className="rounded-2xl bg-[#fffaf1] p-4 text-[#706a5d]"><strong className="text-[#07142b]">0{i + 1}</strong> · {x}</li>)}</ol></article></div></Section>
+      <Section tone="cream"><div className="grid gap-6 lg:grid-cols-2"><article className="rounded-[2rem] bg-white p-8 shadow-sm"><h2 className="text-3xl font-semibold">{t.proofTitle}</h2><p className="mt-5 leading-8 text-[#706a5d]">{t.proofText}</p></article><article className="rounded-[2rem] bg-white p-8 shadow-sm"><h2 className="text-3xl font-semibold">{t.upsellTitle}</h2><p className="mt-5 leading-8 text-[#706a5d]">{t.upsellText}</p><div className="mt-7 flex flex-wrap gap-3"><Link href={miniAuditPath(lang)} className="rounded-full bg-[#07142b] px-6 py-3 text-sm font-semibold text-white">{t.upsellPrimary}</Link><Link href={path(lang, "method")} className="rounded-full border border-black/15 px-6 py-3 text-sm font-semibold text-[#07142b]">{t.upsellSecondary}</Link></div></article></div></Section>
 
-      <Section><h2 className="text-4xl font-semibold">{t.faqTitle}</h2><div className="mt-7 grid gap-4 md:grid-cols-2">{t.faq.map(([q, a]) => <article key={q} className="rounded-[2rem] bg-white p-6 shadow-sm"><h3 className="text-xl font-semibold">{q}</h3><p className="mt-3 leading-7 text-[#706a5d]">{a}</p></article>)}</div></Section>
+      <Section><div className="grid gap-6 lg:grid-cols-[0.72fr_1.28fr]"><article className="rounded-[2rem] bg-white p-8 shadow-sm"><h2 className="text-3xl font-semibold">{t.purchaseTitle}</h2><ol className="mt-6 grid gap-3">{t.purchaseSteps.map((x, i) => <li key={x} className="rounded-2xl bg-[#fffaf1] p-4 text-[#706a5d]"><strong className="text-[#07142b]">0{i + 1}</strong> · {x}</li>)}</ol></article><article className="rounded-[2rem] bg-white p-8 shadow-sm"><h2 className="text-3xl font-semibold">{t.trustLinksTitle}</h2><div className="mt-6 grid gap-3 md:grid-cols-2">{t.trustLinks.map((link) => <Link key={link.href} href={link.href} className="rounded-2xl border border-black/10 bg-[#fffaf1] p-4 font-semibold text-[#07142b] transition hover:border-[#d7b46a]">{link.label}</Link>)}</div><p className="mt-6 leading-8 text-[#706a5d]">{t.disclaimer}</p></article></div></Section>
 
-      <Section tone="dark"><div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center"><div><h2 className="text-4xl font-semibold">{t.finalTitle}</h2><p className="mt-5 max-w-3xl leading-8 text-slate-300">{t.disclaimer}</p><div className="mt-6 flex flex-wrap gap-3 text-sm text-slate-300"><Link href={path(lang, "blog")} className="rounded-full border border-white/10 px-4 py-2">Blog</Link><Link href={path(lang, "support")} className="rounded-full border border-white/10 px-4 py-2">Support</Link></div></div><Link href={checkoutUrl} className="rounded-full bg-[#f7fbff] px-7 py-4 text-sm font-semibold text-[#07142b]">{t.buy}</Link></div></Section>
+      <Section tone="cream"><h2 className="text-4xl font-semibold">{t.faqTitle}</h2><div className="mt-7 grid gap-4 md:grid-cols-2">{t.faq.map(([q, a]) => <article key={q} className="rounded-[2rem] bg-white p-6 shadow-sm"><h3 className="text-xl font-semibold">{q}</h3><p className="mt-3 leading-7 text-[#706a5d]">{a}</p></article>)}</div></Section>
+
+      <Section tone="dark"><div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center"><div><h2 className="text-4xl font-semibold">{t.finalTitle}</h2><p className="mt-5 max-w-3xl leading-8 text-slate-300">{t.disclaimer}</p><div className="mt-6 flex flex-wrap gap-3 text-sm text-slate-300"><Link href={path(lang, "blog")} className="rounded-full border border-white/10 px-4 py-2">Blog</Link><Link href={path(lang, "support")} className="rounded-full border border-white/10 px-4 py-2">Support</Link><Link href={miniAuditPath(lang)} className="rounded-full border border-white/10 px-4 py-2">{t.upsellPrimary}</Link></div></div><Link href={checkoutUrl} className="rounded-full bg-[#f7fbff] px-7 py-4 text-sm font-semibold text-[#07142b]">{t.buy}</Link></div></Section>
     </SiteShell>
   );
 }
