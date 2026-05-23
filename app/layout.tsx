@@ -15,7 +15,9 @@ export const metadata: Metadata = {
   creator: "DaniniNet",
   publisher: "DaniniNet",
   icons: {
-    icon: [{ url: "/brand/danininet-mark.svg", type: "image/svg+xml" }],
+    icon: [
+      { url: "/brand/danininet-mark.svg", type: "image/svg+xml" },
+    ],
     shortcut: ["/brand/danininet-mark.svg"],
     apple: [{ url: "/brand/danininet-mark.svg" }],
   },
@@ -34,12 +36,21 @@ export const metadata: Metadata = {
     title: "DaniniNet — digitalni sistem za ideje koje zaslužuju tržište",
     description:
       "Digitalni, affiliate, content i SEO marketing kroz DaniniNet AI dijalog, proizvode i dokazne projekte.",
+    images: [
+      {
+        url: "/brand/danininet-mark.svg",
+        width: 512,
+        height: 512,
+        alt: "DaniniNet brand mark",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "DaniniNet — digitalni sistem za ideje koje zaslužuju tržište",
     description:
       "Affiliate marketing, SEO, AI dijalog, digitalni proizvodi i realni case study projekti.",
+    images: ["/brand/danininet-mark.svg"],
   },
   robots: {
     index: true,
