@@ -39,6 +39,8 @@ type PageCopy = {
   disclaimer: string;
 };
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://danininet.daninihub.com";
+
 const copy: Record<Locale, PageCopy> = {
   sr: {
     eyebrow: "DaniniNet digitalni proizvod",
@@ -212,6 +214,37 @@ function ChecklistColumn({ title, items, mark }: { title: string; items: string[
   );
 }
 
+function ProductStructuredData({ lang, checkoutUrl }: { lang: Locale; checkoutUrl: string }) {
+  const t = copy[lang];
+  const productUrl = `${siteUrl}${localizedPath(lang, "dpl")}`;
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: lang === "sr" ? "Digitalna prodaja lokacije" : lang === "de" ? "Digitaler Verkauf von Standorten" : "Digital Location Sales",
+    description: t.subtitle,
+    image: `${siteUrl}/images/products/digitalna-prodaja-lokacije-cover.svg`,
+    brand: { "@type": "Brand", name: "DaniniNet" },
+    category: "Digital product",
+    url: productUrl,
+    offers: {
+      "@type": "Offer",
+      url: checkoutUrl,
+      price: "29",
+      priceCurrency: "EUR",
+      availability: "https://schema.org/InStock",
+      itemCondition: "https://schema.org/NewCondition",
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      suppressHydrationWarning
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
 export default async function ProductPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const lang: Locale = normalizeLocale(locale);
@@ -220,6 +253,7 @@ export default async function ProductPage({ params }: { params: Promise<{ locale
 
   return (
     <SiteShell locale={lang} currentPath={localizedPath(lang, "dpl")}>
+      <ProductStructuredData lang={lang} checkoutUrl={checkoutUrl} />
       <section className="relative overflow-hidden bg-[#07142b] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_8%,rgba(215,180,106,0.18),transparent_32%),radial-gradient(circle_at_84%_14%,rgba(68,130,190,0.20),transparent_34%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
