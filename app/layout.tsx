@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://danininet.daninihub.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://danininet.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -20,6 +20,7 @@ export const metadata: Metadata = {
       sr: "/sr",
       de: "/de",
       en: "/en",
+      "x-default": "/sr",
     },
   },
   openGraph: {
@@ -29,12 +30,21 @@ export const metadata: Metadata = {
     title: "DaniniNet — digitalni sistem za ideje koje zaslužuju tržište",
     description:
       "Digitalni, affiliate, content i SEO marketing kroz DaniniHub OS, AI dijalog, proizvode i dokazne projekte.",
+    images: [
+      {
+        url: "/brand/danininet-mark.svg",
+        width: 512,
+        height: 512,
+        alt: "DaniniNet brand mark",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "DaniniNet — digitalni sistem za ideje koje zaslužuju tržište",
     description:
       "Affiliate marketing, SEO, AI dijalog, digitalni proizvodi i realni case study projekti.",
+    images: ["/brand/danininet-mark.svg"],
   },
   robots: {
     index: true,
