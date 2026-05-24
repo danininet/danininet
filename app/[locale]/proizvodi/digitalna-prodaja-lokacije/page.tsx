@@ -16,10 +16,13 @@ type PageCopy = {
   micro: string;
   heroBadges: string[];
   visualFlow: string[];
+  trustStrip: string[];
   problemTitle: string;
   problemText: string;
   productTitle: string;
   productText: string;
+  promiseTitle: string;
+  promiseText: string;
   audienceTitle: string;
   audience: string[];
   notForTitle: string;
@@ -36,6 +39,7 @@ type PageCopy = {
   faqTitle: string;
   faq: [string, string][];
   finalTitle: string;
+  finalText: string;
   disclaimer: string;
 };
 
@@ -53,10 +57,13 @@ const copy: Record<Locale, PageCopy> = {
     micro: "PDF vodič + Bonus Pack. Digitalna isporuka preko Gumroad-a.",
     heroBadges: ["PDF vodič", "Bonus Pack", "Gumroad delivery", "Legal/trust okvir"],
     visualFlow: ["Oglas", "Gateway", "Brief", "Lead", "Kupovina"],
+    trustStrip: ["Edukativni proizvod", "Bez garancije prodaje", "AI-assisted metod", "Legal/trust granice"],
     problemTitle: "Običan oglas često ne objašnjava punu vrednost lokacije.",
     problemText: "Cena, površina i nekoliko fotografija mogu biti dovoljni za jednostavnu nekretninu. Ali kada lokacija ima širi potencijal, ozbiljniji interesent traži kontekst, dokaz, vizuale, granice, sledeći korak i poverenje.",
     productTitle: "Digitalna prodaja lokacije je vodič za izgradnju digitalnog gateway-a.",
     productText: "Ne pravite još jedan oglas. Gradite okvir za javnu prezentaciju, zatvoreni brief, lead formu, email tok, SEO, vizuelni dokaz i legal/trust sloj.",
+    promiseTitle: "Šta je realna vrednost vodiča",
+    promiseText: "Vodič ne pokušava da zameni stručnjake. Njegova vrednost je u tome što pomaže da se lokacija predstavi jasnije: šta ide javno, šta ide u zatvoreni brief, gde su granice tvrdnji i kako izgleda sledeći digitalni korak.",
     audienceTitle: "Za koga je ovaj vodič",
     audience: ["vlasnici parcela, stanova, kuća i poslovnih lokacija", "mali investitori i developeri", "agenti i posrednici", "digitalni marketari", "affiliate i partner saradnici"],
     notForTitle: "Za koga nije",
@@ -80,6 +87,7 @@ const copy: Record<Locale, PageCopy> = {
     faqTitle: "FAQ",
     faq: [["Da li vodič garantuje prodaju?", "Ne. Vodič pomaže da se lokacija predstavi jasnije i profesionalnije, ali ne garantuje rezultat."], ["Da li je ovo pravni ili investicioni savet?", "Ne. Proizvod je edukativan i informativan."], ["Da li moram imati sajt?", "Ne. Vodič prvo pomaže da razdvojite javno, brief, razgovor i neproverene tvrdnje."], ["Šta dobijam osim PDF-a?", "Bonus Pack sa checklistama, strukturama, email primerima i disclaimer blokovima."]],
     finalTitle: "Napravite bolji prvi korak od običnog oglasa.",
+    finalText: "Ako lokacija ima priču, dokaz, potencijal ili ciljnu publiku, običan oglas često nije dovoljan. Vodič pokazuje kako da se napravi profesionalniji okvir za prezentaciju.",
     disclaimer: "Digitalna prodaja lokacije je edukativni i informativni PDF proizvod. Ne predstavlja pravni, finansijski, poreski, urbanistički, tehnički ili investicioni savet. Ne garantuje prodaju, profit, investitora ili izvodljivost.",
   },
   de: {
@@ -93,10 +101,13 @@ const copy: Record<Locale, PageCopy> = {
     micro: "PDF-Leitfaden + Bonus Pack. Digitale Lieferung über Gumroad.",
     heroBadges: ["PDF-Leitfaden", "Bonus Pack", "Gumroad Delivery", "Legal/Trust Rahmen"],
     visualFlow: ["Anzeige", "Gateway", "Brief", "Lead", "Kauf"],
+    trustStrip: ["Bildungsprodukt", "Keine Verkaufsgarantie", "KI-unterstützte Methode", "Legal/Trust Grenzen"],
     problemTitle: "Eine normale Anzeige erklärt oft nicht den vollen Wert eines Standorts.",
     problemText: "Preis, Fläche und ein paar Fotos reichen bei einfachen Objekten. Bei stärkerem Potenzial braucht ein seriöser Interessent Kontext, Belege, Visuals, Grenzen, nächsten Schritt und Vertrauen.",
     productTitle: "Digitaler Verkauf von Standorten ist ein Leitfaden für einen digitalen Gateway.",
     productText: "Kein weiterer Anzeigentext, sondern ein Rahmen für öffentliche Präsentation, geschlossenen Brief, Lead-Formular, E-Mail-Fluss, SEO, visuelle Belege und Legal/Trust.",
+    promiseTitle: "Der reale Wert des Leitfadens",
+    promiseText: "Der Leitfaden ersetzt keine Fachleute. Er hilft, eine Standortpräsentation klarer zu strukturieren: öffentlich, geschlossen, Grenzen der Aussagen und der nächste digitale Schritt.",
     audienceTitle: "Für wen dieser Leitfaden ist",
     audience: ["Eigentümer von Grundstücken, Wohnungen, Häusern und Standorten", "kleine Investoren und Entwickler", "Makler und Vermittler", "digitale Marketer", "Affiliate- und Partnerkontakte"],
     notForTitle: "Für wen er nicht ist",
@@ -120,6 +131,7 @@ const copy: Record<Locale, PageCopy> = {
     faqTitle: "FAQ",
     faq: [["Garantiert der Leitfaden Verkauf?", "Nein. Er hilft bei klarerer Präsentation, garantiert aber kein Ergebnis."], ["Ist es Beratung?", "Nein. Es ist ein Bildungsprodukt."], ["Brauche ich sofort eine Website?", "Nein. Zuerst wird die Struktur geklärt."], ["Was ist außer dem PDF enthalten?", "Bonus Pack mit Checklisten, Strukturen und Disclaimer-Blöcken."]],
     finalTitle: "Machen Sie einen besseren ersten Schritt als eine normale Anzeige.",
+    finalText: "Wenn ein Standort Geschichte, Belege, Potenzial oder Zielgruppe hat, reicht eine einfache Anzeige oft nicht aus.",
     disclaimer: "Dieses Produkt ist edukativ und informativ. Es ist keine Rechts-, Finanz-, Steuer-, Planungs-, Technik- oder Anlageberatung und garantiert keine Ergebnisse.",
   },
   en: {
@@ -133,10 +145,13 @@ const copy: Record<Locale, PageCopy> = {
     micro: "PDF guide + Bonus Pack. Digital delivery through Gumroad.",
     heroBadges: ["PDF guide", "Bonus Pack", "Gumroad delivery", "Legal/trust frame"],
     visualFlow: ["Listing", "Gateway", "Brief", "Lead", "Purchase"],
+    trustStrip: ["Educational product", "No sale guarantee", "AI-assisted method", "Legal/trust boundaries"],
     problemTitle: "A standard listing often fails to explain the full value of a location.",
     problemText: "Price, size and a few photos may be enough for simple cases. When the location has broader potential, serious prospects need context, proof, visuals, boundaries, next step and trust.",
     productTitle: "Digital Location Sales is a guide for building a digital gateway.",
     productText: "Not another listing. A framework for public presentation, closed brief, lead form, email flow, SEO, visual proof and legal/trust layer.",
+    promiseTitle: "The real value of the guide",
+    promiseText: "The guide does not try to replace experts. Its value is helping structure a clearer location presentation: what goes public, what belongs in a closed brief, where claim boundaries are and what the next digital step looks like.",
     audienceTitle: "Who this guide is for",
     audience: ["owners of land, apartments, houses and locations", "small investors and developers", "agents and intermediaries", "digital marketers", "affiliate and partner collaborators"],
     notForTitle: "Who it is not for",
@@ -160,6 +175,7 @@ const copy: Record<Locale, PageCopy> = {
     faqTitle: "FAQ",
     faq: [["Does it guarantee a sale?", "No. It helps with clearer presentation, but does not guarantee results."], ["Is this legal or investment advice?", "No. It is educational and informational."], ["Do I need a website immediately?", "No. First, the structure is clarified."], ["What is included besides the PDF?", "Bonus Pack with checklists, structures, email examples and disclaimer blocks."]],
     finalTitle: "Make a better first step than a standard listing.",
+    finalText: "If a location has story, proof, potential or a defined audience, a standard listing is often not enough.",
     disclaimer: "This is an educational digital product. It is not legal, financial, tax, planning, technical or investment advice and does not guarantee results.",
   },
 };
@@ -281,9 +297,10 @@ export default async function ProductPage({ params }: { params: Promise<{ locale
             </div>
           </aside>
         </div>
+        <div className="relative mx-auto max-w-7xl px-6 pb-10"><div className="grid gap-3 rounded-[2rem] border border-white/10 bg-white/[0.06] p-4 md:grid-cols-4">{t.trustStrip.map((item) => <span key={item} className="rounded-2xl bg-[#07142b] px-4 py-3 text-center text-sm text-slate-300">{item}</span>)}</div></div>
       </section>
 
-      <Section tone="cream"><div className="grid gap-6 lg:grid-cols-2"><article className="rounded-[2rem] bg-white p-8 shadow-sm"><h2 className="text-4xl font-semibold">{t.problemTitle}</h2><p className="mt-5 leading-8 text-[#706a5d]">{t.problemText}</p></article><article className="rounded-[2rem] bg-white p-8 shadow-sm"><h2 className="text-4xl font-semibold">{t.productTitle}</h2><p className="mt-5 leading-8 text-[#706a5d]">{t.productText}</p></article></div></Section>
+      <Section tone="cream"><div className="grid gap-6 lg:grid-cols-3"><article className="rounded-[2rem] bg-white p-8 shadow-sm"><h2 className="text-4xl font-semibold">{t.problemTitle}</h2><p className="mt-5 leading-8 text-[#706a5d]">{t.problemText}</p></article><article className="rounded-[2rem] bg-white p-8 shadow-sm"><h2 className="text-4xl font-semibold">{t.productTitle}</h2><p className="mt-5 leading-8 text-[#706a5d]">{t.productText}</p></article><article className="rounded-[2rem] bg-[#07142b] p-8 text-white shadow-sm"><h2 className="text-4xl font-semibold">{t.promiseTitle}</h2><p className="mt-5 leading-8 text-slate-300">{t.promiseText}</p></article></div></Section>
 
       <Section><div className="grid gap-6 lg:grid-cols-2"><ChecklistColumn title={t.audienceTitle} items={t.audience} mark="✓" /><ChecklistColumn title={t.notForTitle} items={t.notFor} mark="—" /></div></Section>
 
@@ -295,7 +312,7 @@ export default async function ProductPage({ params }: { params: Promise<{ locale
 
       <Section><h2 className="text-4xl font-semibold">{t.faqTitle}</h2><div className="mt-7 grid gap-4 md:grid-cols-2">{t.faq.map(([q, a]) => <article key={q} className="rounded-[2rem] bg-white p-6 shadow-sm"><h3 className="text-xl font-semibold">{q}</h3><p className="mt-3 leading-7 text-[#706a5d]">{a}</p></article>)}</div></Section>
 
-      <Section tone="dark"><div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center"><div><h2 className="text-4xl font-semibold">{t.finalTitle}</h2><p className="mt-5 max-w-3xl leading-8 text-slate-300">{t.disclaimer}</p><div className="mt-6 flex flex-wrap gap-3 text-sm text-slate-300"><Link href={path(lang, "blog")} className="rounded-full border border-white/10 px-4 py-2">Blog</Link><Link href={path(lang, "support")} className="rounded-full border border-white/10 px-4 py-2">Support</Link></div></div><Link href={checkoutUrl} className="rounded-full bg-[#f7fbff] px-7 py-4 text-sm font-semibold text-[#07142b]">{t.buy}</Link></div></Section>
+      <Section tone="dark"><div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center"><div><h2 className="text-4xl font-semibold">{t.finalTitle}</h2><p className="mt-5 max-w-3xl leading-8 text-slate-300">{t.finalText}</p><p className="mt-5 max-w-3xl rounded-2xl border border-white/10 bg-white/[0.06] p-5 text-sm leading-7 text-slate-300">{t.disclaimer}</p><div className="mt-6 flex flex-wrap gap-3 text-sm text-slate-300"><Link href={path(lang, "blog")} className="rounded-full border border-white/10 px-4 py-2">Blog</Link><Link href={path(lang, "support")} className="rounded-full border border-white/10 px-4 py-2">Support</Link></div></div><Link href={checkoutUrl} className="rounded-full bg-[#f7fbff] px-7 py-4 text-sm font-semibold text-[#07142b]">{t.buy}</Link></div></Section>
     </SiteShell>
   );
 }
