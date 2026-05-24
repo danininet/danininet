@@ -3,6 +3,43 @@ import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://danininet.com";
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: "DaniniNet",
+      url: siteUrl,
+      logo: `${siteUrl}/brand/danininet-mark.svg`,
+      description:
+        "DaniniNet je platforma za digitalne proizvode, affiliate marketing, SEO sadržaj, AI dijalog i odgovoran health/water pravac.",
+      sameAs: [
+        "https://www.youtube.com/@NutriLansDigiVerdienst",
+        "https://www.facebook.com/Affiligaga",
+        "https://www.linkedin.com/in/dragan-zdravkovic/",
+        "https://www.instagram.com/dragangaganet/",
+        "https://de.pinterest.com/dragangaganet/",
+        "https://www.tiktok.com/@danininet0803",
+        "https://x.com/zdravkovicgaga"
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "DaniniNet",
+      publisher: { "@id": `${siteUrl}/#organization` },
+      inLanguage: ["sr", "de", "en"],
+      potentialAction: {
+        "@type": "SearchAction",
+        target: `${siteUrl}/sr/blog?search={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -66,7 +103,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="sr">
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
