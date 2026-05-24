@@ -3,6 +3,35 @@ import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://danininet.daninihub.com";
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: "DaniniNet",
+      url: siteUrl,
+      logo: `${siteUrl}/brand/danininet-mark.svg`,
+      description:
+        "DaniniNet gradi digitalne proizvode, affiliate tokove, SEO sadržaj i AI-assisted poslovne sisteme kroz metod Pitaj AI — AI pita tebe.",
+      sameAs: [],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "DaniniNet",
+      publisher: { "@id": `${siteUrl}/#organization` },
+      inLanguage: ["sr", "de", "en"],
+      potentialAction: {
+        "@type": "SearchAction",
+        target: `${siteUrl}/sr/blog?search={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -88,7 +117,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="sr">
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
