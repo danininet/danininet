@@ -6,18 +6,29 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://danininet.daninihub
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "DaniniNet — digitalni, affiliate, content i SEO marketing",
+    default: "DaniniNet — digitalni proizvodi, affiliate i SEO sistemi",
     template: "%s · DaniniNet",
   },
   description:
-    "DaniniNet je krovna platforma za digitalni marketing, affiliate marketing, SEO, AI dijalog, digitalne proizvode, case study projekte i budući health/water pravac.",
+    "DaniniNet gradi digitalne proizvode, affiliate tokove, SEO sadržaj i AI-assisted poslovne sisteme kroz metod Pitaj AI — AI pita tebe.",
   applicationName: "DaniniNet",
   creator: "DaniniNet",
   publisher: "DaniniNet",
+  category: "Digital marketing, affiliate marketing, SEO, digital products",
+  keywords: [
+    "DaniniNet",
+    "DaniniHub",
+    "digitalni proizvodi",
+    "affiliate marketing",
+    "SEO marketing",
+    "content marketing",
+    "digitalna prodaja lokacije",
+    "AI dijalog",
+    "Pitaj AI AI pita tebe",
+    "DACH digital marketing",
+  ],
   icons: {
-    icon: [
-      { url: "/brand/danininet-mark.svg", type: "image/svg+xml" },
-    ],
+    icon: [{ url: "/brand/danininet-mark.svg", type: "image/svg+xml" }],
     shortcut: ["/brand/danininet-mark.svg"],
     apple: [{ url: "/brand/danininet-mark.svg" }],
   },
@@ -27,15 +38,18 @@ export const metadata: Metadata = {
       sr: "/sr",
       de: "/de",
       en: "/en",
+      "x-default": "/sr",
     },
   },
   openGraph: {
     type: "website",
     url: siteUrl,
     siteName: "DaniniNet",
-    title: "DaniniNet — digitalni sistem za ideje koje zaslužuju tržište",
+    locale: "sr_RS",
+    alternateLocale: ["de_DE", "en_US"],
+    title: "DaniniNet — digitalni proizvodi, affiliate i SEO sistemi",
     description:
-      "Digitalni, affiliate, content i SEO marketing kroz DaniniNet AI dijalog, proizvode i dokazne projekte.",
+      "Digitalni proizvodi, affiliate marketing, SEO sadržaj i AI-assisted poslovni sistemi sa jasnim trust slojem.",
     images: [
       {
         url: "/brand/danininet-mark.svg",
@@ -47,7 +61,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "DaniniNet — digitalni sistem za ideje koje zaslužuju tržište",
+    title: "DaniniNet — digitalni proizvodi, affiliate i SEO sistemi",
     description:
       "Affiliate marketing, SEO, AI dijalog, digitalni proizvodi i realni case study projekti.",
     images: ["/brand/danininet-mark.svg"],
@@ -55,9 +69,11 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       "max-snippet": -1,
       "max-image-preview": "large",
       "max-video-preview": -1,
