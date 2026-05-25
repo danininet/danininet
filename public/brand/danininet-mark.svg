@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">DaniniNet brand mark</title>
+  <desc id="desc">Geometric DN monogram for DaniniNet</desc>
+  <rect width="512" height="512" rx="128" fill="#07142B"/>
+  <path d="M116 148h96c78 0 132 49 132 108s-54 108-132 108h-96V148Z" fill="none" stroke="#E7F3FF" stroke-width="34" stroke-linejoin="round"/>
+  <path d="M232 364V148l164 216V148" fill="none" stroke="#D7B46A" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M96 104h320" stroke="#7DB7E8" stroke-width="16" stroke-linecap="round" opacity=".72"/>
+  <path d="M96 408h320" stroke="#D7B46A" stroke-width="16" stroke-linecap="round" opacity=".82"/>
+</svg>
