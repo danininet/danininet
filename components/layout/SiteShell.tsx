@@ -31,6 +31,7 @@ type ShellCopy = {
   affiliate: string;
   ai: string;
   impressum: string;
+  refund: string;
 };
 
 const navRouteKeys: RouteKey[] = ["method", "products", "blog", "guestbook", "support", "legal"];
@@ -50,6 +51,7 @@ const legalSubPaths: Record<string, string> = {
   "affiliate-disclosure": "affiliate-disclosure",
   "ai-transparentnost": "ai-transparentnost",
   "health-disclaimer": "health-disclaimer",
+  "refund-policy": "refund-policy",
 };
 
 const slugToRouteKey: Record<string, RouteKey> = Object.fromEntries(
@@ -63,7 +65,7 @@ const copy: Record<Locale, ShellCopy> = {
     legal: "Legal & Trust", guestbook: "Knjiga utisaka", support: "Support",
     disclosure: "Affiliate napomena · AI transparentnost · GDPR/kolačići · Health disclaimer",
     platform: "Platforma", products: "Proizvodi", trust: "Legal & Trust", dpl: "Digitalna prodaja lokacije", health: "Zdrav stil života / voda",
-    privacy: "Privacy / GDPR", cookies: "Cookies", terms: "Terms", disclaimer: "Disclaimer", affiliate: "Affiliate disclosure", ai: "AI transparentnost", impressum: "Impressum",
+    privacy: "Privacy / GDPR", cookies: "Cookies", terms: "Terms", disclaimer: "Disclaimer", affiliate: "Affiliate disclosure", ai: "AI transparentnost", impressum: "Impressum", refund: "Refund policy",
   },
   de: {
     nav: ["Methode", "Produkte", "Blog", "Gästebuch", "Support", "Legal"],
@@ -71,7 +73,7 @@ const copy: Record<Locale, ShellCopy> = {
     legal: "Legal & Trust", guestbook: "Gästebuch", support: "Support",
     disclosure: "Affiliate-Hinweis · KI-Transparenz · DSGVO/Cookies · Health Disclaimer",
     platform: "Plattform", products: "Produkte", trust: "Legal & Trust", dpl: "Digitaler Verkauf von Standorten", health: "Gesund leben / Wasser",
-    privacy: "Privacy / DSGVO", cookies: "Cookies", terms: "Terms", disclaimer: "Disclaimer", affiliate: "Affiliate Disclosure", ai: "KI-Transparenz", impressum: "Impressum",
+    privacy: "Privacy / DSGVO", cookies: "Cookies", terms: "Terms", disclaimer: "Disclaimer", affiliate: "Affiliate Disclosure", ai: "KI-Transparenz", impressum: "Impressum", refund: "Refund Policy",
   },
   en: {
     nav: ["Method", "Products", "Blog", "Guestbook", "Support", "Legal"],
@@ -79,7 +81,7 @@ const copy: Record<Locale, ShellCopy> = {
     legal: "Legal & Trust", guestbook: "Guestbook", support: "Support",
     disclosure: "Affiliate disclosure · AI transparency · GDPR/Cookies · Health disclaimer",
     platform: "Platform", products: "Products", trust: "Legal & Trust", dpl: "Digital Location Sales", health: "Healthy lifestyle / water",
-    privacy: "Privacy / GDPR", cookies: "Cookies", terms: "Terms", disclaimer: "Disclaimer", affiliate: "Affiliate disclosure", ai: "AI transparency", impressum: "Imprint",
+    privacy: "Privacy / GDPR", cookies: "Cookies", terms: "Terms", disclaimer: "Disclaimer", affiliate: "Affiliate disclosure", ai: "AI transparency", impressum: "Imprint", refund: "Refund policy",
   },
 };
 
@@ -141,7 +143,7 @@ export function SiteShell({ locale, currentPath, children }: { locale: string; c
           <div className="grid gap-8 sm:grid-cols-3">
             <div><h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b9d7f0]">{t.platform}</h3><div className="mt-4 grid gap-3 text-sm"><Link href={localizedPath(lang, "method")}>{t.nav[0]}</Link><Link href={localizedPath(lang, "blog")}>Blog</Link><Link href={localizedPath(lang, "guestbook")}>{t.guestbook}</Link><Link href={localizedPath(lang, "support")}>{t.support}</Link></div></div>
             <div><h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b9d7f0]">{t.products}</h3><div className="mt-4 grid gap-3 text-sm"><Link href={localizedPath(lang, "products")}>{t.products}</Link><Link href={localizedPath(lang, "dpl")}>{t.dpl}</Link><Link href={localizedPath(lang, "health")}>{t.health}</Link></div></div>
-            <div><h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b9d7f0]">{t.trust}</h3><div className="mt-4 grid gap-3 text-sm"><Link href={localizedPath(lang, "legal")}>{t.legal}</Link><Link href={legalPath(lang, "impressum")}>{t.impressum}</Link><Link href={legalPath(lang, "privacy")}>{t.privacy}</Link><Link href={legalPath(lang, "cookies")}>{t.cookies}</Link><Link href={legalPath(lang, "terms")}>{t.terms}</Link><Link href={legalPath(lang, "disclaimer")}>{t.disclaimer}</Link><Link href={legalPath(lang, "affiliate-disclosure")}>{t.affiliate}</Link><Link href={legalPath(lang, "ai-transparentnost")}>{t.ai}</Link></div></div>
+            <div><h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b9d7f0]">{t.trust}</h3><div className="mt-4 grid gap-3 text-sm"><Link href={localizedPath(lang, "legal")}>{t.legal}</Link><Link href={legalPath(lang, "impressum")}>{t.impressum}</Link><Link href={legalPath(lang, "privacy")}>{t.privacy}</Link><Link href={legalPath(lang, "cookies")}>{t.cookies}</Link><Link href={legalPath(lang, "terms")}>{t.terms}</Link><Link href={legalPath(lang, "disclaimer")}>{t.disclaimer}</Link><Link href={legalPath(lang, "affiliate-disclosure")}>{t.affiliate}</Link><Link href={legalPath(lang, "ai-transparentnost")}>{t.ai}</Link><Link href={legalPath(lang, "refund-policy")}>{t.refund}</Link></div></div>
           </div>
         </div>
         <div className="border-t border-white/10"><div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-6 py-5 text-xs text-slate-500"><span>© DaniniNet</span><span>Income · Intelligence · Health</span></div></div>

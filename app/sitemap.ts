@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://danininet.daninihub.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://danininet.com";
 
 const legalRoutes = [
   "/legal/impressum",
@@ -11,6 +11,7 @@ const legalRoutes = [
   "/legal/affiliate-disclosure",
   "/legal/ai-transparentnost",
   "/legal/health-disclaimer",
+  "/legal/refund-policy",
 ] as const;
 
 const routesByLocale = {
@@ -19,6 +20,7 @@ const routesByLocale = {
     "/daninihub-metod",
     "/proizvodi",
     "/proizvodi/digitalna-prodaja-lokacije",
+    "/proizvodi/digitalna-prodaja-lokacije/uspeh",
     "/usluge/mini-audit",
     "/blog",
     "/knjiga-utisaka",
@@ -45,6 +47,7 @@ const routesByLocale = {
     "/method",
     "/products",
     "/products/digital-location-sales",
+    "/products/digital-location-sales/success",
     "/services/mini-audit",
     "/blog",
     "/guestbook",
@@ -57,6 +60,15 @@ const routesByLocale = {
 
 function routePriority(route: string) {
   if (route === "") return 1;
+
+  if (
+    route.includes("digitalna-prodaja-lokacije") ||
+    route.includes("digital-location-sales") ||
+    route.includes("digitaler-verkauf-von-standorten")
+  ) {
+    return 0.95;
+  }
+
   if (
     route.includes("produkte") ||
     route.includes("products") ||
@@ -65,7 +77,9 @@ function routePriority(route: string) {
   ) {
     return 0.9;
   }
+
   if (route.startsWith("/legal/")) return 0.65;
+
   return 0.7;
 }
 
@@ -76,7 +90,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     routes.map((route) => ({
       url: `${siteUrl}/${locale}${route}`,
       lastModified: now,
-      changeFrequency: route === "" || route === "/blog" ? "weekly" : "monthly",
+      changeFrequency:
+        route === "" || route === "/blog" ? "weekly" : "monthly",
       priority: routePriority(route),
     })),
   );
