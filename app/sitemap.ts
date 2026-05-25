@@ -23,6 +23,7 @@ const routesByLocale = {
     "/proizvodi/digitalna-prodaja-lokacije/uspeh",
     "/usluge/mini-audit",
     "/blog",
+    "/newsletter",
     "/knjiga-utisaka",
     "/support",
     "/legal",
@@ -34,8 +35,10 @@ const routesByLocale = {
     "/methode",
     "/produkte",
     "/produkte/digitaler-verkauf-von-standorten",
+    "/produkte/digitaler-verkauf-von-standorten/uspeh",
     "/services/mini-audit",
     "/blog",
+    "/newsletter",
     "/gaestebuch",
     "/support",
     "/legal",
@@ -47,9 +50,10 @@ const routesByLocale = {
     "/method",
     "/products",
     "/products/digital-location-sales",
-    "/products/digital-location-sales/success",
+    "/products/digital-location-sales/uspeh",
     "/services/mini-audit",
     "/blog",
+    "/newsletter",
     "/guestbook",
     "/support",
     "/legal",
@@ -73,7 +77,8 @@ function routePriority(route: string) {
     route.includes("produkte") ||
     route.includes("products") ||
     route.includes("proizvodi") ||
-    route.includes("mini-audit")
+    route.includes("mini-audit") ||
+    route.includes("newsletter")
   ) {
     return 0.9;
   }
@@ -91,7 +96,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${siteUrl}/${locale}${route}`,
       lastModified: now,
       changeFrequency:
-        route === "" || route === "/blog" ? "weekly" : "monthly",
+        route === "" || route === "/blog" || route === "/newsletter" ? "weekly" : "monthly",
       priority: routePriority(route),
     })),
   );
