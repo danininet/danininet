@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { SiteShell } from "@/components/layout/SiteShell";
@@ -26,16 +27,16 @@ const copy: Record<Locale, Copy> = {
     routes: { products: "proizvodi", product: "proizvodi/digitalna-prodaja-lokacije", blog: "blog", method: "daninihub-metod", support: "support", legal: "legal" },
     nav: ["Proizvodi", "Blog", "Metoda", "Support", "Legal"],
     hero: {
-      eyebrow: "DaniniNet · DaniniHub artifact layer",
-      title: "Od ideje do digitalnog prodajnog sistema — bez magije i praznih obećanja.",
-      subtitle: "DaniniNet povezuje digitalne proizvode, affiliate sadržaj, AI dijalog, SEO i trust sloj u jasan tok: problem, dokaz, granica, ponuda i sledeći korak.",
-      primary: "Pogledaj DPL proizvod",
+      eyebrow: "DaniniNet · Income · Intelligence · Health",
+      title: "Digitalni sistemi oko ideja koje imaju tržišni potencijal.",
+      subtitle: "DaniniNet povezuje digitalni marketing, affiliate tokove, SEO sadržaj, DaniniHub AI dijalog i digitalne proizvode u sistem koji ima dokaz, granice i sledeći korak.",
+      primary: "Pogledaj proizvode",
       secondary: "Kako radi DaniniHub metoda",
-      proof: "Glavni prodajni fokus: Digitalna prodaja lokacije",
-      signals: ["DPL PDF + Bonus Pack", "Calije case study", "Affiliate disclosure", "AI transparentnost"],
-      panelTitle: "Šta DaniniNet sada gradi",
-      panelText: "Prvi cilj nije gomila stranica. Prvi cilj je stabilan prodajni tok: početna, DPL landing, trust, checkout, isporuka i sadržaj koji dovodi prave ljude.",
-      panelSteps: [["01", "DPL proizvod kao glavni entry offer"], ["02", "Trust i legal sloj pre plaćenog prometa"], ["03", "SEO članci povezani sa proizvodom"], ["04", "Affiliate preporuke samo uz kontekst"]],
+      proof: "Digitalna prodaja lokacije · stvarni DaniniNet proizvod",
+      signals: ["DaniniHub artifact layer", "DPL proizvodni tok", "SEO + trust", "Gumroad isporuka"],
+      panelTitle: "AI-assisted sistem, ne generički tekst.",
+      panelText: "DaniniHub metoda se koristi da ideja ne ode direktno u prodaju bez pitanja, dokaza, granica i jasnog artifacta.",
+      panelSteps: [["01", "Pitanje pre sadržaja"], ["02", "Dokaz pre tvrdnje"], ["03", "Granica pre CTA-a"], ["04", "Artifact pre kampanje"]],
     },
     system: { title: "Nije poenta samo napraviti stranicu. Poenta je napraviti sistem koji ima smisao.", text: "Svaka ideja se posmatra kroz pitanje: kome služi, koji dokaz postoji, šta se prodaje, šta se ne sme obećati i koji je sledeći korak.", rows: [["Ideja", "Kome služi i zašto sada?"], ["Dokaz", "Šta postoji, a šta je pretpostavka?"], ["Sadržaj", "Koji problem objašnjava pre prodaje?"], ["Tok", "Kako posetilac prelazi u kupca, lead ili čitaoca?"]] },
     pillars: [
@@ -58,7 +59,7 @@ const copy: Record<Locale, Copy> = {
   de: {
     routes: { products: "produkte", product: "produkte/digitaler-verkauf-von-standorten", blog: "blog", method: "methode", support: "support", legal: "legal" },
     nav: ["Produkte", "Blog", "Methode", "Support", "Legal"],
-    hero: { eyebrow: "DaniniNet · DaniniHub Artifact Layer", title: "Von der Idee zum digitalen Verkaufssystem — ohne leere Versprechen.", subtitle: "DaniniNet verbindet digitale Produkte, Affiliate-Inhalte, KI-Dialog, SEO und Trust-Layer in einen klaren Flow: Problem, Beleg, Grenze, Angebot und nächster Schritt.", primary: "DPL Produkt ansehen", secondary: "DaniniHub Methode ansehen", proof: "Hauptfokus: Digitaler Verkauf von Standorten", signals: ["DPL PDF + Bonus Pack", "Calije Case Study", "Affiliate Disclosure", "KI-Transparenz"], panelTitle: "Was DaniniNet jetzt baut", panelText: "Der erste Fokus ist kein Seiten-Chaos, sondern ein stabiler Verkaufsflow: Startseite, DPL Landing, Trust, Checkout, Lieferung und SEO-Inhalte.", panelSteps: [["01", "DPL als Entry Offer"], ["02", "Trust vor Paid Traffic"], ["03", "SEO Artikel mit Produktbezug"], ["04", "Affiliate nur mit Kontext"]] },
+    hero: { eyebrow: "DaniniNet · Income · Intelligence · Health", title: "Digitale Systeme rund um Ideen mit Marktpotenzial.", subtitle: "DaniniNet verbindet digitales Marketing, Affiliate-Flows, SEO-Inhalte, DaniniHub KI-Dialog und digitale Produkte zu einem System mit Belegen, Grenzen und nächstem Schritt.", primary: "Produkte ansehen", secondary: "DaniniHub Methode ansehen", proof: "Digitaler Verkauf von Standorten · echtes DaniniNet Produkt", signals: ["DaniniHub Artifact Layer", "DPL Produktfluss", "SEO + Trust", "Gumroad Flow"], panelTitle: "KI-unterstütztes System, kein generischer Text.", panelText: "Die DaniniHub Methode verhindert, dass eine Idee ohne Fragen, Belege, Grenzen und klares Artefakt direkt in den Verkauf geht.", panelSteps: [["01", "Frage vor Inhalt"], ["02", "Beleg vor Aussage"], ["03", "Grenze vor CTA"], ["04", "Artefakt vor Kampagne"]] },
     system: { title: "Es geht nicht nur darum, eine Seite zu bauen. Es geht darum, ein System mit Sinn zu bauen.", text: "Jede Idee wird über klare Fragen geprüft: wem dient sie, welche Belege gibt es, was wird verkauft, was darf nicht versprochen werden und was ist der nächste Schritt.", rows: [["Idee", "Wem dient sie und warum jetzt?"], ["Beleg", "Was existiert und was ist Annahme?"], ["Inhalt", "Welches Problem erklärt er vor dem Verkauf?"], ["Flow", "Wie wird aus Besuch Interesse, Kauf oder Lead?"]] },
     pillars: [{ key: "digital", label: "Income", title: "Verkauf und Affiliate", text: "Digitale Produkte, Affiliate Marketing, Gumroad-Auslieferung, Landingpages und Kampagnen." }, { key: "dialogue", label: "Intelligence", title: "DaniniHub Methode", text: "KI-Dialog, Fragen, Trennung von Fakten und Annahmen, Risiken und Entscheidungen." }, { key: "water", label: "Health", title: "Health / Water", text: "Wasser, Routinen und verantwortlicher Affiliate-Rahmen ohne medizinische Versprechen." }],
     product: { eyebrow: "Aktuelles Produkt", title: "Digitaler Verkauf von Standorten", text: "Ein Leitfaden, um Standort, Immobilie oder Projekt in einen seriöseren digitalen Verkaufsfluss zu übersetzen.", cta: "Produkte öffnen" },
@@ -70,7 +71,7 @@ const copy: Record<Locale, Copy> = {
   en: {
     routes: { products: "products", product: "products/digital-location-sales", blog: "blog", method: "method", support: "support", legal: "legal" },
     nav: ["Products", "Blog", "Method", "Support", "Legal"],
-    hero: { eyebrow: "DaniniNet · DaniniHub artifact layer", title: "From idea to digital sales system — without empty promises.", subtitle: "DaniniNet connects digital products, affiliate content, AI dialogue, SEO and trust into a clear flow: problem, proof, boundary, offer and next step.", primary: "View DPL product", secondary: "See the DaniniHub method", proof: "Main sales focus: Digital Location Sales", signals: ["DPL PDF + Bonus Pack", "Calije case study", "Affiliate disclosure", "AI transparency"], panelTitle: "What DaniniNet is building now", panelText: "The first focus is not page chaos. It is a stable sales flow: homepage, DPL landing, trust, checkout, delivery and product-linked SEO content.", panelSteps: [["01", "DPL as entry offer"], ["02", "Trust before paid traffic"], ["03", "SEO articles linked to product"], ["04", "Affiliate only with context"]] },
+    hero: { eyebrow: "DaniniNet · Income · Intelligence · Health", title: "Digital systems around ideas with market potential.", subtitle: "DaniniNet connects digital marketing, affiliate flows, SEO content, DaniniHub AI dialogue and digital products into a system with proof, boundaries and a next step.", primary: "View products", secondary: "See the DaniniHub method", proof: "Digital Location Sales · real DaniniNet product", signals: ["DaniniHub artifact layer", "DPL product flow", "SEO + trust", "Gumroad flow"], panelTitle: "AI-assisted system, not generic copy.", panelText: "The DaniniHub method prevents an idea from going straight into sales without questions, proof, boundaries and a clear artifact.", panelSteps: [["01", "Question before content"], ["02", "Proof before claim"], ["03", "Boundary before CTA"], ["04", "Artifact before campaign"]] },
     system: { title: "The point is not just to build a page. The point is to build a system that makes sense.", text: "Every idea is examined through practical questions: who it serves, what proof exists, what is sold, what must not be promised and what the next step is.", rows: [["Idea", "Who does it serve and why now?"], ["Proof", "What exists and what is assumption?"], ["Content", "What problem does it explain before selling?"], ["Flow", "How does a visitor become a buyer, lead or reader?"]] },
     pillars: [{ key: "digital", label: "Income", title: "Sales and affiliate layer", text: "Digital products, affiliate marketing, Gumroad delivery, landing pages and campaigns." }, { key: "dialogue", label: "Intelligence", title: "DaniniHub method", text: "AI dialogue, questions, facts versus assumptions, risks and decisions." }, { key: "water", label: "Health", title: "Health / Water", text: "Water, routines and responsible affiliate framework without medical promises." }],
     product: { eyebrow: "Current product", title: "Digital Location Sales", text: "A guide for turning land, a property, a location or a project into a more serious digital sales flow.", cta: "Open products" },
@@ -97,28 +98,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <SiteShell locale={lang} currentPath={`/${lang}`}>
-      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_18%_10%,rgba(197,163,90,0.16),transparent_32%),radial-gradient(circle_at_82%_18%,rgba(45,91,141,0.22),transparent_36%),linear-gradient(180deg,#05070A_0%,#071326_100%)] text-[#F8F3E8]">
+      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_18%_10%,rgba(197,163,90,0.18),transparent_32%),radial-gradient(circle_at_82%_18%,rgba(45,91,141,0.20),transparent_34%),linear-gradient(180deg,#05070A_0%,#071326_62%,#EDE1CE_62%,#EFE6D6_100%)] text-[#F8F3E8]">
         <div className="mx-auto max-w-7xl px-6 py-16 md:px-8 lg:py-24">
-          <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
-            <div>
-              <p className="mb-6 inline-flex rounded-full border border-[#C5A35A]/35 bg-white/[0.05] px-4 py-2 text-sm text-[#E9D8A8]">{t.hero.eyebrow}</p>
-              <h1 className="max-w-4xl text-5xl font-semibold leading-[1.04] tracking-tight md:text-7xl">{t.hero.title}</h1>
-              <p className="mt-7 max-w-3xl text-lg leading-8 text-[#D9E2EA]">{t.hero.subtitle}</p>
-              <div className="mt-9 flex flex-wrap gap-4">
-                <Link href={path(lang, t.routes.product)} className="rounded-full bg-[#F8F3E8] px-6 py-3 text-sm font-semibold text-[#071326]">{t.hero.primary}</Link>
-                <Link href={path(lang, t.routes.method)} className="rounded-full border border-white/18 px-6 py-3 text-sm font-medium text-white">{t.hero.secondary}</Link>
-              </div>
-              <div className="mt-9 grid max-w-3xl gap-3 sm:grid-cols-2 lg:grid-cols-4">{t.hero.signals.map((signal) => <span key={signal} className="rounded-2xl border border-white/10 bg-white/[0.055] px-4 py-3 text-sm text-[#D9E2EA]">{signal}</span>)}</div>
-            </div>
-            <Card className="relative p-7">
-              <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[#C5A35A]/20 blur-3xl" />
-              <p className="relative text-xs uppercase tracking-[0.24em] text-[#C5A35A]">{t.hero.proof}</p>
-              <h2 className="relative mt-4 text-3xl font-semibold leading-tight text-white">{t.hero.panelTitle}</h2>
-              <p className="relative mt-4 leading-8 text-[#D9E2EA]">{t.hero.panelText}</p>
-              <div className="relative mt-6 grid gap-3">
-                {t.hero.panelSteps.map(([num, label]) => <div key={num} className="rounded-2xl border border-white/10 bg-[#071326] p-4"><span className="text-xs text-[#C5A35A]">{num}</span><p className="mt-1 text-sm font-semibold text-white">{label}</p></div>)}
-              </div>
-            </Card>
+          <div className="grid gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+            <div><p className="mb-6 inline-flex rounded-full border border-[#C5A35A]/35 bg-white/[0.05] px-4 py-2 text-sm text-[#E9D8A8]">{t.hero.eyebrow}</p><h1 className="max-w-4xl text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl">{t.hero.title}</h1><p className="mt-8 max-w-3xl text-lg leading-8 text-[#D9E2EA]">{t.hero.subtitle}</p><div className="mt-10 flex flex-wrap gap-4"><Link href={path(lang, t.routes.products)} className="rounded-full bg-[#F8F3E8] px-6 py-3 text-sm font-semibold text-[#071326]">{t.hero.primary}</Link><Link href={path(lang, t.routes.method)} className="rounded-full border border-white/18 px-6 py-3 text-sm font-medium text-white">{t.hero.secondary}</Link></div><div className="mt-10 grid max-w-3xl gap-3 sm:grid-cols-2 lg:grid-cols-4">{t.hero.signals.map((signal) => <span key={signal} className="rounded-2xl border border-white/10 bg-white/[0.055] px-4 py-3 text-sm text-[#D9E2EA]">{signal}</span>)}</div></div>
+            <Card className="relative p-5"><div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[#C5A35A]/20 blur-3xl" /><div className="relative grid gap-5 md:grid-cols-[0.57fr_0.43fr] md:items-center"><div className="relative overflow-hidden rounded-[1.6rem] border border-[#C5A35A]/25 bg-[#05070A] p-3"><Image src="/images/products/digitalna-prodaja-lokacije-cover.svg" alt="Digitalna prodaja lokacije — DaniniNet PDF vodič" width={900} height={1272} priority className="h-auto w-full rounded-[1.2rem]" /></div><div className="rounded-[1.5rem] border border-white/10 bg-white/[0.055] p-5"><p className="text-xs uppercase tracking-[0.22em] text-[#C5A35A]">{t.hero.proof}</p><h2 className="mt-4 text-2xl font-semibold leading-tight text-white">{t.hero.panelTitle}</h2><p className="mt-3 text-sm leading-7 text-[#D9E2EA]">{t.hero.panelText}</p><div className="mt-5 grid gap-3">{t.hero.panelSteps.map(([num, label]) => <div key={num} className="rounded-2xl border border-white/10 bg-[#071326] p-4"><span className="text-xs text-[#C5A35A]">{num}</span><p className="mt-1 text-sm font-semibold text-white">{label}</p></div>)}</div></div></div></Card>
           </div>
         </div>
       </section>
