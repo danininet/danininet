@@ -1,5 +1,14 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## DaniniNet deploy note
+
+Current live deployment target is expected to pull from the `main` branch.
+
+Latest stabilization:
+- shared SiteShell header/logo hotfix
+- DPL success alias import path fix
+- domain fallback kept on danininet.daninihub.com
+
 ## Getting Started
 
 First, run the development server:
