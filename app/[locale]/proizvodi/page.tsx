@@ -14,6 +14,21 @@ type ProductCard = {
   points: string[];
 };
 
+const dplIncludes = [
+  "PDF vodič: Digitalna prodaja lokacije",
+  "DPL Bonus Pack kao sastavni deo paketa",
+  "Pre-launch checklist",
+  "Investor Brief Outline",
+  "Homepage Structure Template",
+  "Lead Calculator spec",
+  "Email Templates",
+  "Visual Asset Checklist",
+  "Public / Private Information Map",
+  "Metrics Tracker",
+  "Disclaimer Library",
+  "DaniniHub Prompt Pack",
+] as const;
+
 const copy: Record<Locale, {
   eyebrow: string;
   title: string;
@@ -26,6 +41,7 @@ const copy: Record<Locale, {
   price: string;
   systemTitle: string;
   system: string[];
+  includeTitle: string;
   inventoryTitle: string;
   inventoryText: string;
   products: ProductCard[];
@@ -41,31 +57,23 @@ const copy: Record<Locale, {
     artifactNote: "Radni princip: Pitaj AI — AI pita tebe · artifact pre kampanje · dokaz pre tvrdnje · granica pre CTA-a.",
     featured: "Aktuelni prodajni artifact",
     dplTitle: "Digitalna prodaja lokacije",
-    dplText: "PDF vodič + DPL Bonus Pack za pretvaranje lokacije, parcele, stana, kuće ili projekta u digitalni gateway: javna stranica, zatvoreni Investor Brief, lead kvalifikacija, email tok, metrike i disclaimer biblioteka.",
+    dplText: "DaniniNet komercijalni PDF proizvod nastao iz DaniniHub sistema/metode i Calije Park Residence artifacta. Paket nije samo PDF: DPL uključuje vodič i kompletan Bonus Pack za primenu, proveru, lead tok, delivery i legal/trust granice.",
     dplCta: "Otvori DPL prodajnu stranicu",
     price: "29 € launch · 49 € regular",
     systemTitle: "Artifact tok",
     system: ["Problem", "Ideja", "Podpitanja", "Razjašnjenje", "Agent workflow", "Artifact", "Delivery", "Signal"],
+    includeTitle: "DPL paket uključuje",
     inventoryTitle: "Inventar proizvoda i affiliate pravaca",
-    inventoryText: "Ovo su proizvodi i pravci pronađeni u postojećim materijalima: DPL vodič, DPL Bonus Pack, NutriLans eBook, Wellan/UMH voda i health affiliate linija.",
+    inventoryText: "Ovo su proizvodi i pravci pronađeni u postojećim materijalima: DPL paket, NutriLans eBook, Wellan/UMH voda i health affiliate linija. Bonus Pack nije poseban proizvod za odvajanje od DPL-a, nego deo glavnog paketa.",
     products: [
       {
-        label: "DaniniNet · Digitalni proizvod",
-        title: "Digitalna prodaja lokacije",
-        text: "Glavni proizvod za vlasnike lokacija, agente, male investitore i digitalne kreatore koji žele da običan oglas pretvore u javni gateway i ozbiljniji poslovni tok.",
-        status: "Aktivni prodajni fokus",
+        label: "DaniniNet · Glavni digitalni proizvod",
+        title: "Digitalna prodaja lokacije — PDF + Bonus Pack",
+        text: "Glavni proizvod za vlasnike lokacija, agente, male investitore i digitalne kreatore koji žele da običan oglas pretvore u javni gateway i ozbiljniji poslovni tok. Bonus Pack je uključen u paket.",
+        status: "Aktivni prodajni fokus · final working product source",
         cta: "Prodajna stranica",
         href: "dpl",
-        points: ["PDF vodič", "case study Calije", "public/private logika", "Gumroad delivery"],
-      },
-      {
-        label: "DaniniNet · Bonus Pack",
-        title: "DPL Bonus Pack",
-        text: "Radni alati za primenu DPL metode: Pre-launch checklist, Investor Brief Outline, Homepage Template, Lead Calculator, Email Templates, Visual Checklist, Public/Private mapa, Metrics Tracker i Disclaimer Library.",
-        status: "Uključeno uz DPL proizvod",
-        cta: "Uključeno u DPL",
-        href: "dpl",
-        points: ["checkliste", "lead calculator", "email templates", "disclaimer library"],
+        points: ["DaniniHub metoda", "Calije case study", "Bonus Pack uključen", "Gumroad/checkout delivery"],
       },
       {
         label: "NutriLans · Health / Water",
@@ -104,13 +112,14 @@ const copy: Record<Locale, {
     artifactNote: "Arbeitsprinzip: Frag die KI — die KI fragt dich · Artefakt vor Kampagne · Beleg vor Aussage · Grenze vor CTA.",
     featured: "Aktuelles Verkaufsartefakt",
     dplTitle: "Digitaler Verkauf von Standorten",
-    dplText: "PDF-Leitfaden + Bonus Pack für Standort, Immobilie oder Projekt als digitaler Gateway: öffentliche Seite, geschlossener Investor Brief, Lead-Qualifizierung, E-Mail-Fluss, Metriken und Disclaimer Library.",
+    dplText: "DaniniNet kommerzielles PDF-Produkt aus DaniniHub Methode und Calije Park Residence Artifact. Das Paket ist nicht nur ein PDF: DPL enthält den Leitfaden und den Bonus Pack für Anwendung, Prüfung, Lead Flow, Delivery und Legal/Trust Grenzen.",
     dplCta: "DPL Verkaufsseite öffnen",
     price: "29 € Launch · 49 € regulär",
     systemTitle: "Artefakt-Flow",
     system: ["Problem", "Idee", "Rückfragen", "Klärung", "Agent Workflow", "Artefakt", "Delivery", "Signal"],
+    includeTitle: "DPL Paket enthält",
     inventoryTitle: "Produkt- und Affiliate-Inventar",
-    inventoryText: "Gefundene Produktlinien: DPL, DPL Bonus Pack, NutriLans Wasser-eBook, Wellan/UMH und Health/Water Affiliate-Linie.",
+    inventoryText: "Gefundene Produktlinien: DPL Paket, NutriLans Wasser-eBook, Wellan/UMH und Health/Water Affiliate-Linie.",
     products: [],
     methodTitle: "Wie jedes Produkt entstehen muss",
     methodSteps: [["01", "Problem ohne Hype benennen."], ["02", "KI stellt bis zu drei Rückfragen."], ["03", "Workflow trennt Fakten, Annahmen und Risiken."], ["04", "Artefakt wird als Seite, PDF, E-Mail-Fluss oder Tool geliefert."], ["05", "Legal/Trust setzt Grenzen."], ["06", "Metriken entscheiden GO, Überarbeitung oder Stop."]],
@@ -124,13 +133,14 @@ const copy: Record<Locale, {
     artifactNote: "Working principle: Ask AI — AI asks you · artifact before campaign · proof before claim · boundary before CTA.",
     featured: "Current sales artifact",
     dplTitle: "Digital Location Sales",
-    dplText: "PDF guide + Bonus Pack for presenting land, property, location or project as a digital gateway: public page, closed Investor Brief, lead qualification, email flow, metrics and disclaimer library.",
+    dplText: "DaniniNet commercial PDF product created from the DaniniHub method and Calije Park Residence artifact. The package is not just a PDF: DPL includes the guide and the Bonus Pack for application, checks, lead flow, delivery and legal/trust boundaries.",
     dplCta: "Open DPL sales page",
     price: "29 € launch · 49 € regular",
     systemTitle: "Artifact flow",
     system: ["Problem", "Idea", "Questions", "Clarification", "Agent workflow", "Artifact", "Delivery", "Signal"],
+    includeTitle: "DPL package includes",
     inventoryTitle: "Product and affiliate inventory",
-    inventoryText: "Confirmed lines: DPL, DPL Bonus Pack, NutriLans water eBook, Wellan/UMH and Health/Water affiliate line.",
+    inventoryText: "Confirmed lines: DPL package, NutriLans water eBook, Wellan/UMH and Health/Water affiliate line.",
     products: [],
     methodTitle: "How every product must be created",
     methodSteps: [["01", "Name the problem without hype."], ["02", "AI asks up to three clarifying questions."], ["03", "Workflow separates facts, assumptions and risks."], ["04", "Artifact is delivered as page, PDF, email flow or tool."], ["05", "Legal/trust keeps boundaries."], ["06", "Metrics signal decides GO, improve or stop."]],
@@ -180,6 +190,12 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
                   <strong className="block text-[#d7b46a]">0{index + 1}</strong>{item}
                 </span>
               ))}
+            </div>
+            <div className="mt-7 rounded-[1.5rem] border border-white/10 bg-white/[0.05] p-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#d7b46a]">{t.includeTitle}</p>
+              <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                {dplIncludes.map((item) => <span key={item} className="text-sm leading-6 text-slate-300">• {item}</span>)}
+              </div>
             </div>
             <Link href={localizedPath(lang, "dpl")} className="mt-8 inline-flex rounded-full bg-[#d9ecff] px-6 py-3 text-sm font-semibold text-[#07142b]">
               {t.dplCta}
