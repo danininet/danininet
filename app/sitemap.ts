@@ -34,7 +34,6 @@ const routesByLocale = {
     "/methode",
     "/produkte",
     "/produkte/digitaler-verkauf-von-standorten",
-    "/produkte/digitaler-verkauf-von-standorten/erfolg",
     "/services/mini-audit",
     "/blog",
     "/gaestebuch",
