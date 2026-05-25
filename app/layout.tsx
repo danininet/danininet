@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://danininet.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://danininet.daninihub.com";
 
 const structuredData = {
   "@context": "https://schema.org",
