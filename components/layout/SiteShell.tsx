@@ -7,6 +7,7 @@ type RouteKey =
   | "products"
   | "dpl"
   | "blog"
+  | "newsletter"
   | "guestbook"
   | "support"
   | "legal"
@@ -24,6 +25,7 @@ type ShellCopy = {
   trust: string;
   dpl: string;
   health: string;
+  newsletter: string;
   privacy: string;
   cookies: string;
   terms: string;
@@ -34,12 +36,12 @@ type ShellCopy = {
   refund: string;
 };
 
-const navRouteKeys: RouteKey[] = ["method", "products", "blog", "guestbook", "support", "legal"];
+const navRouteKeys: RouteKey[] = ["method", "products", "blog", "newsletter", "support", "legal"];
 
 const paths: Record<Locale, Record<RouteKey, string>> = {
-  sr: { home: "", method: "daninihub-metod", products: "proizvodi", dpl: "proizvodi/digitalna-prodaja-lokacije", blog: "blog", guestbook: "knjiga-utisaka", support: "support", legal: "legal", health: "zdrav-stil-zivota" },
-  de: { home: "", method: "methode", products: "produkte", dpl: "produkte/digitaler-verkauf-von-standorten", blog: "blog", guestbook: "gaestebuch", support: "support", legal: "legal", health: "gesund-leben-wasser" },
-  en: { home: "", method: "method", products: "products", dpl: "products/digital-location-sales", blog: "blog", guestbook: "guestbook", support: "support", legal: "legal", health: "healthy-lifestyle-water" },
+  sr: { home: "", method: "daninihub-metod", products: "proizvodi", dpl: "proizvodi/digitalna-prodaja-lokacije", blog: "blog", newsletter: "newsletter", guestbook: "knjiga-utisaka", support: "support", legal: "legal", health: "zdrav-stil-zivota" },
+  de: { home: "", method: "methode", products: "produkte", dpl: "produkte/digitaler-verkauf-von-standorten", blog: "blog", newsletter: "newsletter", guestbook: "gaestebuch", support: "support", legal: "legal", health: "gesund-leben-wasser" },
+  en: { home: "", method: "method", products: "products", dpl: "products/digital-location-sales", blog: "blog", newsletter: "newsletter", guestbook: "guestbook", support: "support", legal: "legal", health: "healthy-lifestyle-water" },
 };
 
 const legalSubPaths: Record<string, string> = {
@@ -60,27 +62,27 @@ const slugToRouteKey: Record<string, RouteKey> = Object.fromEntries(
 
 const copy: Record<Locale, ShellCopy> = {
   sr: {
-    nav: ["Metoda", "Proizvodi", "Blog", "Utisci", "Support", "Legal"],
+    nav: ["Metoda", "Proizvodi", "Blog", "Lead gate", "Support", "Legal"],
     footerText: "DaniniNet je platforma za digitalne proizvode, affiliate i content marketing — sa jasnim trust slojem, AI transparentnošću i DACH-ready pravnim okvirom.",
     legal: "Legal & Trust", guestbook: "Knjiga utisaka", support: "Support",
     disclosure: "Affiliate napomena · AI transparentnost · GDPR/kolačići · Health disclaimer",
-    platform: "Platforma", products: "Proizvodi", trust: "Legal & Trust", dpl: "Digitalna prodaja lokacije", health: "Zdrav stil života / voda",
+    platform: "Platforma", products: "Proizvodi", trust: "Legal & Trust", dpl: "Digitalna prodaja lokacije", health: "Zdrav stil života / voda", newsletter: "Lead gate / newsletter",
     privacy: "Privacy / GDPR", cookies: "Cookies", terms: "Terms", disclaimer: "Disclaimer", affiliate: "Affiliate disclosure", ai: "AI transparentnost", impressum: "Impressum", refund: "Refund policy",
   },
   de: {
-    nav: ["Methode", "Produkte", "Blog", "Gästebuch", "Support", "Legal"],
+    nav: ["Methode", "Produkte", "Blog", "Lead Gate", "Support", "Legal"],
     footerText: "DaniniNet ist eine Plattform für digitale Produkte, Affiliate- und Content-Marketing — mit Trust-Layer, KI-Transparenz und DACH-orientiertem Rechtsrahmen.",
     legal: "Legal & Trust", guestbook: "Gästebuch", support: "Support",
     disclosure: "Affiliate-Hinweis · KI-Transparenz · DSGVO/Cookies · Health Disclaimer",
-    platform: "Plattform", products: "Produkte", trust: "Legal & Trust", dpl: "Digitaler Verkauf von Standorten", health: "Gesund leben / Wasser",
+    platform: "Plattform", products: "Produkte", trust: "Legal & Trust", dpl: "Digitaler Verkauf von Standorten", health: "Gesund leben / Wasser", newsletter: "Lead Gate / Newsletter",
     privacy: "Privacy / DSGVO", cookies: "Cookies", terms: "Terms", disclaimer: "Disclaimer", affiliate: "Affiliate Disclosure", ai: "KI-Transparenz", impressum: "Impressum", refund: "Refund Policy",
   },
   en: {
-    nav: ["Method", "Products", "Blog", "Guestbook", "Support", "Legal"],
+    nav: ["Method", "Products", "Blog", "Lead gate", "Support", "Legal"],
     footerText: "DaniniNet is a platform for digital products, affiliate and content marketing — with a trust layer, AI transparency and DACH-aware legal structure.",
     legal: "Legal & Trust", guestbook: "Guestbook", support: "Support",
     disclosure: "Affiliate disclosure · AI transparency · GDPR/Cookies · Health disclaimer",
-    platform: "Platform", products: "Products", trust: "Legal & Trust", dpl: "Digital Location Sales", health: "Healthy lifestyle / water",
+    platform: "Platform", products: "Products", trust: "Legal & Trust", dpl: "Digital Location Sales", health: "Healthy lifestyle / water", newsletter: "Lead gate / newsletter",
     privacy: "Privacy / GDPR", cookies: "Cookies", terms: "Terms", disclaimer: "Disclaimer", affiliate: "Affiliate disclosure", ai: "AI transparency", impressum: "Imprint", refund: "Refund policy",
   },
 };
@@ -141,7 +143,7 @@ export function SiteShell({ locale, currentPath, children }: { locale: string; c
             <p className="mt-5 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-sm leading-7 text-slate-400">{t.disclosure}</p>
           </div>
           <div className="grid gap-8 sm:grid-cols-3">
-            <div><h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b9d7f0]">{t.platform}</h3><div className="mt-4 grid gap-3 text-sm"><Link href={localizedPath(lang, "method")}>{t.nav[0]}</Link><Link href={localizedPath(lang, "blog")}>Blog</Link><Link href={localizedPath(lang, "guestbook")}>{t.guestbook}</Link><Link href={localizedPath(lang, "support")}>{t.support}</Link></div></div>
+            <div><h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b9d7f0]">{t.platform}</h3><div className="mt-4 grid gap-3 text-sm"><Link href={localizedPath(lang, "method")}>{t.nav[0]}</Link><Link href={localizedPath(lang, "blog")}>Blog</Link><Link href={localizedPath(lang, "newsletter")}>{t.newsletter}</Link><Link href={localizedPath(lang, "guestbook")}>{t.guestbook}</Link><Link href={localizedPath(lang, "support")}>{t.support}</Link></div></div>
             <div><h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b9d7f0]">{t.products}</h3><div className="mt-4 grid gap-3 text-sm"><Link href={localizedPath(lang, "products")}>{t.products}</Link><Link href={localizedPath(lang, "dpl")}>{t.dpl}</Link><Link href={localizedPath(lang, "health")}>{t.health}</Link></div></div>
             <div><h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b9d7f0]">{t.trust}</h3><div className="mt-4 grid gap-3 text-sm"><Link href={localizedPath(lang, "legal")}>{t.legal}</Link><Link href={legalPath(lang, "impressum")}>{t.impressum}</Link><Link href={legalPath(lang, "privacy")}>{t.privacy}</Link><Link href={legalPath(lang, "cookies")}>{t.cookies}</Link><Link href={legalPath(lang, "terms")}>{t.terms}</Link><Link href={legalPath(lang, "disclaimer")}>{t.disclaimer}</Link><Link href={legalPath(lang, "affiliate-disclosure")}>{t.affiliate}</Link><Link href={legalPath(lang, "ai-transparentnost")}>{t.ai}</Link><Link href={legalPath(lang, "refund-policy")}>{t.refund}</Link></div></div>
           </div>
