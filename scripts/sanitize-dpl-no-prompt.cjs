@@ -1,14 +1,35 @@
 const fs = require('fs');
-const path = 'app/[locale]/proizvodi/digitalna-prodaja-lokacije/page.tsx';
-let s = fs.readFileSync(path, 'utf8');
-s = s.replaceAll('DaniniHub Prompt Pack', 'DaniniHub Dialogue Method Pack');
-s = s.replaceAll('Calije artifact', 'Lead Calculator');
-s = s.replaceAll('Calije Artifact', 'Lead Calculator');
-s = s.replaceAll('DaniniHub Prompt', 'DaniniHub Dialogue Method');
-s = s.replaceAll('Prompt Pack', 'Dialogue Method Pack');
-s = s.replaceAll('prompt pack', 'dialogue method pack');
-s = s.replaceAll('Promt', 'Dialogue');
-s = s.replaceAll('prompt', 'dialogue');
-s = s.replaceAll('Prompt', 'Dialogue');
-fs.writeFileSync(path, s);
-console.log('DPL no-prompt wording sanitized');
+
+const files = [
+  'app/[locale]/proizvodi/digitalna-prodaja-lokacije/page.tsx',
+  'app/[locale]/produkte/digitaler-verkauf-von-standorten/page.tsx',
+  'app/[locale]/products/digital-location-sales/page.tsx'
+];
+
+const replacements = [
+  ['DaniniHub Prompt Pack', 'DaniniHub Dialogue Method Pack'],
+  ['DaniniHub Prompt', 'DaniniHub Dialogue Method'],
+  ['Prompt Pack', 'Dialogue Method Pack'],
+  ['prompt pack', 'dialogue method pack'],
+  ['Promt', 'Dialogue'],
+  ['prompt', 'dialogue'],
+  ['Prompt', 'Dialogue'],
+  ['Calije artifact', 'Lead Calculator'],
+  ['Calije Artifact', 'Lead Calculator'],
+  ['Calije case study', 'Lead Calculator + Metrics Tracker'],
+  ['Calije Case Study', 'Lead Calculator + Metrics Tracker']
+];
+
+for (const file of files) {
+  if (!fs.existsSync(file)) continue;
+
+  let s = fs.readFileSync(file, 'utf8');
+
+  for (const [from, to] of replacements) {
+    s = s.split(from).join(to);
+  }
+
+  fs.writeFileSync(file, s);
+}
+
+console.log('DaniniNet no-prompt sanitizer completed');
