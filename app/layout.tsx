@@ -13,7 +13,7 @@ const structuredData = {
       url: siteUrl,
       logo: `${siteUrl}/brand/danininet-mark.svg`,
       description:
-        "DaniniNet je platforma za digitalne proizvode, affiliate marketing, SEO sadržaj, AI dijalog i odgovoran health/water pravac.",
+        "DaniniNet je platforma za digitalne proizvode, affiliate marketing, SEO sadržaj i AI-assisted dijalog kroz DaniniHub metod.",
       sameAs: [
         "https://www.youtube.com/@NutriLansDigiVerdienst",
         "https://www.facebook.com/Affiligaga",
@@ -43,14 +43,25 @@ const structuredData = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "DaniniNet — digitalni, affiliate, content i SEO marketing",
+    default: "DaniniNet — digitalni marketing, affiliate i AI-assisted content",
     template: "%s · DaniniNet",
   },
   description:
-    "DaniniNet je krovna platforma za digitalni marketing, affiliate marketing, SEO, AI dijalog, digitalne proizvode, case study projekte i budući health/water pravac.",
+    "DaniniNet je digitalni i edukativni sloj za affiliate marketing, SEO sadržaj, AI-assisted dijalog, digitalne proizvode i dokazne case study projekte.",
   applicationName: "DaniniNet",
   creator: "DaniniNet",
   publisher: "DaniniNet",
+  keywords: [
+    "DaniniNet",
+    "affiliate marketing",
+    "SEO",
+    "digitalni proizvodi",
+    "AI-assisted",
+    "DaniniHub",
+    "DACH marketing",
+    "content strategy"
+  ],
+  category: "business",
   alternates: {
     canonical: "/",
     languages: {
@@ -66,7 +77,8 @@ export const metadata: Metadata = {
     siteName: "DaniniNet",
     title: "DaniniNet — digitalni sistem za ideje koje zaslužuju tržište",
     description:
-      "Digitalni, affiliate, content i SEO marketing kroz DaniniHub OS, AI dijalog, proizvode i dokazne projekte.",
+      "Affiliate marketing, SEO sadržaj, AI-assisted dijalog i digitalni proizvodi kroz DaniniHub metod.",
+    locale: "sr_RS",
     images: [
       {
         url: "/brand/danininet-mark.svg",
@@ -80,7 +92,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "DaniniNet — digitalni sistem za ideje koje zaslužuju tržište",
     description:
-      "Affiliate marketing, SEO, AI dijalog, digitalni proizvodi i realni case study projekti.",
+      "Affiliate marketing, SEO sadržaj, AI-assisted dijalog i digitalni proizvodi.",
     images: ["/brand/danininet-mark.svg"],
   },
   robots: {
