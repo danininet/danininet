@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LeadCaptureForm } from "@/components/leads/LeadCaptureForm";
 import { SectionIntro, SiteShell, normalizeLocale, localizedPath } from "@/components/layout/SiteShell";
 
 type Locale = "sr" | "de" | "en";
@@ -21,6 +22,8 @@ const copy: Record<Locale, {
   interestLabel: string;
   consent: string;
   submit: string;
+  success: string;
+  error: string;
   support: string;
   interests: Interest[];
   methodTitle: string;
@@ -34,20 +37,22 @@ const copy: Record<Locale, {
     text: "Ova forma služi da se posetilac ne gura u generičku listu, nego da se pravilno segmentira prema interesovanju: digitalni proizvodi, affiliate, AI metoda, voda/zdravlje ili case study projekti.",
     artifactNote: "Radni princip: prvo interesovanje, zatim podpitanje, zatim relevantan artifact — ne spam, ne generička kampanja.",
     formTitle: "Izaberi pravac koji te zanima",
-    formText: "Forma je pripremljena kao front-end artifact. Povezivanje sa Brevo/Gumroad/CRM tokom ide kao sledeći tehnički korak, bez prikupljanja viška podataka.",
+    formText: "Forma je povezana sa Brevo lead flow-om preko server-side API rute. Podaci ne idu kroz mailto link, a API ključ nije izložen u browseru.",
     emailLabel: "Email adresa",
     nameLabel: "Ime / projekat",
     interestLabel: "Primarno interesovanje",
     consent: "Saglasan/na sam da dobijem relevantne DaniniNet informacije za izabrani pravac. Razumem da sadržaj može sadržati edukativne, affiliate i AI-assisted materijale uz jasne disclaimere.",
     submit: "Prijavi interesovanje",
+    success: "Prijava je primljena. Sledeći korak je relevantan DaniniNet artifact, ne generički spam.",
+    error: "Prijava trenutno nije uspela. Proveri email i saglasnost ili pokušaj kasnije.",
     support: "Za kupovine i delivery support idi na support stranicu.",
     interests: [
       { badge: "Income", title: "Digitalni proizvodi", text: "PDF, e-knjige, kursevi, template-i, delivery i monetizacija kroz DaniniNet artifact tok." },
       { badge: "Income", title: "Affiliate marketing", text: "Odgovorne preporuke, disclosure, DACH/Balkan razdvajanje i long-term content engine." },
-      { badge: "Intelligence", title: "AI u praksi", text: "Pitaj AI — AI pita tebe, agent workflow, decision engine i artifact output umesto prompt šablona." },
-      { badge: "Health", title: "Voda i zdrav stil života", text: "NutriLans, health/water edukacija, filter/uređaj preporuke i health disclaimer okvir." },
-      { badge: "Proof", title: "Case studies", text: "Calije Park Residence i drugi proof artifacti: javni gateway, privatni brief, lead tok i trust sloj." },
-      { badge: "Partner", title: "Saradnja / partnerstvo", text: "Signal za vlasnike proizvoda, partnere, affiliate saradnike i projekte koji mogu postati DaniniHub artifact." },
+      { badge: "Intelligence", title: "AI u praksi", text: "Pitaj AI — AI pita tebe, agent workflow, decision engine i artifact output." },
+      { badge: "Health", title: "DaniniLans / voda i zdrav stil života", text: "Budući DaniniLans health/water/lifestyle sloj sa jasnim health disclaimer okvirom." },
+      { badge: "Product", title: "Digitalna prodaja lokacije", text: "Interesovanje za DPL proizvod, PDF vodič, Bonus Pack i digital gateway logiku." },
+      { badge: "Partner", title: "Saradnja / partnerstvo", text: "Signal za partnere, affiliate saradnike i projekte koji mogu postati DaniniHub artifact." },
     ],
     methodTitle: "Kako se lead obrađuje po DaniniHub logici",
     methodSteps: [["01", "Korisnik bira interesovanje."], ["02", "Sistem ne šalje sve svima, nego segmentira pravac."], ["03", "Sledeće pitanje razjašnjava potrebu bez pritiska."], ["04", "Korisnik dobija relevantan artifact: vodič, članak, case study, ponudu ili support tok."]],
@@ -60,20 +65,22 @@ const copy: Record<Locale, {
     text: "Die Form segmentiert Besucher nach Interesse: digitale Produkte, Affiliate, KI-Methode, Wasser/Health oder Case Studies.",
     artifactNote: "Prinzip: zuerst Interesse, dann Rückfrage, dann relevantes Artifact — kein Spam, keine generische Kampagne.",
     formTitle: "Wählen Sie den passenden Bereich",
-    formText: "Dieses Formular ist als Front-end Artifact vorbereitet. Brevo/Gumroad/CRM-Anbindung folgt als technischer Schritt mit minimaler Datenerhebung.",
+    formText: "Das Formular läuft über eine serverseitige Brevo API Route. Kein mailto-Link, kein API-Key im Browser.",
     emailLabel: "E-Mail-Adresse",
     nameLabel: "Name / Projekt",
     interestLabel: "Primäres Interesse",
     consent: "Ich stimme zu, relevante DaniniNet Informationen zum gewählten Bereich zu erhalten. Inhalte können edukative, Affiliate- und KI-unterstützte Materialien mit klaren Disclaimern enthalten.",
     submit: "Interesse senden",
+    success: "Die Anmeldung wurde empfangen. Der nächste Schritt ist ein relevantes DaniniNet Artifact, keine generische Kampagne.",
+    error: "Die Anmeldung war nicht erfolgreich. Bitte E-Mail und Zustimmung prüfen oder später erneut versuchen.",
     support: "Für Kauf- und Delivery-Support bitte die Support-Seite nutzen.",
     interests: [
       { badge: "Income", title: "Digitale Produkte", text: "PDFs, E-Books, Kurse, Templates, Delivery und Monetarisierung." },
       { badge: "Income", title: "Affiliate Marketing", text: "Verantwortliche Empfehlungen, Disclosure und Content Engine." },
       { badge: "Intelligence", title: "KI in der Praxis", text: "Frag die KI — die KI fragt dich, Agent Workflow und Artifact Output." },
-      { badge: "Health", title: "Wasser und gesunder Lebensstil", text: "NutriLans, Health/Water Bildung, Empfehlungen und Health Disclaimer." },
-      { badge: "Proof", title: "Case Studies", text: "Calije Park Residence und weitere Proof Artifacts." },
-      { badge: "Partner", title: "Kooperation / Partnerschaft", text: "Signal für Partner, Produkte und Projekte mit Artifact-Potenzial." },
+      { badge: "Health", title: "DaniniLans / Wasser und gesunder Lebensstil", text: "Künftiger DaniniLans Health/Water/Lifestyle Layer mit klarem Disclaimer." },
+      { badge: "Product", title: "Digitaler Verkauf von Standorten", text: "Interesse am DPL Produkt, PDF Leitfaden, Bonus Pack und Digital Gateway Logik." },
+      { badge: "Partner", title: "Kooperation / Partnerschaft", text: "Signal für Partner, Affiliate-Kooperationen und Projekte mit Artifact-Potenzial." },
     ],
     methodTitle: "Wie Leads nach DaniniHub Logik verarbeitet werden",
     methodSteps: [["01", "Interesse wählen."], ["02", "Segmentieren statt alles an alle."], ["03", "Nächste Rückfrage klärt Bedarf."], ["04", "Relevantes Artifact liefern: Leitfaden, Artikel, Case Study, Angebot oder Support."]],
@@ -86,20 +93,22 @@ const copy: Record<Locale, {
     text: "The form segments visitors by interest: digital products, affiliate, AI method, water/health or case studies.",
     artifactNote: "Principle: interest first, then clarification, then relevant artifact — not spam, not a generic campaign.",
     formTitle: "Choose your direction",
-    formText: "This form is prepared as a front-end artifact. Brevo/Gumroad/CRM connection is the next technical step with minimal data collection.",
+    formText: "The form is connected through a server-side Brevo API route. No mailto link and no API key in the browser.",
     emailLabel: "Email address",
     nameLabel: "Name / project",
     interestLabel: "Primary interest",
     consent: "I agree to receive relevant DaniniNet information for the chosen direction. I understand content may include educational, affiliate and AI-assisted materials with clear disclaimers.",
     submit: "Register interest",
+    success: "Your registration was received. The next step is a relevant DaniniNet artifact, not a generic campaign.",
+    error: "Registration failed. Please check your email and consent or try again later.",
     support: "For purchase and delivery support, use the support page.",
     interests: [
       { badge: "Income", title: "Digital products", text: "PDFs, e-books, courses, templates, delivery and monetization." },
       { badge: "Income", title: "Affiliate marketing", text: "Responsible recommendations, disclosure and content engine." },
       { badge: "Intelligence", title: "AI in practice", text: "Ask AI — AI asks you, agent workflow and artifact output." },
-      { badge: "Health", title: "Water and healthy lifestyle", text: "NutriLans, health/water education, recommendations and health disclaimer." },
-      { badge: "Proof", title: "Case studies", text: "Calije Park Residence and other proof artifacts." },
-      { badge: "Partner", title: "Collaboration / partnership", text: "Signal for partners, products and projects with artifact potential." },
+      { badge: "Health", title: "DaniniLans / water and healthy lifestyle", text: "Future DaniniLans health/water/lifestyle layer with clear disclaimers." },
+      { badge: "Product", title: "Digital Location Sales", text: "Interest in DPL product, PDF guide, Bonus Pack and Digital Gateway logic." },
+      { badge: "Partner", title: "Collaboration / partnership", text: "Signal for partners, affiliate collaborators and projects with artifact potential." },
     ],
     methodTitle: "How leads are handled by DaniniHub logic",
     methodSteps: [["01", "Choose interest."], ["02", "Segment instead of sending everything to everyone."], ["03", "Next question clarifies need."], ["04", "Deliver relevant artifact: guide, article, case study, offer or support flow."]],
@@ -129,27 +138,19 @@ export default async function NewsletterPage({ params }: { params: Promise<{ loc
           <p className="text-sm uppercase tracking-[0.22em] text-[#d7b46a]">Lead form</p>
           <h2 className="mt-4 text-4xl font-semibold leading-tight">{t.formTitle}</h2>
           <p className="mt-4 leading-8 text-slate-300">{t.formText}</p>
-          <form className="mt-8 grid gap-4" action={`mailto:info@daninihub.com`} method="post">
-            <label className="grid gap-2 text-sm font-semibold text-slate-200">
-              {t.emailLabel}
-              <input name="email" type="email" required placeholder="you@example.com" className="rounded-2xl border border-white/10 bg-white px-4 py-3 text-[#07142b] outline-none" />
-            </label>
-            <label className="grid gap-2 text-sm font-semibold text-slate-200">
-              {t.nameLabel}
-              <input name="name" type="text" placeholder="DaniniNet / NutriLans / project" className="rounded-2xl border border-white/10 bg-white px-4 py-3 text-[#07142b] outline-none" />
-            </label>
-            <label className="grid gap-2 text-sm font-semibold text-slate-200">
-              {t.interestLabel}
-              <select name="interest" required className="rounded-2xl border border-white/10 bg-white px-4 py-3 text-[#07142b] outline-none">
-                {t.interests.map((item) => <option key={item.title}>{item.title}</option>)}
-              </select>
-            </label>
-            <label className="flex gap-3 rounded-2xl border border-white/10 bg-white/[0.05] p-4 text-sm leading-6 text-slate-300">
-              <input name="consent" type="checkbox" required className="mt-1" />
-              <span>{t.consent}</span>
-            </label>
-            <button className="rounded-full bg-[#f7fbff] px-7 py-4 text-sm font-semibold text-[#07142b]" type="submit">{t.submit}</button>
-          </form>
+          <LeadCaptureForm
+            locale={lang}
+            interests={t.interests}
+            labels={{
+              email: t.emailLabel,
+              name: t.nameLabel,
+              interest: t.interestLabel,
+              consent: t.consent,
+              submit: t.submit,
+              success: t.success,
+              error: t.error,
+            }}
+          />
           <p className="mt-5 text-sm leading-6 text-slate-400"><Link href={localizedPath(lang, "support")} className="underline decoration-[#d7b46a] underline-offset-4">{t.support}</Link></p>
         </article>
 
