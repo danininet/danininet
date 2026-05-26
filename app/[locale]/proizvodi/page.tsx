@@ -57,14 +57,14 @@ const copy: Record<Locale, {
     artifactNote: "Radni princip: Pitaj AI — AI pita tebe · artifact pre kampanje · dokaz pre tvrdnje · granica pre CTA-a.",
     featured: "Aktuelni prodajni artifact",
     dplTitle: "Digitalna prodaja lokacije",
-    dplText: "DaniniNet komercijalni PDF proizvod nastao iz DaniniHub sistema/metode i Calije Park Residence artifacta. Paket nije samo PDF: DPL uključuje vodič i kompletan Bonus Pack za primenu, proveru, lead tok, delivery i legal/trust granice.",
+    dplText: "DaniniNet komercijalni PDF proizvod nastao iz DaniniHub sistema/metode i digital gateway artifacta. Paket nije samo PDF: DPL uključuje vodič i kompletan Bonus Pack za primenu, proveru, lead tok, delivery i legal/trust granice.",
     dplCta: "Otvori DPL prodajnu stranicu",
     price: "29 € launch · 49 € regular",
     systemTitle: "Artifact tok",
     system: ["Problem", "Ideja", "Podpitanja", "Razjašnjenje", "Agent workflow", "Artifact", "Delivery", "Signal"],
     includeTitle: "DPL paket uključuje",
     inventoryTitle: "Inventar proizvoda i affiliate pravaca",
-    inventoryText: "Ovo su proizvodi i pravci pronađeni u postojećim materijalima: DPL paket, NutriLans eBook, Wellan/UMH voda i health affiliate linija. Bonus Pack nije poseban proizvod za odvajanje od DPL-a, nego deo glavnog paketa.",
+    inventoryText: "Ovo su proizvodi i pravci pronađeni u postojećim materijalima: DPL paket, DaniniLans health/water sloj, Wellan/UMH voda i health affiliate linija. Bonus Pack nije poseban proizvod za odvajanje od DPL-a, nego deo glavnog paketa.",
     products: [
       {
         label: "DaniniNet · Glavni digitalni proizvod",
@@ -73,30 +73,33 @@ const copy: Record<Locale, {
         status: "Aktivni prodajni fokus · final working product source",
         cta: "Prodajna stranica",
         href: "dpl",
-        points: ["DaniniHub metoda", "Calije case study", "Bonus Pack uključen", "Gumroad/checkout delivery"],
+        points: ["DaniniHub metoda", "Digital gateway", "Bonus Pack uključen", "Gumroad/checkout delivery"],
       },
       {
-        label: "NutriLans · Health / Water",
-        title: "Leitfaden für reines Wasser und gesundes Leben",
-        text: "Nemački eBook o vodi, hidrataciji, kvalitetu vode i zdravijim navikama. Služi kao health/water proizvodni stub i kao osnova za odgovoran affiliate sadržaj.",
-        status: "Pronađen Drive proizvod · treba prodajna stranica",
-        cta: "U pripremi",
+        label: "DaniniLans · Health / Water",
+        title: "DaniniLans — voda, hidratacija i zdrav stil života",
+        text: "Budući health/water artifact sloj na daninilans.daninihub.com. Nastaje iz postojećih materijala o vodi, hidrataciji i zdravijim navikama, ali sa jasnim health disclaimerima i DaniniHub metodom.",
+        status: "Poseban projekat · sledeća faza",
+        cta: "Prati razvoj",
+        href: "newsletter",
         points: ["voda i hidratacija", "water filter preporuke", "health disclaimer", "DACH sadržaj"],
       },
       {
         label: "Affiliate / partner product",
         title: "WELLAN®2000",
         text: "Partner/affiliate pravac za obradu vode, kamenac, cevi, koroziju i kvalitet vode. Materijal postoji kroz prezentaciju i kontakt distributera.",
-        status: "Pronađen affiliate materijal · potrebna pravila tvrdnji",
-        cta: "U pripremi",
+        status: "Review · potrebna pravila tvrdnji",
+        cta: "Prijavi interesovanje",
+        href: "newsletter",
         points: ["water treatment", "kamenac", "partner kontakt", "bez medicinskih obećanja"],
       },
       {
         label: "Affiliate / research cluster",
         title: "UMH, Brita, Aarke, Berkey, Santevia, Aqualogis, Maunawai",
-        text: "Grupa proizvoda iz NutriLans materijala za buduće affiliate kartice, poređenja i članke. Linkovi moraju biti provereni pre javne objave.",
+        text: "Grupa proizvoda iz DaniniLans materijala za buduće affiliate kartice, poređenja i članke. Linkovi moraju biti provereni pre javne objave.",
         status: "Inventarisan pravac · link audit pre objave",
-        cta: "Link audit potreban",
+        cta: "Prijavi interesovanje",
+        href: "newsletter",
         points: ["affiliate cards", "poređenja", "water filters", "transparent disclosure"],
       },
     ],
@@ -112,14 +115,14 @@ const copy: Record<Locale, {
     artifactNote: "Arbeitsprinzip: Frag die KI — die KI fragt dich · Artefakt vor Kampagne · Beleg vor Aussage · Grenze vor CTA.",
     featured: "Aktuelles Verkaufsartefakt",
     dplTitle: "Digitaler Verkauf von Standorten",
-    dplText: "DaniniNet kommerzielles PDF-Produkt aus DaniniHub Methode und Calije Park Residence Artifact. Das Paket ist nicht nur ein PDF: DPL enthält den Leitfaden und den Bonus Pack für Anwendung, Prüfung, Lead Flow, Delivery und Legal/Trust Grenzen.",
+    dplText: "DaniniNet kommerzielles PDF-Produkt aus DaniniHub Methode und Digital-Gateway Artefakt. Das Paket ist nicht nur ein PDF: DPL enthält den Leitfaden und den Bonus Pack für Anwendung, Prüfung, Lead Flow, Delivery und Legal/Trust Grenzen.",
     dplCta: "DPL Verkaufsseite öffnen",
     price: "29 € Launch · 49 € regulär",
     systemTitle: "Artefakt-Flow",
     system: ["Problem", "Idee", "Rückfragen", "Klärung", "Agent Workflow", "Artefakt", "Delivery", "Signal"],
     includeTitle: "DPL Paket enthält",
     inventoryTitle: "Produkt- und Affiliate-Inventar",
-    inventoryText: "Gefundene Produktlinien: DPL Paket, NutriLans Wasser-eBook, Wellan/UMH und Health/Water Affiliate-Linie.",
+    inventoryText: "Gefundene Produktlinien: DPL Paket, DaniniLans Health/Water Layer, Wellan/UMH und Health/Water Affiliate-Linie.",
     products: [],
     methodTitle: "Wie jedes Produkt entstehen muss",
     methodSteps: [["01", "Problem ohne Hype benennen."], ["02", "KI stellt bis zu drei Rückfragen."], ["03", "Workflow trennt Fakten, Annahmen und Risiken."], ["04", "Artefakt wird als Seite, PDF, E-Mail-Fluss oder Tool geliefert."], ["05", "Legal/Trust setzt Grenzen."], ["06", "Metriken entscheiden GO, Überarbeitung oder Stop."]],
@@ -133,14 +136,14 @@ const copy: Record<Locale, {
     artifactNote: "Working principle: Ask AI — AI asks you · artifact before campaign · proof before claim · boundary before CTA.",
     featured: "Current sales artifact",
     dplTitle: "Digital Location Sales",
-    dplText: "DaniniNet commercial PDF product created from the DaniniHub method and Calije Park Residence artifact. The package is not just a PDF: DPL includes the guide and the Bonus Pack for application, checks, lead flow, delivery and legal/trust boundaries.",
+    dplText: "DaniniNet commercial PDF product created from the DaniniHub method and digital gateway artifact. The package is not just a PDF: DPL includes the guide and the Bonus Pack for application, checks, lead flow, delivery and legal/trust boundaries.",
     dplCta: "Open DPL sales page",
     price: "29 € launch · 49 € regular",
     systemTitle: "Artifact flow",
     system: ["Problem", "Idea", "Questions", "Clarification", "Agent workflow", "Artifact", "Delivery", "Signal"],
     includeTitle: "DPL package includes",
     inventoryTitle: "Product and affiliate inventory",
-    inventoryText: "Confirmed lines: DPL package, NutriLans water eBook, Wellan/UMH and Health/Water affiliate line.",
+    inventoryText: "Confirmed lines: DPL package, DaniniLans health/water layer, Wellan/UMH and Health/Water affiliate line.",
     products: [],
     methodTitle: "How every product must be created",
     methodSteps: [["01", "Name the problem without hype."], ["02", "AI asks up to three clarifying questions."], ["03", "Workflow separates facts, assumptions and risks."], ["04", "Artifact is delivered as page, PDF, email flow or tool."], ["05", "Legal/trust keeps boundaries."], ["06", "Metrics signal decides GO, improve or stop."]],
@@ -154,7 +157,9 @@ function getProducts(lang: Locale) {
 }
 
 function productHref(lang: Locale, href?: string) {
-  return href === "dpl" ? localizedPath(lang, "dpl") : localizedPath(lang, "products");
+  if (href === "dpl") return localizedPath(lang, "dpl");
+  if (href === "newsletter") return `/${lang}/newsletter`;
+  return localizedPath(lang, "products");
 }
 
 export default async function ProductsPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -208,7 +213,7 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
         <div className="grid gap-7 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="text-sm uppercase tracking-[0.22em] text-[#226bbf]">{t.inventoryTitle}</p>
-            <h2 className="mt-4 text-4xl font-semibold leading-tight">DPL · NutriLans · WELLAN · UMH</h2>
+            <h2 className="mt-4 text-4xl font-semibold leading-tight">DPL · DaniniLans · WELLAN · UMH</h2>
           </div>
           <p className="text-lg leading-9 text-[#706a5d]">{t.inventoryText}</p>
         </div>
