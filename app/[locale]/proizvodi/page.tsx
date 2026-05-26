@@ -26,7 +26,7 @@ const dplIncludes = [
   "Public / Private Information Map",
   "Metrics Tracker",
   "Disclaimer Library",
-  "DaniniHub Prompt Pack",
+  "AI Dialogue Worksheet",
 ] as const;
 
 const copy: Record<Locale, {
