@@ -1,0 +1,14 @@
+const fs = require('fs');
+const path = 'app/[locale]/proizvodi/digitalna-prodaja-lokacije/page.tsx';
+let s = fs.readFileSync(path, 'utf8');
+s = s.replaceAll('DaniniHub Prompt Pack', 'DaniniHub Dialogue Method Pack');
+s = s.replaceAll('Calije artifact', 'Lead Calculator');
+s = s.replaceAll('Calije Artifact', 'Lead Calculator');
+s = s.replaceAll('DaniniHub Prompt', 'DaniniHub Dialogue Method');
+s = s.replaceAll('Prompt Pack', 'Dialogue Method Pack');
+s = s.replaceAll('prompt pack', 'dialogue method pack');
+s = s.replaceAll('Promt', 'Dialogue');
+s = s.replaceAll('prompt', 'dialogue');
+s = s.replaceAll('Prompt', 'Dialogue');
+fs.writeFileSync(path, s);
+console.log('DPL no-prompt wording sanitized');
