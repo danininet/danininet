@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/sanitize-dpl-no-prompt.cjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
