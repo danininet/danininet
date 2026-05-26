@@ -3,71 +3,71 @@ import { SectionIntro, SiteShell, normalizeLocale, localizedPath } from "@/compo
 
 type Locale = "sr" | "de" | "en";
 
-const articleSlug = "kako-se-lokacija-pretvara-u-investitorski-argument";
+const articleSlug = "zasto-obicna-affiliate-preporuka-nije-dovoljna";
 
 const copy = {
   sr: {
     eyebrow: "DaniniNet Blog",
-    title: "Sadržaj koji gradi poverenje pre prodaje.",
-    text: "Blog je editorial i SEO centar DaniniNet-a: ne služi za gomilanje tekstova, nego za objašnjavanje problema, povezivanje proizvoda, uvođenje čitaoca u funnel i čuvanje poverenja pre CTA-a.",
-    featuredLabel: "Novo · Evergreen case study",
-    featuredTitle: "Kako se lokacija pretvara u investitorski argument: Calije Park Residence case study",
-    featuredText: "Calije Park Residence pokazuje kako se građevinska lokacija u Nišu može predstaviti kroz javni gateway, video uvod, višejezični sadržaj i zatvoreni Investor Brief — kao investitorski argument, a ne običan oglas.",
+    title: "Editorial hub za proizvode, affiliate preporuke i AI-assisted odluke.",
+    text: "Blog nije mesto za nasumične tekstove. Svaki članak mora objasniti problem, postaviti do tri AI podpitanja, dati praktičan artifact i jasno označiti affiliate, AI i trust granice.",
+    featuredLabel: "Evergreen · DaniniNet metoda",
+    featuredTitle: "Zašto obična affiliate preporuka nije dovoljna",
+    featuredText: "DaniniNet preporuka mora imati kontekst, realnu upotrebu, disclosure, granice tvrdnji i jasnu vezu sa potrebom korisnika. Cilj nije klik po svaku cenu, nego poverenje i relevantan sledeći korak.",
     featuredCta: "Čitaj članak",
-    funnel: ["Problem", "Objašnjenje", "Dokaz", "Proizvod", "Trust"],
+    funnel: ["Problem", "Podpitanja", "Analiza", "Artifact", "Trust"],
     items: [
-      ["Zašto običan oglas nije dovoljan", "Ulazni članak za vlasnike lokacija: objašnjava razliku između oglasa i digitalnog gateway-a."],
-      ["Javna stranica vs zatvoreni brief", "Editorial most ka proizvodu: šta sme javno, šta ide samo ozbiljnijim interesentima."],
-      ["Šta investitor želi da vidi", "Case-study pristup bez obećanja: kontekst, dokaz, rizik, granice i sledeći korak."],
-      ["Affiliate preporuka bez pritiska", "DaniniNet standard za preporuke: kontekst, disclosure, realna upotreba i bez garancija."],
-      ["AI dijalog u praksi", "Pitaj AI — AI pita tebe kao metoda za pitanja, dokaze, rizike i konkretan artifact."],
-      ["Health / Water pravac", "Budući editorial sloj o vodi, rutinama i zdravom stilu života, odvojen od medicinskih obećanja."],
+      ["Affiliate marketing bez guru narativa", "Kako preporučivati alate i proizvode bez quick-money obećanja, pritiska i lažnih rezultata."],
+      ["Digitalni proizvodi i delivery", "Kako PDF, bonus, email tok i support treba da rade kao jedan artifact, a ne kao razbacani fajlovi."],
+      ["AI dijalog u praksi", "Pitaj AI — AI pita tebe kao metoda za razjašnjenje problema, rizika i odluke, uz maksimalno tri podpitanja."],
+      ["Hostinger, alati i infrastruktura", "Hosting, domeni i alati se predstavljaju kroz kontekst upotrebe, ne kao agresivna prodajna lista."],
+      ["DaniniLans preview", "Health/water sadržaj se odvaja u poseban authority sloj, uz health disclaimer i odgovorne affiliate preporuke."],
+      ["Legal, trust i disclosure", "Svaki affiliate, AI-assisted i health sadržaj mora imati jasne granice pre CTA-a."],
     ],
-    cta: "Pogledaj proizvod",
-    secondary: "Kako radi metoda",
-    funnelTitle: "Editorial funnel vodi čitaoca od problema do sledećeg logičnog koraka.",
+    cta: "Pogledaj proizvode",
+    secondary: "Prijavi interesovanje",
+    funnelTitle: "Editorial funnel vodi čitaoca od problema do odgovorne odluke.",
   },
   de: {
     eyebrow: "DaniniNet Blog",
-    title: "Inhalte, die Vertrauen vor dem Verkauf aufbauen.",
-    text: "Der Blog ist das Editorial- und SEO-Zentrum von DaniniNet: Er erklärt Probleme, verbindet Produkte, führt Leser in den Funnel und schützt Vertrauen vor dem CTA.",
-    featuredLabel: "Neu · Evergreen Case Study",
-    featuredTitle: "Wie ein Standort zum Investorenargument wird: Calije Park Residence Case Study",
-    featuredText: "Calije Park Residence zeigt, wie ein Standort in Niš über einen öffentlichen Gateway, Video, mehrsprachige Inhalte und einen geschlossenen Investor Brief präsentiert werden kann.",
+    title: "Editorial Hub für Produkte, Affiliate-Empfehlungen und KI-gestützte Entscheidungen.",
+    text: "Der Blog sammelt keine zufälligen Texte. Jeder Artikel erklärt ein Problem, nutzt bis zu drei KI-Rückfragen, liefert ein praktisches Artefakt und markiert Affiliate-, KI- und Trust-Grenzen.",
+    featuredLabel: "Evergreen · DaniniNet Methode",
+    featuredTitle: "Warum eine normale Affiliate-Empfehlung nicht reicht",
+    featuredText: "Eine DaniniNet Empfehlung braucht Kontext, reale Nutzung, Disclosure, klare Grenzen und einen relevanten nächsten Schritt.",
     featuredCta: "Artikel lesen",
-    funnel: ["Problem", "Erklärung", "Beleg", "Produkt", "Trust"],
+    funnel: ["Problem", "Rückfragen", "Analyse", "Artefakt", "Trust"],
     items: [
-      ["Warum eine normale Anzeige nicht reicht", "Einstiegsartikel für Eigentümer: Unterschied zwischen Anzeige und digitalem Gateway."],
-      ["Öffentliche Seite vs. geschlossener Brief", "Was öffentlich sein darf und was nur ernstere Interessenten sehen."],
-      ["Was Investoren sehen möchten", "Case-Study-Ansatz ohne Versprechen: Kontext, Beleg, Risiko, Grenzen und nächster Schritt."],
-      ["Affiliate Empfehlung ohne Druck", "DaniniNet Standard: Kontext, Disclosure, reale Nutzung und keine Garantien."],
-      ["KI-Dialog in der Praxis", "Frag die KI — die KI fragt dich als Methode für Fragen, Belege, Risiken und Artifact."],
-      ["Health / Water Bereich", "Künftiger Editorial-Bereich zu Wasser, Routinen und gesundem Lebensstil ohne medizinische Versprechen."],
+      ["Affiliate Marketing ohne Guru-Narrativ", "Empfehlungen ohne Quick-Money Versprechen, Druck und falsche Ergebnisse."],
+      ["Digitale Produkte und Delivery", "PDF, Bonus, E-Mail-Fluss und Support als ein Artefakt."],
+      ["KI-Dialog in der Praxis", "Frag die KI — die KI fragt dich mit maximal drei Rückfragen."],
+      ["Hostinger, Tools und Infrastruktur", "Hosting, Domains und Tools im Nutzungskontext, nicht als aggressive Liste."],
+      ["DaniniLans Preview", "Health/Water Inhalte werden in einen separaten Authority Layer ausgelagert."],
+      ["Legal, Trust und Disclosure", "Affiliate-, KI- und Health-Inhalte brauchen klare Grenzen vor dem CTA."],
     ],
-    cta: "Produkt ansehen",
-    secondary: "Methode ansehen",
-    funnelTitle: "Der Editorial Funnel führt vom Problem zum nächsten logischen Schritt.",
+    cta: "Produkte ansehen",
+    secondary: "Interesse anmelden",
+    funnelTitle: "Der Editorial Funnel führt vom Problem zur verantwortlichen Entscheidung.",
   },
   en: {
     eyebrow: "DaniniNet Blog",
-    title: "Content that builds trust before the sale.",
-    text: "The blog is DaniniNet's editorial and SEO center: it explains problems, connects products, guides readers into the funnel and protects trust before the CTA.",
-    featuredLabel: "New · Evergreen case study",
-    featuredTitle: "How a location becomes an investor argument: Calije Park Residence case study",
-    featuredText: "Calije Park Residence shows how a location in Niš can be presented through a public gateway, video, multilingual content and a closed Investor Brief.",
+    title: "Editorial hub for products, affiliate recommendations and AI-assisted decisions.",
+    text: "The blog is not a collection of random posts. Every article explains a problem, uses up to three AI clarification questions, delivers a practical artifact and clearly marks affiliate, AI and trust boundaries.",
+    featuredLabel: "Evergreen · DaniniNet method",
+    featuredTitle: "Why a standard affiliate recommendation is not enough",
+    featuredText: "A DaniniNet recommendation needs context, real use, disclosure, clear claim boundaries and a relevant next step.",
     featuredCta: "Read article",
-    funnel: ["Problem", "Explanation", "Proof", "Product", "Trust"],
+    funnel: ["Problem", "Questions", "Analysis", "Artifact", "Trust"],
     items: [
-      ["Why a standard listing is not enough", "Entry article for owners: the difference between a listing and a digital gateway."],
-      ["Public page vs. closed brief", "What can be public and what belongs only to serious prospects."],
-      ["What investors want to see", "Case-study approach without promises: context, proof, risk, boundaries and next step."],
-      ["Affiliate recommendation without pressure", "DaniniNet standard: context, disclosure, real use and no guarantees."],
-      ["AI dialogue in practice", "Ask AI — AI asks you as a method for questions, proof, risks and artifact."],
-      ["Health / Water direction", "Future editorial layer on water, routines and healthy lifestyle without medical promises."],
+      ["Affiliate marketing without guru narratives", "Recommendations without quick-money promises, pressure or fake results."],
+      ["Digital products and delivery", "PDF, bonus, email flow and support should work as one artifact."],
+      ["AI dialogue in practice", "Ask AI — AI asks you with a maximum of three clarification questions."],
+      ["Hostinger, tools and infrastructure", "Hosting, domains and tools presented through usage context, not aggressive lists."],
+      ["DaniniLans preview", "Health/water content moves into a separate authority layer with strict disclaimers."],
+      ["Legal, trust and disclosure", "Affiliate, AI-assisted and health content needs clear boundaries before the CTA."],
     ],
-    cta: "View product",
-    secondary: "See method",
-    funnelTitle: "The editorial funnel leads from problem to the next logical step.",
+    cta: "View products",
+    secondary: "Register interest",
+    funnelTitle: "The editorial funnel leads from problem to responsible decision.",
   },
 } as const;
 
@@ -115,8 +115,8 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-14 md:flex-row md:items-center md:justify-between">
           <h2 className="max-w-3xl text-4xl font-semibold">{t.funnelTitle}</h2>
           <div className="flex flex-wrap gap-3">
-            <Link href={localizedPath(lang, "dpl")} className="rounded-full bg-[#d9ecff] px-6 py-3 text-sm font-semibold text-[#07142b]">{t.cta}</Link>
-            <Link href={localizedPath(lang, "method")} className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white">{t.secondary}</Link>
+            <Link href={localizedPath(lang, "products")} className="rounded-full bg-[#d9ecff] px-6 py-3 text-sm font-semibold text-[#07142b]">{t.cta}</Link>
+            <Link href={`/${lang}/newsletter`} className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white">{t.secondary}</Link>
           </div>
         </div>
       </section>
