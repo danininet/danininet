@@ -64,16 +64,16 @@ const copy: Record<Locale, {
     system: ["Problem", "Ideja", "Podpitanja", "Razjašnjenje", "Agent workflow", "Artifact", "Delivery", "Signal"],
     includeTitle: "DPL paket uključuje",
     inventoryTitle: "Inventar proizvoda i affiliate pravaca",
-    inventoryText: "Ovo su proizvodi i pravci pronađeni u postojećim materijalima: DPL paket, DaniniLans health/water sloj, Wellan/UMH voda i health affiliate linija. Bonus Pack nije poseban proizvod za odvajanje od DPL-a, nego deo glavnog paketa.",
+    inventoryText: "DaniniNet sada razdvaja glavne proizvode, buduće artifacte i affiliate pravce: DPL kao aktivni proizvod, DaniniLans kao health/water sloj, Hostinger kao approved alat, Amazon kao selektivni kanal i WELLAN/UMH kao review pravac uz stroge granice tvrdnji.",
     products: [
       {
         label: "DaniniNet · Glavni digitalni proizvod",
         title: "Digitalna prodaja lokacije — PDF + Bonus Pack",
         text: "Glavni proizvod za vlasnike lokacija, agente, male investitore i digitalne kreatore koji žele da običan oglas pretvore u javni gateway i ozbiljniji poslovni tok. Bonus Pack je uključen u paket.",
-        status: "Aktivni prodajni fokus · final working product source",
+        status: "Aktivni prodajni fokus · owned product",
         cta: "Prodajna stranica",
         href: "dpl",
-        points: ["DaniniHub metoda", "Digital gateway", "Bonus Pack uključen", "Gumroad/checkout delivery"],
+        points: ["DaniniHub metoda", "Digital gateway", "Bonus Pack uključen", "Lead i delivery logika"],
       },
       {
         label: "DaniniLans · Health / Water",
@@ -83,6 +83,24 @@ const copy: Record<Locale, {
         cta: "Prati razvoj",
         href: "newsletter",
         points: ["voda i hidratacija", "water filter preporuke", "health disclaimer", "DACH sadržaj"],
+      },
+      {
+        label: "Approved affiliate · infrastruktura",
+        title: "Hostinger",
+        text: "Preporučeni hosting/domen pravac za blogere, affiliate početnike, landing stranice i male online projekte. Ide kroz transparentan affiliate disclosure i registry kontrolu.",
+        status: "Approved · registry controlled",
+        cta: "Interesuje me setup",
+        href: "newsletter",
+        points: ["hosting", "domeni", "blog setup", "affiliate disclosure"],
+      },
+      {
+        label: "Selective affiliate · DACH",
+        title: "Amazon PartnerNet — kurirane preporuke",
+        text: "Amazon ne ide kao generički katalog. Ide selektivno kroz vodu/filtere, creator setup, ergonomiju i knjige, uz jasne disclaimere i bez medicinskih obećanja.",
+        status: "Approved-selective · bez hype-a",
+        cta: "Prijavi interesovanje",
+        href: "newsletter",
+        points: ["water/filter products", "creator setup", "ergonomija", "knjige"],
       },
       {
         label: "Affiliate / partner product",
@@ -106,7 +124,7 @@ const copy: Record<Locale, {
     methodTitle: "Kako svaki proizvod mora nastati",
     methodSteps: [["01", "Problem se imenuje bez hype-a."], ["02", "AI postavlja do tri potpitanja za razjašnjenje."], ["03", "Agent workflow razdvaja činjenice, pretpostavke i rizike."], ["04", "Artifact se isporučuje kao stranica, PDF, email tok ili alat."], ["05", "Legal/trust sloj čuva granice i poverenje."], ["06", "Metrics signal odlučuje GO, dorada ili stop."]],
     disclaimerTitle: "Granice i poverenje",
-    disclaimerText: "Sadržaj je edukativnog i informativnog karaktera. Affiliate linkovi moraju biti označeni. Health/water sadržaj nije medicinski savet. DPL nije pravni, finansijski, urbanistički, tehnički ili investicioni savet i ne obećava prodaju, profit, investitore ili dozvole.",
+    disclaimerText: "Sadržaj je edukativnog i informativnog karaktera. Affiliate linkovi moraju biti označeni. Health/water sadržaj nije medicinski savet. DPL nije pravni, finansijski, urbanistički, tehnički ili investicioni savet i ne obećava prodaju, profit, investitore ili dozvole. AI može pomoći u strukturi i pitanjima, ali čovek donosi odluku.",
   },
   de: {
     eyebrow: "DaniniNet Produkte",
@@ -122,7 +140,7 @@ const copy: Record<Locale, {
     system: ["Problem", "Idee", "Rückfragen", "Klärung", "Agent Workflow", "Artefakt", "Delivery", "Signal"],
     includeTitle: "DPL Paket enthält",
     inventoryTitle: "Produkt- und Affiliate-Inventar",
-    inventoryText: "Gefundene Produktlinien: DPL Paket, DaniniLans Health/Water Layer, Wellan/UMH und Health/Water Affiliate-Linie.",
+    inventoryText: "Gefundene Produktlinien: DPL Paket, DaniniLans Health/Water Layer, Hostinger, Amazon selektiv, Wellan/UMH und Health/Water Affiliate-Linie.",
     products: [],
     methodTitle: "Wie jedes Produkt entstehen muss",
     methodSteps: [["01", "Problem ohne Hype benennen."], ["02", "KI stellt bis zu drei Rückfragen."], ["03", "Workflow trennt Fakten, Annahmen und Risiken."], ["04", "Artefakt wird als Seite, PDF, E-Mail-Fluss oder Tool geliefert."], ["05", "Legal/Trust setzt Grenzen."], ["06", "Metriken entscheiden GO, Überarbeitung oder Stop."]],
@@ -143,7 +161,7 @@ const copy: Record<Locale, {
     system: ["Problem", "Idea", "Questions", "Clarification", "Agent workflow", "Artifact", "Delivery", "Signal"],
     includeTitle: "DPL package includes",
     inventoryTitle: "Product and affiliate inventory",
-    inventoryText: "Confirmed lines: DPL package, DaniniLans health/water layer, Wellan/UMH and Health/Water affiliate line.",
+    inventoryText: "Confirmed lines: DPL package, DaniniLans health/water layer, Hostinger, selective Amazon, Wellan/UMH and Health/Water affiliate line.",
     products: [],
     methodTitle: "How every product must be created",
     methodSteps: [["01", "Name the problem without hype."], ["02", "AI asks up to three clarifying questions."], ["03", "Workflow separates facts, assumptions and risks."], ["04", "Artifact is delivered as page, PDF, email flow or tool."], ["05", "Legal/trust keeps boundaries."], ["06", "Metrics signal decides GO, improve or stop."]],
@@ -213,7 +231,7 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
         <div className="grid gap-7 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="text-sm uppercase tracking-[0.22em] text-[#226bbf]">{t.inventoryTitle}</p>
-            <h2 className="mt-4 text-4xl font-semibold leading-tight">DPL · DaniniLans · WELLAN · UMH</h2>
+            <h2 className="mt-4 text-4xl font-semibold leading-tight">DPL · DaniniLans · Hostinger · Amazon · WELLAN/UMH</h2>
           </div>
           <p className="text-lg leading-9 text-[#706a5d]">{t.inventoryText}</p>
         </div>
