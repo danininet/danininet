@@ -2,6 +2,9 @@ import { NextResponse } from "next/server";
 import { upsertBrevoContact } from "@/lib/brevo/client";
 import { validateLeadPayload } from "@/lib/leads/validateLeadPayload";
 
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+
 export async function POST(request: Request) {
   try {
     const payload = await request.json();
