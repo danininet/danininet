@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "prebuild": "node scripts/sanitize-dpl-no-prompt.cjs",
-    "build": "next build",
+    "build": "next build && node scripts/hostinger-output.cjs",
     "start": "next start",
     "lint": "eslint"
   },
