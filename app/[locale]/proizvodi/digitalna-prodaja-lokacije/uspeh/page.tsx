@@ -3,6 +3,13 @@ import { SiteShell, normalizeLocale, localizedPath } from "@/components/layout/S
 
 type Locale = "sr" | "de" | "en";
 
+export const metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 const copy = {
   sr: {
     eyebrow: "DPL delivery artifact",
@@ -16,7 +23,7 @@ const copy = {
       ["04", "Support", "Ako link ne radi, pošaljite support upit sa checkout emailom i nazivom proizvoda."],
     ],
     includesTitle: "DPL paket uključuje",
-    includes: ["PDF vodič Digitalna prodaja lokacije", "DPL Bonus Pack", "Lead Calculator spec", "Email Templates", "Metrics Tracker", "Disclaimer Library", "DaniniHub Prompt Pack"],
+    includes: ["PDF vodič Digitalna prodaja lokacije", "DPL Bonus Pack", "Lead Calculator spec", "Email Templates", "Metrics Tracker", "Disclaimer Library", "DaniniHub paket pitanja i dijalog metod"],
     support: "Otvori support",
     product: "Nazad na proizvod",
     disclaimer: "DPL je edukativni i informativni proizvod. Ne predstavlja pravni, finansijski, urbanistički, tehnički ili investicioni savet i ne garantuje prodaju, profit, investitore ili izvodljivost.",
@@ -28,7 +35,7 @@ const copy = {
     stepsTitle: "Nach dem Kauf prüfen",
     steps: [["01", "Gumroad E-Mail", "PDF und Bonus Pack kommen an die Checkout-E-Mail."], ["02", "Spam / Promotions", "Bitte Spam, Promotions und Gumroad Library prüfen."], ["03", "Erster Arbeitsschritt", "Starten Sie mit Pre-launch Checklist und Public / Private Map."], ["04", "Support", "Bei Problemen Support mit Checkout-E-Mail und Produktname kontaktieren."]],
     includesTitle: "DPL Paket enthält",
-    includes: ["PDF-Leitfaden", "DPL Bonus Pack", "Lead Calculator spec", "Email Templates", "Metrics Tracker", "Disclaimer Library", "DaniniHub Prompt Pack"],
+    includes: ["PDF-Leitfaden", "DPL Bonus Pack", "Lead Calculator spec", "Email Templates", "Metrics Tracker", "Disclaimer Library", "DaniniHub Fragen- und Dialogmethodik"],
     support: "Support öffnen",
     product: "Zurück zum Produkt",
     disclaimer: "DPL ist edukativ und informativ. Es ist keine Rechts-, Finanz-, Planungs-, Technik- oder Anlageberatung und garantiert keine Ergebnisse.",
@@ -40,7 +47,7 @@ const copy = {
     stepsTitle: "After purchase, check",
     steps: [["01", "Gumroad email", "PDF guide and Bonus Pack arrive to the checkout email."], ["02", "Spam / Promotions", "Check spam, promotions and Gumroad library if needed."], ["03", "First working step", "Start with the Pre-launch checklist and Public / Private Information Map."], ["04", "Support", "If the link does not work, send a support request with checkout email and product name."]],
     includesTitle: "DPL package includes",
-    includes: ["PDF guide", "DPL Bonus Pack", "Lead Calculator spec", "Email Templates", "Metrics Tracker", "Disclaimer Library", "DaniniHub Prompt Pack"],
+    includes: ["PDF guide", "DPL Bonus Pack", "Lead Calculator spec", "Email Templates", "Metrics Tracker", "Disclaimer Library", "DaniniHub questions and dialogue method"],
     support: "Open support",
     product: "Back to product",
     disclaimer: "DPL is educational and informational. It is not legal, financial, planning, technical or investment advice and does not guarantee results.",
