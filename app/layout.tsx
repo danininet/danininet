@@ -13,9 +13,11 @@ const structuredData = {
       url: siteUrl,
       logo: `${siteUrl}/brand/danininet-mark.svg`,
       description:
-        "DaniniNet je platforma za digitalne proizvode, affiliate marketing, SEO sadržaj i AI-assisted dijalog kroz DaniniHub metod.",
+        "DaniniNet povezuje digitalne proizvode, DPL metodologiju, AI-assisted dijalog, DaniniHub OS, Čalije Case Study i DaniniLans ekosistem.",
       sameAs: [
-        "https://www.youtube.com/@NutriLansDigiVerdienst",
+        "https://daninihub.com",
+        "https://daninilans.daninihub.com",
+        "https://calije.daninihub.com",
         "https://www.facebook.com/Affiligaga",
         "https://www.linkedin.com/in/dragan-zdravkovic/",
         "https://www.instagram.com/dragangaganet/",
@@ -43,21 +45,25 @@ const structuredData = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "DaniniNet — digitalni marketing, affiliate i AI-assisted content",
+    default: "DaniniNet — digitalni proizvodi, DPL i AI-assisted sistemi",
     template: "%s · DaniniNet",
   },
   description:
-    "DaniniNet je digitalni i edukativni sloj za affiliate marketing, SEO sadržaj, AI-assisted dijalog, digitalne proizvode i dokazne case study projekte.",
+    "DaniniNet je digitalni i edukativni sloj za DPL metodologiju, AI-assisted dijalog, digitalne proizvode, affiliate projekte i dokazne case study sisteme.",
   applicationName: "DaniniNet",
   creator: "DaniniNet",
   publisher: "DaniniNet",
   keywords: [
     "DaniniNet",
+    "digitalni proizvodi",
+    "Digitalna prodaja lokacije",
+    "DPL",
+    "AI-assisted",
+    "DaniniHub OS",
+    "DaniniLans",
+    "Čalije Case Study",
     "affiliate marketing",
     "SEO",
-    "digitalni proizvodi",
-    "AI-assisted",
-    "DaniniHub",
     "DACH marketing",
     "content strategy"
   ],
@@ -77,7 +83,7 @@ export const metadata: Metadata = {
     siteName: "DaniniNet",
     title: "DaniniNet — digitalni sistem za ideje koje zaslužuju tržište",
     description:
-      "Affiliate marketing, SEO sadržaj, AI-assisted dijalog i digitalni proizvodi kroz DaniniHub metod.",
+      "DPL metodologija, AI-assisted dijalog, digitalni proizvodi i dokazni case study projekti kroz DaniniHub OS.",
     locale: "sr_RS",
     images: [
       {
@@ -92,7 +98,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "DaniniNet — digitalni sistem za ideje koje zaslužuju tržište",
     description:
-      "Affiliate marketing, SEO sadržaj, AI-assisted dijalog i digitalni proizvodi.",
+      "DPL metodologija, AI-assisted dijalog, digitalni proizvodi i dokazni case study projekti.",
     images: ["/brand/danininet-mark.svg"],
   },
   robots: {
