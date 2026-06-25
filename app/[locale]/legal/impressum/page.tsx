@@ -2,45 +2,52 @@ import { SiteShell, normalizeLocale } from "@/components/layout/SiteShell";
 
 type Locale = "sr" | "de" | "en";
 
+const provider = {
+  name: "Dragan Zdravkovic",
+  brand: "DaniniNet",
+  address: "Fischerstr. 54, 47055 Duisburg, Deutschland",
+  email: "dragangaganet@gmail.com",
+};
+
 const copy = {
   sr: {
     eyebrow: "Impressum",
     title: "Podaci o vlasniku i odgovornom licu.",
-    intro: "Ova stranica je identifikaciona stranica za DaniniNet i DACH trust sloj. Podaci moraju biti provereni i dopunjeni pre intenzivne javne promocije.",
+    intro: "Ova stranica je identifikaciona stranica za DaniniNet i DACH trust sloj. Podaci su usklađeni kao javni kontakt okvir za PROJEKAT DANINI.",
     rows: [
-      ["Vlasnik / odgovorno lice", "Dragan Zdravkovic"],
-      ["Brend / sajt", "DaniniNet"],
-      ["Kontakt", "dragangaganet@gmail.com"],
-      ["Adresa", "Uneti punu poslovnu ili zakonski dozvoljenu kontakt adresu pre finalne DACH promocije."],
-      ["Odgovornost za sadržaj", "Dragan Zdravkovic je odgovorno lice za sadržaj ovog sajta, osim kada je drugačije navedeno."],
+      ["Vlasnik / odgovorno lice", provider.name],
+      ["Brend / sajt", provider.brand],
+      ["Kontakt", provider.email],
+      ["Adresa", provider.address],
+      ["Odgovornost za sadržaj", `${provider.name} je odgovorno lice za sadržaj ovog sajta, osim kada je drugačije navedeno.`],
     ],
-    note: "Ovaj Impressum nije pravni savet. Za Nemačku, Austriju i Švajcarsku potrebno je proveriti lokalne obaveze sa kvalifikovanim stručnjakom pre finalne upotrebe.",
+    note: "Ovaj Impressum predstavlja javni identifikacioni i kontakt okvir za DaniniNet. Za posebne ugovorne, poreske, potrošačke ili regulativne obaveze u DACH regionu potrebna je nezavisna stručna provera pre zaključivanja konkretnih poslova.",
   },
   de: {
     eyebrow: "Impressum",
     title: "Angaben zum Anbieter und Verantwortlichen.",
-    intro: "Diese Seite ist die Anbieterkennzeichnung für DaniniNet und Teil der DACH-Vertrauensebene. Die Angaben müssen vor intensiver öffentlicher Vermarktung geprüft und vervollständigt werden.",
+    intro: "Diese Seite bildet die Anbieterkennzeichnung für DaniniNet und die Vertrauensebene des PROJEKT DANINI.",
     rows: [
-      ["Anbieter / verantwortliche Person", "Dragan Zdravkovic"],
-      ["Marke / Website", "DaniniNet"],
-      ["Kontakt", "dragangaganet@gmail.com"],
-      ["Anschrift", "Bitte vollständige geschäftliche oder rechtlich zulässige Kontaktanschrift vor finaler DACH-Vermarktung eintragen."],
-      ["Verantwortlich für den Inhalt", "Dragan Zdravkovic ist für die Inhalte dieser Website verantwortlich, sofern nicht anders angegeben."],
+      ["Anbieter / verantwortliche Person", provider.name],
+      ["Marke / Website", provider.brand],
+      ["Kontakt", provider.email],
+      ["Anschrift", provider.address],
+      ["Verantwortlich für den Inhalt", `${provider.name} ist für die Inhalte dieser Website verantwortlich, sofern nicht anders angegeben.`],
     ],
-    note: "Dieses Impressum ist keine Rechtsberatung. Für Deutschland, Österreich und die Schweiz sollten die lokalen Anbieterkennzeichnungs- und Informationspflichten vor finaler Nutzung fachlich geprüft werden.",
+    note: "Dieses Impressum bildet den öffentlichen Identifikations- und Kontaktbereich für DaniniNet. Besondere vertragliche, steuerliche, verbraucherschutzrechtliche oder regulatorische Pflichten im DACH-Raum sollten vor konkreten Geschäften fachlich geprüft werden.",
   },
   en: {
     eyebrow: "Imprint",
     title: "Provider and responsible person information.",
-    intro: "This page is the provider identification page for DaniniNet and part of the DACH trust layer. Details must be reviewed and completed before intensive public promotion.",
+    intro: "This page provides the provider identification and trust layer for DaniniNet within PROJECT DANINI.",
     rows: [
-      ["Provider / responsible person", "Dragan Zdravkovic"],
-      ["Brand / website", "DaniniNet"],
-      ["Contact", "dragangaganet@gmail.com"],
-      ["Address", "Insert the full business or legally acceptable contact address before final DACH promotion."],
-      ["Responsible for content", "Dragan Zdravkovic is responsible for this website's content unless otherwise stated."],
+      ["Provider / responsible person", provider.name],
+      ["Brand / website", provider.brand],
+      ["Contact", provider.email],
+      ["Address", provider.address],
+      ["Responsible for content", `${provider.name} is responsible for this website's content unless otherwise stated.`],
     ],
-    note: "This imprint is not legal advice. For Germany, Austria and Switzerland, local provider identification and information obligations should be reviewed by a qualified professional before final use.",
+    note: "This imprint provides the public identification and contact framework for DaniniNet. Specific contractual, tax, consumer protection or regulatory obligations in the DACH region should be professionally reviewed before concrete business use.",
   },
 } as const;
 
