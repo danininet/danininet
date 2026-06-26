@@ -3,17 +3,20 @@ import { SectionIntro, SiteShell, normalizeLocale, localizedPath } from "@/compo
 
 type Locale = "sr" | "de" | "en";
 
-const articleSlug = "zasto-obicna-affiliate-preporuka-nije-dovoljna";
+const articleSlug = "poziv-za-saradnike-proizvode-i-partnere";
+const secondarySlug = "zasto-obicna-affiliate-preporuka-nije-dovoljna";
 
 const copy = {
   sr: {
     eyebrow: "DaniniNet Blog",
     title: "Editorial hub za proizvode, affiliate preporuke i AI-assisted odluke.",
     text: "Blog nije mesto za nasumične tekstove. Svaki članak mora objasniti problem, postaviti do tri AI podpitanja, dati praktičan artifact i jasno označiti affiliate, AI i trust granice.",
-    featuredLabel: "Evergreen · DaniniNet metoda",
-    featuredTitle: "Zašto obična affiliate preporuka nije dovoljna",
-    featuredText: "DaniniNet preporuka mora imati kontekst, realnu upotrebu, disclosure, granice tvrdnji i jasnu vezu sa potrebom korisnika. Cilj nije klik po svaku cenu, nego poverenje i relevantan sledeći korak.",
-    featuredCta: "Čitaj članak",
+    featuredLabel: "Partneri · Proizvodi · Saradnici",
+    featuredTitle: "PROJEKAT DANINI otvara prostor za ozbiljne saradnike, proizvode i poslovne partnere",
+    featuredText: "Poziv za kompanije, autore, affiliate partnere, dobavljače i stručne saradnike koji žele da uđu u Danini ekosistem kroz kvalitet, transparentnost i dugoročnu vrednost.",
+    featuredCta: "Čitaj poziv za saradnju",
+    secondaryTitle: "Zašto obična affiliate preporuka nije dovoljna",
+    secondaryText: "Affiliate preporuka mora imati kontekst, realnu upotrebu, disclosure, granice tvrdnji i jasan sledeći korak.",
     funnel: ["Problem", "Podpitanja", "Analiza", "Artifact", "Trust"],
     items: [
       ["Affiliate marketing bez guru narativa", "Kako preporučivati alate i proizvode bez quick-money obećanja, pritiska i lažnih rezultata."],
@@ -31,10 +34,12 @@ const copy = {
     eyebrow: "DaniniNet Blog",
     title: "Editorial Hub für Produkte, Affiliate-Empfehlungen und KI-gestützte Entscheidungen.",
     text: "Der Blog sammelt keine zufälligen Texte. Jeder Artikel erklärt ein Problem, nutzt bis zu drei KI-Rückfragen, liefert ein praktisches Artefakt und markiert Affiliate-, KI- und Trust-Grenzen.",
-    featuredLabel: "Evergreen · DaniniNet Methode",
-    featuredTitle: "Warum eine normale Affiliate-Empfehlung nicht reicht",
-    featuredText: "Eine DaniniNet Empfehlung braucht Kontext, reale Nutzung, Disclosure, klare Grenzen und einen relevanten nächsten Schritt.",
-    featuredCta: "Artikel lesen",
+    featuredLabel: "Partner · Produkte · Kooperation",
+    featuredTitle: "PROJEKT DANINI oeffnet den Raum fuer serioese Partner, Produkte und Kooperationen",
+    featuredText: "Ein kuratierter Aufruf fuer Unternehmen, Autoren, Affiliate-Partner, Lieferanten und Experten, die in das Danini Oekosystem passen.",
+    featuredCta: "Kooperationsaufruf lesen",
+    secondaryTitle: "Warum eine normale Affiliate-Empfehlung nicht reicht",
+    secondaryText: "Eine Empfehlung braucht Kontext, reale Nutzung, Disclosure und einen relevanten naechsten Schritt.",
     funnel: ["Problem", "Rückfragen", "Analyse", "Artefakt", "Trust"],
     items: [
       ["Affiliate Marketing ohne Guru-Narrativ", "Empfehlungen ohne Quick-Money Versprechen, Druck und falsche Ergebnisse."],
@@ -52,10 +57,12 @@ const copy = {
     eyebrow: "DaniniNet Blog",
     title: "Editorial hub for products, affiliate recommendations and AI-assisted decisions.",
     text: "The blog is not a collection of random posts. Every article explains a problem, uses up to three AI clarification questions, delivers a practical artifact and clearly marks affiliate, AI and trust boundaries.",
-    featuredLabel: "Evergreen · DaniniNet method",
-    featuredTitle: "Why a standard affiliate recommendation is not enough",
-    featuredText: "A DaniniNet recommendation needs context, real use, disclosure, clear claim boundaries and a relevant next step.",
-    featuredCta: "Read article",
+    featuredLabel: "Partners · Products · Collaboration",
+    featuredTitle: "PROJECT DANINI opens a curated space for serious partners, products and collaborators",
+    featuredText: "A curated invitation for companies, authors, affiliate partners, suppliers and experts who fit the Danini ecosystem.",
+    featuredCta: "Read collaboration call",
+    secondaryTitle: "Why a standard affiliate recommendation is not enough",
+    secondaryText: "A recommendation needs context, real use, disclosure and a relevant next step.",
     funnel: ["Problem", "Questions", "Analysis", "Artifact", "Trust"],
     items: [
       ["Affiliate marketing without guru narratives", "Recommendations without quick-money promises, pressure or fake results."],
@@ -84,10 +91,23 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
           <p className="text-sm uppercase tracking-[0.22em] text-[#d7b46a]">{t.featuredLabel}</p>
           <h2 className="mt-4 max-w-4xl text-4xl font-semibold leading-tight md:text-5xl">{t.featuredTitle}</h2>
           <p className="mt-5 max-w-3xl leading-8 text-slate-300">{t.featuredText}</p>
-          <Link href={`/${lang}/blog/${articleSlug}`} className="mt-8 inline-flex rounded-full bg-[#d9ecff] px-6 py-3 text-sm font-semibold text-[#07142b]">
-            {t.featuredCta}
-          </Link>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href={`/${lang}/blog/${articleSlug}`} className="inline-flex rounded-full bg-[#d9ecff] px-6 py-3 text-sm font-semibold text-[#07142b]">
+              {t.featuredCta}
+            </Link>
+            <Link href={`/${lang}/blog/${secondarySlug}`} className="inline-flex rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white">
+              {t.secondaryTitle}
+            </Link>
+          </div>
         </article>
+      </section>
+      <section className="mx-auto max-w-7xl px-6 pb-16">
+        <div className="rounded-[2.5rem] bg-white p-8 shadow-sm">
+          <p className="text-sm uppercase tracking-[0.22em] text-[#226bbf]">Evergreen</p>
+          <h2 className="mt-4 text-3xl font-semibold text-[#15130f]">{t.secondaryTitle}</h2>
+          <p className="mt-4 max-w-3xl leading-8 text-[#706a5d]">{t.secondaryText}</p>
+          <Link href={`/${lang}/blog/${secondarySlug}`} className="mt-6 inline-flex rounded-full bg-[#07142b] px-6 py-3 text-sm font-semibold text-white">{t.secondaryTitle}</Link>
+        </div>
       </section>
       <section className="mx-auto max-w-7xl px-6 pb-16">
         <div className="rounded-[2.5rem] bg-[#07142b] p-6 text-white shadow-[0_24px_70px_rgba(7,20,43,0.18)]">
