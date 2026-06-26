@@ -14,6 +14,11 @@ const legalRoutes = [
   "/legal/refund-policy",
 ] as const;
 
+const blogRoutes = [
+  "/blog/zasto-obicna-affiliate-preporuka-nije-dovoljna",
+  "/blog/poziv-za-saradnike-proizvode-i-partnere",
+] as const;
+
 const routesByLocale = {
   sr: [
     "",
@@ -22,6 +27,7 @@ const routesByLocale = {
     "/proizvodi/digitalna-prodaja-lokacije",
     "/usluge/mini-audit",
     "/blog",
+    ...blogRoutes,
     "/newsletter",
     "/knjiga-utisaka",
     "/support",
@@ -36,6 +42,7 @@ const routesByLocale = {
     "/produkte/digitaler-verkauf-von-standorten",
     "/services/mini-audit",
     "/blog",
+    ...blogRoutes,
     "/newsletter",
     "/gaestebuch",
     "/support",
@@ -50,6 +57,7 @@ const routesByLocale = {
     "/products/digital-location-sales",
     "/services/mini-audit",
     "/blog",
+    ...blogRoutes,
     "/newsletter",
     "/guestbook",
     "/support",
@@ -70,6 +78,8 @@ function routePriority(route: string) {
     return 0.95;
   }
 
+  if (route.includes("poziv-za-saradnike-proizvode-i-partnere")) return 0.92;
+
   if (
     route.includes("produkte") ||
     route.includes("products") ||
@@ -80,6 +90,7 @@ function routePriority(route: string) {
     return 0.9;
   }
 
+  if (route.startsWith("/blog/")) return 0.82;
   if (route.startsWith("/legal/")) return 0.65;
 
   return 0.7;
@@ -93,7 +104,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${siteUrl}/${locale}${route}`,
       lastModified: now,
       changeFrequency:
-        route === "" || route === "/blog" || route === "/newsletter" ? "weekly" : "monthly",
+        route === "" || route === "/blog" || route.startsWith("/blog/") || route === "/newsletter" ? "weekly" : "monthly",
       priority: routePriority(route),
     })),
   );
