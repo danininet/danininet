@@ -4,13 +4,13 @@ import { SectionIntro, SiteShell, normalizeLocale, localizedPath } from "@/compo
 
 type Locale = "sr" | "de" | "en";
 
-type ProductCard = {
+type Card = {
   label: string;
   title: string;
   text: string;
   status: string;
   cta: string;
-  href?: string;
+  href: "dpl" | "support" | "newsletter" | "health";
   points: string[];
 };
 
@@ -42,9 +42,12 @@ const copy: Record<Locale, {
   systemTitle: string;
   system: string[];
   includeTitle: string;
-  inventoryTitle: string;
-  inventoryText: string;
-  products: ProductCard[];
+  offerTitle: string;
+  offerText: string;
+  cards: Card[];
+  futureTitle: string;
+  futureText: string;
+  futureCards: Card[];
   methodTitle: string;
   methodSteps: [string, string][];
   disclaimerTitle: string;
@@ -52,139 +55,158 @@ const copy: Record<Locale, {
 }> = {
   sr: {
     eyebrow: "DaniniNet proizvodi",
-    title: "Proizvodi kao DaniniHub OS artifacti, ne katalog bez pravca.",
-    text: "DaniniNet proizvodi nastaju iz metode: problem, ideja, potpitanja, razjašnjenje, agent workflow, artifact i isporuka. Svaki proizvod mora imati jasnu primenu, dokazni sloj, granice i legal/trust napomene.",
+    title: "DPL je glavni proizvod. DPL analiza je posebna usluga. Ostali pravci su odvojeni.",
+    text: "Na ovoj strani ne mešamo proizvode. Kupac DPL paketa dobija PDF vodič i Bonus Pack. DPL analiza ide preko upita. Affiliate i health/water pravci nisu deo DPL paketa.",
     artifactNote: "Radni princip: Pitaj AI — AI pita tebe · artifact pre kampanje · dokaz pre tvrdnje · granica pre CTA-a.",
-    featured: "Aktuelni prodajni artifact",
-    dplTitle: "Digitalna prodaja lokacije",
-    dplText: "DaniniNet komercijalni PDF proizvod nastao iz DaniniHub sistema/metode i digital gateway artifacta. Paket nije samo PDF: DPL uključuje vodič i kompletan Bonus Pack za primenu, proveru, lead tok, delivery i legal/trust granice.",
+    featured: "Aktuelni prodajni proizvod",
+    dplTitle: "Digitalna prodaja lokacije — PDF + Bonus Pack",
+    dplText: "Jedan jasan digitalni proizvod za vlasnike lokacija, agente, male investitore i digitalne kreatore koji žele da običan oglas pretvore u ozbiljniji digitalni prodajni tok. Paket uključuje PDF vodič i Bonus Pack za primenu, proveru, lead tok, delivery i legal/trust granice.",
     dplCta: "Otvori DPL prodajnu stranicu",
     price: "29 € launch · 49 € regular",
-    systemTitle: "Artifact tok",
-    system: ["Problem", "Ideja", "Podpitanja", "Razjašnjenje", "Agent workflow", "Artifact", "Delivery", "Signal"],
+    systemTitle: "DPL tok",
+    system: ["Problem", "Podpitanja", "Gateway", "Brief", "Lead", "Delivery", "Signal"],
     includeTitle: "DPL paket uključuje",
-    inventoryTitle: "Inventar proizvoda i affiliate pravaca",
-    inventoryText: "DaniniNet sada razdvaja glavne proizvode, buduće artifacte i affiliate pravce: DPL kao aktivni proizvod, DaniniLans kao health/water sloj, Hostinger kao approved alat, Amazon kao selektivni kanal i WELLAN/UMH kao review pravac uz stroge granice tvrdnji.",
-    products: [
+    offerTitle: "Šta se zaista nudi",
+    offerText: "Zaključana ponuda ima dva nivoa: digitalni proizvod koji se kupuje odmah i uslugu koja se traži preko upita. Tako kupcu ne obećavamo više nego što stvarno isporučujemo.",
+    cards: [
       {
-        label: "DaniniNet · Glavni digitalni proizvod",
-        title: "Digitalna prodaja lokacije — PDF + Bonus Pack",
-        text: "Glavni proizvod za vlasnike lokacija, agente, male investitore i digitalne kreatore koji žele da običan oglas pretvore u javni gateway i ozbiljniji poslovni tok. Bonus Pack je uključen u paket.",
-        status: "Aktivni prodajni fokus · owned product",
+        label: "Digitalni proizvod · Gumroad",
+        title: "DPL Paket — PDF vodič + Bonus Pack",
+        text: "Kupac dobija edukativni PDF i operativni Bonus Pack. Ovo je glavni komercijalni proizvod DaniniNet-a i ne uključuje individualnu analizu konkretne lokacije.",
+        status: "Aktivni prodajni fokus · 29 € launch",
         cta: "Prodajna stranica",
         href: "dpl",
-        points: ["DaniniHub metoda", "Digital gateway", "Bonus Pack uključen", "Lead i delivery logika"],
+        points: ["PDF + Bonus Pack", "Gumroad isporuka", "AI Dialogue Worksheet", "bez garancije prodaje"],
       },
       {
-        label: "DaniniLans · Health / Water",
-        title: "DaniniLans — voda, hidratacija i zdrav stil života",
-        text: "Budući health/water artifact sloj na daninilans.daninihub.com. Nastaje iz postojećih materijala o vodi, hidrataciji i zdravijim navikama, ali sa jasnim health disclaimerima i DaniniHub metodom.",
+        label: "Usluga · preko upita",
+        title: "DPL analiza potencijala lokacije",
+        text: "Za vlasnike parcela, poslovnih prostora ili zakupnih površina koji žele konkretnu proveru: namena, javni/privatni sloj, rizici, lead logika i sledeći koraci.",
+        status: "Posebna ponuda · nije Gumroad proizvod",
+        cta: "Zatraži DPL analizu",
+        href: "support",
+        points: ["individualni upit", "ručna procena", "bez automatizovanih obećanja", "pisani dogovor pre rada"],
+      },
+    ],
+    futureTitle: "Odvojeni pravci — nisu deo DPL paketa",
+    futureText: "Ovi pravci ostaju u sistemu, ali se ne prikazuju kao sadržaj DPL kupovine. Svaki ima svoj disclaimer, svoju stranicu i svoju kampanju kada bude spreman.",
+    futureCards: [
+      {
+        label: "Health / Water · poseban projekat",
+        title: "DaniniLans — voda i zdrav stil života",
+        text: "Poseban health/water sloj sa jasnim granicama tvrdnji. Nije deo DPL paketa i ne sme se mešati sa prodajom lokacija.",
         status: "Poseban projekat · sledeća faza",
+        cta: "Pogledaj pravac",
+        href: "health",
+        points: ["voda", "zdrav stil života", "health disclaimer", "DACH sadržaj kasnije"],
+      },
+      {
+        label: "Affiliate · posebno označeno",
+        title: "Hostinger, Amazon, WELLAN/UMH i drugi pravci",
+        text: "Affiliate proizvodi idu samo kroz jasno označene preporuke, bez mešanja sa DPL isporukom i bez medicinskih ili finansijskih obećanja.",
+        status: "Inventar · nije deo DPL kupovine",
         cta: "Prati razvoj",
         href: "newsletter",
-        points: ["voda i hidratacija", "water filter preporuke", "health disclaimer", "DACH sadržaj"],
-      },
-      {
-        label: "Approved affiliate · infrastruktura",
-        title: "Hostinger",
-        text: "Preporučeni hosting/domen pravac za blogere, affiliate početnike, landing stranice i male online projekte. Ide kroz transparentan affiliate disclosure i registry kontrolu.",
-        status: "Approved · registry controlled",
-        cta: "Interesuje me setup",
-        href: "newsletter",
-        points: ["hosting", "domeni", "blog setup", "affiliate disclosure"],
-      },
-      {
-        label: "Selective affiliate · DACH",
-        title: "Amazon PartnerNet — kurirane preporuke",
-        text: "Amazon ne ide kao generički katalog. Ide selektivno kroz vodu/filtere, creator setup, ergonomiju i knjige, uz jasne disclaimere i bez medicinskih obećanja.",
-        status: "Approved-selective · bez hype-a",
-        cta: "Prijavi interesovanje",
-        href: "newsletter",
-        points: ["water/filter products", "creator setup", "ergonomija", "knjige"],
-      },
-      {
-        label: "Affiliate / partner product",
-        title: "WELLAN®2000",
-        text: "Partner/affiliate pravac za obradu vode, kamenac, cevi, koroziju i kvalitet vode. Materijal postoji kroz prezentaciju i kontakt distributera.",
-        status: "Review · potrebna pravila tvrdnji",
-        cta: "Prijavi interesovanje",
-        href: "newsletter",
-        points: ["water treatment", "kamenac", "partner kontakt", "bez medicinskih obećanja"],
-      },
-      {
-        label: "Affiliate / research cluster",
-        title: "UMH, Brita, Aarke, Berkey, Santevia, Aqualogis, Maunawai",
-        text: "Grupa proizvoda iz DaniniLans materijala za buduće affiliate kartice, poređenja i članke. Linkovi moraju biti provereni pre javne objave.",
-        status: "Inventarisan pravac · link audit pre objave",
-        cta: "Prijavi interesovanje",
-        href: "newsletter",
-        points: ["affiliate cards", "poređenja", "water filters", "transparent disclosure"],
+        points: ["affiliate disclosure", "link audit pre objave", "bez hype-a", "posebne stranice"],
       },
     ],
     methodTitle: "Kako svaki proizvod mora nastati",
-    methodSteps: [["01", "Problem se imenuje bez hype-a."], ["02", "AI postavlja do tri potpitanja za razjašnjenje."], ["03", "Agent workflow razdvaja činjenice, pretpostavke i rizike."], ["04", "Artifact se isporučuje kao stranica, PDF, email tok ili alat."], ["05", "Legal/trust sloj čuva granice i poverenje."], ["06", "Metrics signal odlučuje GO, dorada ili stop."]],
+    methodSteps: [["01", "Problem se imenuje bez hype-a."], ["02", "AI postavlja potpitanja za razjašnjenje."], ["03", "Agent workflow razdvaja činjenice, pretpostavke i rizike."], ["04", "Artifact se isporučuje kao stranica, PDF, email tok ili alat."], ["05", "Legal/trust sloj čuva granice i poverenje."], ["06", "Metrics signal odlučuje GO, dorada ili stop."]],
     disclaimerTitle: "Granice i poverenje",
-    disclaimerText: "Sadržaj je edukativnog i informativnog karaktera. Affiliate linkovi moraju biti označeni. Health/water sadržaj nije medicinski savet. DPL nije pravni, finansijski, urbanistički, tehnički ili investicioni savet i ne obećava prodaju, profit, investitore ili dozvole. AI može pomoći u strukturi i pitanjima, ali čovek donosi odluku.",
+    disclaimerText: "DPL paket je edukativni digitalni proizvod. DPL analiza je posebna usluga preko upita. DPL nije pravni, finansijski, urbanistički, tehnički ili investicioni savet i ne obećava prodaju, profit, investitore, zakupce ili dozvole. Affiliate i health/water pravci nisu deo DPL paketa osim ako je izričito drugačije navedeno.",
   },
   de: {
     eyebrow: "DaniniNet Produkte",
-    title: "Produkte als DaniniHub OS Artefakte, nicht als richtungsloser Katalog.",
-    text: "DaniniNet Produkte entstehen aus Methode: Problem, Idee, Rückfragen, Klärung, Agent Workflow, Artefakt und Auslieferung.",
+    title: "DPL ist das Hauptprodukt. Die DPL-Analyse ist eine separate Dienstleistung.",
+    text: "Der Käufer des DPL-Pakets erhält PDF-Leitfaden und Bonus Pack. Eine individuelle Standortanalyse wird separat angefragt. Affiliate- und Health/Water-Linien sind nicht Teil des DPL-Pakets.",
     artifactNote: "Arbeitsprinzip: Frag die KI — die KI fragt dich · Artefakt vor Kampagne · Beleg vor Aussage · Grenze vor CTA.",
-    featured: "Aktuelles Verkaufsartefakt",
-    dplTitle: "Digitaler Verkauf von Standorten",
-    dplText: "DaniniNet kommerzielles PDF-Produkt aus DaniniHub Methode und Digital-Gateway Artefakt. Das Paket ist nicht nur ein PDF: DPL enthält den Leitfaden und den Bonus Pack für Anwendung, Prüfung, Lead Flow, Delivery und Legal/Trust Grenzen.",
+    featured: "Aktuelles Verkaufsprodukt",
+    dplTitle: "Digitaler Verkauf von Standorten — PDF + Bonus Pack",
+    dplText: "Ein klares digitales Produkt für Eigentümer, Vermittler, kleine Investoren und digitale Creator, die eine einfache Anzeige in einen seriöseren digitalen Verkaufsfluss übersetzen möchten.",
     dplCta: "DPL Verkaufsseite öffnen",
     price: "29 € Launch · 49 € regulär",
-    systemTitle: "Artefakt-Flow",
-    system: ["Problem", "Idee", "Rückfragen", "Klärung", "Agent Workflow", "Artefakt", "Delivery", "Signal"],
+    systemTitle: "DPL Flow",
+    system: ["Problem", "Rückfragen", "Gateway", "Brief", "Lead", "Delivery", "Signal"],
     includeTitle: "DPL Paket enthält",
-    inventoryTitle: "Produkt- und Affiliate-Inventar",
-    inventoryText: "Gefundene Produktlinien: DPL Paket, DaniniLans Health/Water Layer, Hostinger, Amazon selektiv, Wellan/UMH und Health/Water Affiliate-Linie.",
-    products: [],
+    offerTitle: "Was wirklich angeboten wird",
+    offerText: "Das Angebot ist sauber getrennt: digitales Produkt zum Sofortkauf und individuelle Analyse über Anfrage.",
+    cards: [
+      { label: "Digitalprodukt · Gumroad", title: "DPL Paket — PDF-Leitfaden + Bonus Pack", text: "Der Käufer erhält PDF und Bonus Pack. Keine individuelle Analyse eines konkreten Standorts.", status: "Aktiver Verkaufsfokus · 29 € Launch", cta: "Verkaufsseite", href: "dpl", points: ["PDF + Bonus Pack", "Gumroad Lieferung", "AI Dialogue Worksheet", "keine Ergebnisgarantie"] },
+      { label: "Dienstleistung · Anfrage", title: "DPL Standortpotenzial-Analyse", text: "Für Eigentümer, die eine konkrete Prüfung von Nutzung, Risiken, öffentlicher/privater Ebene, Lead-Logik und nächsten Schritten benötigen.", status: "Separate Anfrage · kein Gumroad Produkt", cta: "DPL Analyse anfragen", href: "support", points: ["individuelle Anfrage", "manuelle Prüfung", "keine automatischen Versprechen", "schriftlicher Rahmen"] },
+    ],
+    futureTitle: "Separate Linien — nicht Teil des DPL-Pakets",
+    futureText: "Diese Richtungen bleiben im System, werden aber nicht als Teil des DPL-Kaufs dargestellt.",
+    futureCards: [
+      { label: "Health / Water · separates Projekt", title: "DaniniLans — Wasser und gesunder Lebensstil", text: "Eigene Health/Water-Ebene mit klaren Grenzen. Nicht Teil des DPL-Pakets.", status: "Separates Projekt · nächste Phase", cta: "Bereich ansehen", href: "health", points: ["Wasser", "gesunder Lebensstil", "Health Disclaimer", "DACH Content später"] },
+      { label: "Affiliate · klar markiert", title: "Hostinger, Amazon, WELLAN/UMH und weitere Linien", text: "Affiliate-Empfehlungen nur mit klarer Kennzeichnung und ohne Vermischung mit DPL-Lieferung.", status: "Inventar · nicht Teil des DPL-Kaufs", cta: "Entwicklung verfolgen", href: "newsletter", points: ["Affiliate Disclosure", "Link-Audit vor Veröffentlichung", "ohne Hype", "separate Seiten"] },
+    ],
     methodTitle: "Wie jedes Produkt entstehen muss",
-    methodSteps: [["01", "Problem ohne Hype benennen."], ["02", "KI stellt bis zu drei Rückfragen."], ["03", "Workflow trennt Fakten, Annahmen und Risiken."], ["04", "Artefakt wird als Seite, PDF, E-Mail-Fluss oder Tool geliefert."], ["05", "Legal/Trust setzt Grenzen."], ["06", "Metriken entscheiden GO, Überarbeitung oder Stop."]],
+    methodSteps: [["01", "Problem ohne Hype benennen."], ["02", "KI stellt Rückfragen."], ["03", "Workflow trennt Fakten, Annahmen und Risiken."], ["04", "Artefakt wird als Seite, PDF, E-Mail-Fluss oder Tool geliefert."], ["05", "Legal/Trust setzt Grenzen."], ["06", "Metriken entscheiden GO, Überarbeitung oder Stop."]],
     disclaimerTitle: "Grenzen und Vertrauen",
-    disclaimerText: "Inhalte sind informativ und edukativ. Affiliate Links müssen markiert werden. Health/Water Inhalte sind kein medizinischer Rat. DPL ist kein rechtlicher, finanzieller, technischer oder Investment-Rat.",
+    disclaimerText: "Das DPL Paket ist ein informatives digitales Produkt. Die DPL Analyse ist eine separate Dienstleistung. DPL ist keine Rechts-, Finanz-, Planungs-, Technik- oder Investmentberatung und garantiert keinen Verkauf, Profit, Investor, Mieter oder Genehmigungen.",
   },
   en: {
     eyebrow: "DaniniNet products",
-    title: "Products as DaniniHub OS artifacts, not a directionless catalog.",
-    text: "DaniniNet products are created through method: problem, idea, clarifying questions, agent workflow, artifact and delivery.",
+    title: "DPL is the main product. DPL analysis is a separate service.",
+    text: "The DPL buyer receives the PDF guide and Bonus Pack. Individual location analysis is requested separately. Affiliate and health/water lines are not part of the DPL package.",
     artifactNote: "Working principle: Ask AI — AI asks you · artifact before campaign · proof before claim · boundary before CTA.",
-    featured: "Current sales artifact",
-    dplTitle: "Digital Location Sales",
-    dplText: "DaniniNet commercial PDF product created from the DaniniHub method and digital gateway artifact. The package is not just a PDF: DPL includes the guide and the Bonus Pack for application, checks, lead flow, delivery and legal/trust boundaries.",
+    featured: "Current sales product",
+    dplTitle: "Digital Location Sales — PDF + Bonus Pack",
+    dplText: "One clear digital product for owners, agents, small investors and digital creators who want to turn a basic listing into a more serious digital sales flow.",
     dplCta: "Open DPL sales page",
     price: "29 € launch · 49 € regular",
-    systemTitle: "Artifact flow",
-    system: ["Problem", "Idea", "Questions", "Clarification", "Agent workflow", "Artifact", "Delivery", "Signal"],
+    systemTitle: "DPL flow",
+    system: ["Problem", "Questions", "Gateway", "Brief", "Lead", "Delivery", "Signal"],
     includeTitle: "DPL package includes",
-    inventoryTitle: "Product and affiliate inventory",
-    inventoryText: "Confirmed lines: DPL package, DaniniLans health/water layer, Hostinger, selective Amazon, Wellan/UMH and Health/Water affiliate line.",
-    products: [],
+    offerTitle: "What is actually offered",
+    offerText: "The offer is separated: a digital product for instant purchase and an individual analysis service via inquiry.",
+    cards: [
+      { label: "Digital product · Gumroad", title: "DPL Package — PDF guide + Bonus Pack", text: "The buyer receives the PDF and Bonus Pack. This does not include an individual analysis of a specific location.", status: "Active sales focus · 29 € launch", cta: "Sales page", href: "dpl", points: ["PDF + Bonus Pack", "Gumroad delivery", "AI Dialogue Worksheet", "no result guarantee"] },
+      { label: "Service · inquiry", title: "DPL location potential analysis", text: "For owners who need a specific review of use, risks, public/private layer, lead logic and next steps.", status: "Separate inquiry · not a Gumroad product", cta: "Request DPL analysis", href: "support", points: ["individual inquiry", "manual review", "no automated promises", "written agreement"] },
+    ],
+    futureTitle: "Separate directions — not part of the DPL package",
+    futureText: "These directions remain in the system, but are not shown as part of the DPL purchase.",
+    futureCards: [
+      { label: "Health / Water · separate project", title: "DaniniLans — water and healthy lifestyle", text: "A separate health/water layer with clear claim boundaries. Not part of the DPL package.", status: "Separate project · next phase", cta: "View direction", href: "health", points: ["water", "healthy lifestyle", "health disclaimer", "DACH content later"] },
+      { label: "Affiliate · clearly disclosed", title: "Hostinger, Amazon, WELLAN/UMH and other lines", text: "Affiliate recommendations only with clear disclosure and without mixing them into DPL delivery.", status: "Inventory · not part of DPL purchase", cta: "Follow development", href: "newsletter", points: ["affiliate disclosure", "link audit before publishing", "no hype", "separate pages"] },
+    ],
     methodTitle: "How every product must be created",
-    methodSteps: [["01", "Name the problem without hype."], ["02", "AI asks up to three clarifying questions."], ["03", "Workflow separates facts, assumptions and risks."], ["04", "Artifact is delivered as page, PDF, email flow or tool."], ["05", "Legal/trust keeps boundaries."], ["06", "Metrics signal decides GO, improve or stop."]],
+    methodSteps: [["01", "Name the problem without hype."], ["02", "AI asks clarifying questions."], ["03", "Workflow separates facts, assumptions and risks."], ["04", "Artifact is delivered as page, PDF, email flow or tool."], ["05", "Legal/trust keeps boundaries."], ["06", "Metrics signal decides GO, improve or stop."]],
     disclaimerTitle: "Boundaries and trust",
-    disclaimerText: "Content is educational and informational. Affiliate links must be disclosed. Health/water content is not medical advice. DPL is not legal, financial, technical or investment advice.",
+    disclaimerText: "The DPL package is an educational digital product. DPL analysis is a separate inquiry-based service. DPL is not legal, financial, planning, technical or investment advice and does not guarantee a sale, profit, investor, tenant or permits.",
   },
 };
 
-function getProducts(lang: Locale) {
-  return copy[lang].products.length ? copy[lang].products : copy.sr.products;
+function pathFor(lang: Locale, href: Card["href"]) {
+  if (href === "dpl") return localizedPath(lang, "dpl");
+  if (href === "support") return localizedPath(lang, "support");
+  if (href === "health") return localizedPath(lang, "health");
+  return localizedPath(lang, "newsletter");
 }
 
-function productHref(lang: Locale, href?: string) {
-  if (href === "dpl") return localizedPath(lang, "dpl");
-  if (href === "newsletter") return `/${lang}/newsletter`;
-  return localizedPath(lang, "products");
+function CardGrid({ lang, cards }: { lang: Locale; cards: Card[] }) {
+  return (
+    <div className="mt-8 grid gap-6 md:grid-cols-2">
+      {cards.map((card) => (
+        <article key={card.title} className="rounded-[2rem] border border-black/10 bg-white p-7 shadow-sm">
+          <p className="text-xs uppercase tracking-[0.2em] text-[#226bbf]">{card.label}</p>
+          <h3 className="mt-3 text-2xl font-semibold leading-tight">{card.title}</h3>
+          <p className="mt-4 leading-8 text-[#706a5d]">{card.text}</p>
+          <p className="mt-5 rounded-2xl bg-[#fff7e8] px-4 py-3 text-sm font-semibold text-[#795d1e]">{card.status}</p>
+          <ul className="mt-5 grid gap-2 text-sm text-[#706a5d]">
+            {card.points.map((point) => <li key={point}>• {point}</li>)}
+          </ul>
+          <Link href={pathFor(lang, card.href)} className="mt-6 inline-flex rounded-full bg-[#07142b] px-5 py-3 text-sm font-semibold text-white">{card.cta}</Link>
+        </article>
+      ))}
+    </div>
+  );
 }
 
 export default async function ProductsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const lang: Locale = normalizeLocale(locale);
   const t = copy[lang];
-  const products = getProducts(lang);
 
   return (
     <SiteShell locale={lang} currentPath={localizedPath(lang, "products")}>
@@ -198,7 +220,7 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
       </section>
 
       <section className="mx-auto max-w-7xl px-6 pb-16">
-        <article className="grid gap-8 rounded-[2.5rem] bg-[#07142b] p-8 text-white lg:grid-cols-[0.78fr_1.22fr] lg:p-10 lg:items-center">
+        <article className="grid gap-8 rounded-[2.5rem] bg-[#07142b] p-8 text-white lg:grid-cols-[0.78fr_1.22fr] lg:items-center lg:p-10">
           <div className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-4">
             <Image src="/images/products/digitalna-prodaja-lokacije-cover.svg" alt="Digitalna prodaja lokacije cover" width={900} height={1272} className="mx-auto h-auto w-full max-w-[330px] rounded-[1.4rem]" />
           </div>
@@ -207,7 +229,8 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
             <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{t.dplTitle}</h2>
             <p className="mt-5 max-w-3xl leading-8 text-slate-300">{t.dplText}</p>
             <p className="mt-5 text-lg font-semibold text-[#d7b46a]">{t.price}</p>
-            <div className="mt-7 grid gap-3 sm:grid-cols-4 lg:grid-cols-8">
+            <p className="mt-3 text-sm uppercase tracking-[0.2em] text-slate-400">{t.systemTitle}</p>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-7">
               {t.system.map((item, index) => (
                 <span key={item} className="rounded-2xl border border-white/10 bg-white/[0.05] px-3 py-3 text-center text-xs text-slate-300">
                   <strong className="block text-[#d7b46a]">0{index + 1}</strong>{item}
@@ -230,25 +253,23 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
       <section className="mx-auto max-w-7xl px-6 pb-16">
         <div className="grid gap-7 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <p className="text-sm uppercase tracking-[0.22em] text-[#226bbf]">{t.inventoryTitle}</p>
-            <h2 className="mt-4 text-4xl font-semibold leading-tight">DPL · DaniniLans · Hostinger · Amazon · WELLAN/UMH</h2>
+            <p className="text-sm uppercase tracking-[0.22em] text-[#226bbf]">{t.offerTitle}</p>
+            <h2 className="mt-4 text-4xl font-semibold leading-tight">DPL paket + DPL analiza</h2>
           </div>
-          <p className="text-lg leading-9 text-[#706a5d]">{t.inventoryText}</p>
+          <p className="text-lg leading-9 text-[#706a5d]">{t.offerText}</p>
         </div>
-        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {products.map((product) => (
-            <article key={product.title} className="rounded-[2rem] border border-black/10 bg-white p-7 shadow-sm">
-              <p className="text-xs uppercase tracking-[0.2em] text-[#226bbf]">{product.label}</p>
-              <h3 className="mt-3 text-2xl font-semibold leading-tight">{product.title}</h3>
-              <p className="mt-4 leading-8 text-[#706a5d]">{product.text}</p>
-              <p className="mt-5 rounded-2xl bg-[#fff7e8] px-4 py-3 text-sm font-semibold text-[#795d1e]">{product.status}</p>
-              <ul className="mt-5 grid gap-2 text-sm text-[#706a5d]">
-                {product.points.map((point) => <li key={point}>• {point}</li>)}
-              </ul>
-              <Link href={productHref(lang, product.href)} className="mt-6 inline-flex rounded-full bg-[#07142b] px-5 py-3 text-sm font-semibold text-white">{product.cta}</Link>
-            </article>
-          ))}
+        <CardGrid lang={lang} cards={t.cards} />
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-16">
+        <div className="grid gap-7 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p className="text-sm uppercase tracking-[0.22em] text-[#226bbf]">{t.futureTitle}</p>
+            <h2 className="mt-4 text-4xl font-semibold leading-tight">DaniniLans · Affiliate · Health / Water</h2>
+          </div>
+          <p className="text-lg leading-9 text-[#706a5d]">{t.futureText}</p>
         </div>
+        <CardGrid lang={lang} cards={t.futureCards} />
       </section>
 
       <section className="mx-auto max-w-7xl px-6 pb-16">
