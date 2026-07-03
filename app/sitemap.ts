@@ -10,8 +10,10 @@ const legalRoutes = [
   "/legal/disclaimer",
   "/legal/affiliate-disclosure",
   "/legal/ai-transparentnost",
+  "/legal/daninihub-os",
+  "/legal/product-transparency",
+  "/legal/refund",
   "/legal/health-disclaimer",
-  "/legal/refund-policy",
 ] as const;
 
 const blogRoutes = [
