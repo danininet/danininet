@@ -1,81 +1,107 @@
 # DaniniNet YouTube — Video 01 Production Pack
 
+## Core story
+The small Čalije lot is the pilot. The first video documents the full decision process before major spending: clear the overgrowth and walnut trees, request the official location information / administrative guidance, obtain real contractor quotes, test demand, and only then decide on tampon/gravel, advertising panels, parking signage and solar video surveillance.
+
+This is not a finished-parking reveal. It is a real project starting from zero.
+
 ## Working title
-**Imam plac koji mi trenutno ne donosi ništa. Može li AI da pronađe realan način da ga monetizujem?**
+**Ovaj plac zarađuje 0 €. Evo kako ga od nule pretvaramo u tržišni test uz AI**
 
-Alternative for A/B testing:
-1. **Ovaj plac zarađuje 0 €. Testiram da li AI može da promeni to**
-2. **Ne ulažem prvo. Testiram potražnju za ovim placem**
-3. **Može li neiskorišćen plac da postane biznis bez velike investicije?**
+Alternative A/B titles:
+1. **Prvo čistimo plac, pa tek onda ulažemo: stvarni AI eksperiment u Nišu**
+2. **Može li zapušten plac da postane parking bez velike početne greške?**
+3. **AI + stvarni plac: od šiblja do prvog tržišnog testa**
 
-## Thumbnail direction
-Use a real photo of the Čalije lot as the dominant visual once available. Do not use a generic luxury parking image.
+## Thumbnail
+Dominant visual: real photo of the small lot in its current condition. No fake finished parking.
 
-Primary thumbnail copy: **0 € → ?**
-Secondary options: **PLAC BEZ PRIHODA** / **NE ULAŽEM PRVO**
-
-Composition:
-- left 65%: real lot, slightly darker foreground so text is readable
-- right/top: large `0 € → ?`
-- small DaniniNet mark only, no long branding
-- no face required
-- no fake cars, fake construction or exaggerated money graphics
+Primary copy: **0 € → PRVI TEST**
+Secondary: **OD ŠIBLJA DO POSLA?** / **PRVO PROVERA. ONDA ULAGANJE.**
 
 ## Target length
-6:30–8:00 minutes.
+7:30–9:00 min.
 
-## Voice-over script
+## Voice-over / edit script
 
-### 00:00–00:20 — Cold open
-Ovaj plac u Nišu trenutno mi ne donosi ni jedan euro mesečno. Mogao bih da čekam investitora, napravim skup plan ili odmah uložim u uređenje. Ali ovaj put radim obrnuto. Prvo ću uz pomoć AI-ja i interneta pokušati da proverim da li tržište uopšte želi ono što bismo ovde mogli da ponudimo.
+### 00:00–00:25 — Cold open
+Ovo je naš mali plac u Nišu. Trenutno je zarastao, na njemu su šiblje i četiri oraha, i ne donosi ni jedan euro tekućeg prihoda. Umesto da prvo naspemo rizlu, postavimo panele i proglasimo ga parkingom, krećemo od nule: prvo teren, dokumentacija, ponude izvođača i provera tržišta.
 
-On-screen: `STVARNA PARCELA · NIŠ` / `TEKUĆI PRIHOD: 0 €`
+On-screen: `MALI PLAC · PILOT PROJEKAT` / `TEKUĆI PRIHOD: 0 €`
 
-### 00:20–00:55 — The rule
-Glavno pravilo eksperimenta je jednostavno: ne ulažemo prvo veliki novac. Prvo tražimo problem koji postoji, pravimo najmanji mogući test i merimo da li ljudi ostavljaju ozbiljne upite. Ako nema signala, ne pravimo sebi skuplji problem.
+### 00:25–01:05 — Šta zapravo testiramo
+Ovo nije video o tome kako AI preko noći pravi novac. AI koristimo kao alat da paralelno rešavamo četiri realna problema: ko može da očisti teren, šta administrativno moramo da proverimo pre uređenja, koliko minimalno košta funkcionalan parking i postoji li neko ko bi ga zaista koristio.
 
-On-screen graphic: `PROBLEM → TEST → UPIT → ODLUKA`
+Graphic: `TEREN + DOKUMENTACIJA + TROŠAK + POTRAŽNJA`
 
-### 00:55–01:40 — What we actually have
-Ovo nije teorijski primer. Parcela postoji. Postoje pristupi, okruženje, automobili i lokalna potreba koju pokušavamo da proverimo. Ali činjenica da mi mislimo da je parking dobra ideja ne znači da će ga tržište platiti. Zato parking tretiramo kao hipotezu, ne kao gotov biznis.
+### 01:05–02:10 — Prvi fizički posao: raščišćavanje
+Prvi posao je najobičniji i potpuno fizički: uklanjanje šiblja, rešavanje četiri oraha i panjeva, utovar i odvoz, pa grubo ravnanje. Ne želimo da platimo teren dva puta, zato od izvođača odmah tražimo i odvojenu cenu za sledeću fazu — tampon i pripremu podloge.
 
-B-roll: ulaz, obod parcele, okolne ulice, parkirana vozila, nekoliko širokih kadrova.
+B-roll now: Drive photos, archive images and map context.
+B-roll later: machines entering, cutting/clearing, loading, stump removal, grading.
 
-### 01:40–02:35 — Options considered
-Razmatrali smo više načina korišćenja: mesečni parking za privatne korisnike, više mesta za firme i službena vozila, reklamne panele na lokaciji i kasniji razvoj parcele. Za prvi test biramo parking jer može da se proveri sa relativno malim i reverzibilnim ulaganjem.
+On-screen checklist:
+- `ŠIBLJE`
+- `4 ORAHA / PANJEVI`
+- `UTOVAR + ODVOZ`
+- `GRUBO RAVNANJE`
+- `POSEBNO: TAMPON`
 
-On-screen cards: `PRIVATNI KORISNICI` / `FIRME I FLOTE` / `OGLAŠAVANJE`
+### 02:10–03:20 — AI traži realne izvođače
+Umesto nasumičnih poziva, pravimo isti zahtev i šaljemo ga na najmanje tri firme. Pored cene tražimo: koju mašinu bi koristili, koliko dana rada očekuju, šta je uključeno u odvoz i da li mogu kasnije da pripreme podlogu za parking. Tako dobijamo uporedive ponude, a ne tri potpuno različita odgovora.
 
-### 02:35–03:25 — MVP, not paradise
-Prva faza nije asfalt, automatizovana rampa i skupa infrastruktura. Radni model je mnogo jednostavniji: ravnanje, tampon i rizla, obeležavanje mesta, reklamni paneli koji mogu da formiraju obod, tabla i solarni video-nadzor. Ideja je da prvo napravimo funkcionalan test, a ne da glumimo završen parking pre nego što postoji potražnja.
+Screen capture: contractor comparison and inquiry template.
 
-On-screen: `MVP ≠ LUKSUZ`
+### 03:20–04:40 — Paralelno ide administracija
+Dok čekamo ponude, ne čekamo skrštenih ruku. Za mali plac tražimo Informaciju o lokaciji i jasno postavljamo pitanje nadležnom organu: pod kojim uslovima privatna parcela može privremeno da se koristi za privatni parking i šta je potrebno pre tamponiranja, postavljanja table, eventualnih reklamnih panoa i solarne kamere. Nećemo pretpostaviti da je nešto dozvoljeno samo zato što je jeftino ili privremeno.
 
-### 03:25–04:20 — Website before construction
-Zato smo napravili i javnu stranicu pre fizičkog uređenja. Na njoj se mogu javiti privatni korisnici, firme i potencijalni oglašivači. Cenu za sada ne guramo javno kao fiksnu istinu, jer prvo želimo da vidimo ko pita, za koliko mesta i pod kojim uslovima.
+On-screen: `NE GRADIMO NAPAMET`
 
-Screen recording: calije.daninihub.com, contact form, locations, business/partners entries.
+### 04:40–05:35 — Zašto ne radimo sve odmah
+Radni MVP je jednostavan: tampon + rizla, obeležavanje, tabla za privatni parking, solarni video-nadzor i eventualni reklamni paneli koji mogu vizuelno da formiraju obod. Nema rampe u prvoj fazi. Ali redosled je važan: ništa od toga ne kupujemo pre nego što znamo šta je administrativno prihvatljivo i koliki nam je realan trošak terena.
 
-### 04:20–05:15 — What AI actually does
-AI ovde nije biznis model i ne stvara kupca. Pomaže u analizi opcija, istraživanju tržišta, matematici, strukturiranju ponude, pisanju sajta, pripremi outreach-a i kasnijoj analizi rezultata. Odluke, vlasništvo, ulaganje i odgovornost ostaju kod čoveka.
+Graphic: `RAŠČISTI → PROVERI → IZMERI → TEK ONDA ULOŽI`
 
-On-screen: `AI = UBRZANJE` / `ČOVEK = ODLUKA`
+### 05:35–06:30 — Tržišni test već može da počne
+Dok teren još nije gotov, možemo da proveravamo interesovanje. Sajt postoji. Privatni korisnici, firme i potencijalni oglašivači mogu da ostave upit. Ne objavljujemo izmišljenu popunjenost niti garantujemo datum otvaranja. Merimo ko pita, koliko mesta traži i pod kojim uslovima.
 
-### 05:15–06:15 — What we measure
-Najvažnije: nećemo meriti uspeh brojem lajkova. Merimo koliko ljudi klikne sa videa, koliko njih pogleda Case 01, koliko ode na parking ponudu, koliko ostavi upit, da li je privatni ili poslovni korisnik i koliko mesta stvarno traži. Tek tada možemo da računamo šta ima smisla ulagati.
+Screen recording: Čalije Parking + Case 01.
 
-On-screen: `PREGLEDI ≠ POSAO` / `UPITI → POTRAŽNJA → ODLUKA`
+### 06:30–07:30 — Šta AI radi, a šta ne
+AI nam pomaže da pronađemo izvođače, uporedimo ponude, pripremimo pitanja za upravu, vodimo matematiku troškova, napravimo sajt i merimo interesovanje. Ali mašinu mora da doveze stvarna firma. Dokument mora da izda stvarni organ. Korisnik mora stvarno da želi parking. AI ubrzava proces; ne može da izmisli realnost.
 
-### 06:15–07:00 — Open ending
-Ne znam još da li će ovaj parking postati dobar posao. I to je poenta serije. Ako tržište kaže ne, želim da to saznam sa malim troškom. Ako kaže da, onda imamo podatak na osnovu kog možemo da napravimo sledeći korak.
+On-screen: `AI = UBRZANJE` / `REALNOST = DOKAZ`
 
-### 07:00–07:25 — CTA
-Na DaniniNetu postoji Case 01 stranica gde ćemo objavljivati šta testiramo i šta se stvarno dešava. Ako i vi imate plac, iskustvo, veštinu ili drugi resurs, ali ne znate kako da ga pretvorite u realnu ponudu, tamo možete krenuti kroz besplatnu Opportunity Map. Link je u opisu.
+### 07:30–08:20 — Sledeći video je fizički dokaz
+Kada krene raščišćavanje, snimamo sve: stanje pre, dolazak mašina, način rada, odvoz i stanje posle. Ako izvođač želi, pitaćemo ga pred kamerom kako procenjuje ovakav teren, koju mehanizaciju koristi i šta je potrebno da bi podloga kasnije mogla da nosi vozila. To je istovremeno korisna informacija za publiku i korektna promocija firme koja stvarno radi posao.
+
+### 08:20–08:45 — CTA
+Na DaniniNet Case 01 stranici objavljivaćemo stvarne ponude, odluke i rezultate testa. U sledećoj epizodi nećemo pokazivati render — pokazaćemo mašine i stvarni teren, ako radovi krenu.
+
+## Google Maps / Earth use
+Use map imagery only as geographic context and retain required Google attribution. Do not crop out or cover attribution. Clearly distinguish archive/street/map imagery from current on-site footage.
+
+Suggested sequence:
+1. city-level Niš orientation
+2. neighborhood approach
+3. small-lot pilot marker
+4. brief zoom-out showing that the larger block is a later phase, not part of the first physical test
+
+## Contractor interview — Video 02/03
+Keep interview practical, 45–90 seconds total. Suggested questions:
+1. Šta prvo gledate kada dođete na ovakav zarastao plac?
+2. Koja mehanizacija je najpraktičnija za šiblje, panjeve i ravnanje?
+3. Šta može da se proceni sa fotografija, a šta tek na terenu?
+4. Šta mora da se uradi da teren kasnije bude spreman za tampon i vozila?
+5. Koliko vremena ovakav posao realno može da traje?
+6. Šta najčešće vlasnici pogrešno urade pre nego što pozovu izvođača?
+
+If contractor receives any consideration for appearing, disclose it. Never script a fake recommendation.
 
 ## Description — Serbian
-**Može li neiskorišćena parcela da počne da donosi prihod bez velikog početnog ulaganja?**
+**Mali plac u Nišu je naš prvi DaniniNet pilot. Trenutno je zarastao i ne donosi prihod.**
 
-U ovoj seriji javno testiramo stvarni slučaj: Čalije Parking u Nišu. Ne obećavamo rezultat unapred. Prvo proveravamo potražnju, pa tek onda odlučujemo da li i koliko treba ulagati.
+U prvoj epizodi ne pravimo gotov parking. Paralelno radimo četiri stvari: tražimo izvođače za raščišćavanje, proveravamo administrativne uslove, računamo minimalni MVP i testiramo stvarno interesovanje.
 
 ▶ Case 01 — Čalije:
 https://danininet.com/sr/case-studies/calije?utm_source=youtube&utm_medium=video&utm_campaign=case01_calije&utm_content=video01
@@ -86,71 +112,52 @@ https://danininet.com/sr/pocni?utm_source=youtube&utm_medium=video&utm_campaign=
 ▶ Čalije Parking:
 https://calije.daninihub.com/sr?utm_source=youtube&utm_medium=video&utm_campaign=case01_calije&utm_content=video01
 
-U sledećoj epizodi: minimalni trošak uređenja, prag isplativosti i šta namerno NE kupujemo pre nego što postoji potražnja.
+Sledeće: mašine, raščišćavanje, stvarni trošak i stanje pre/posle.
 
-#DaniniNet #AI #Biznis #Parking #Nis #Preduzetnistvo
+#DaniniNet #AI #Nis #Parking #MaliBiznis #Preduzetnistvo
 
 ## Chapters
-00:00 Plac koji trenutno zarađuje 0 €
-00:20 Pravilo eksperimenta
-00:55 Šta stvarno imamo
-01:40 Koje opcije testiramo
-02:35 Minimalni parking MVP
-03:25 Sajt pre ulaganja
-04:20 Šta AI radi, a šta ne
-05:15 Šta merimo
-06:15 Šta ako test ne uspe
-07:00 Case 01 i Opportunity Map
+00:00 Mali plac: pilot počinje od nule
+00:25 Četiri problema koja rešavamo paralelno
+01:05 Raščišćavanje šiblja i oraha
+02:10 Kako tražimo i poredimo izvođače
+03:20 Informacija o lokaciji i administrativna provera
+04:40 Zašto još ne nasipamo rizlu
+05:35 Tržišni test pre završetka radova
+06:30 Šta AI stvarno radi
+07:30 Sledeće: mašine i intervju izvođača
+08:20 Case 01
 
-## Pinned comment
-Ovo je stvarni eksperiment, ne obećanje zarade. Šta biste vi prvo testirali na ovakvoj lokaciji: mesečni parking, firme/flote, reklame ili nešto četvrto? Case 01 i svi linkovi su u opisu.
+## Shorts from Video 01
+### Short 01 — `Plac prvo mora da se očisti`
+"Pre nego što pričamo o parkingu i zaradi, ovaj plac ima mnogo običniji problem: šiblje, četiri oraha i teren koji prvo mora da se dovede u red. AI ne može da vozi bager — ali može da nam pomogne da pronađemo firmu, uporedimo ponude i ne platimo isti teren dva puta."
 
-## Shorts pack
+### Short 02 — `Četiri stvari odjednom`
+"Dok tražimo firmu za raščišćavanje, paralelno proveravamo dokumentaciju, računamo najjeftiniji parking MVP i merimo da li iko stvarno traži parking. Ideja je jednostavna: ne čekaj da jedna faza završi ako druge možeš da proveravaš odmah."
 
-### Short 01 — `Plac koji zarađuje 0 €`
-Duration: 25–35 s.
-
-VO:
-"Ovaj plac u Nišu trenutno zarađuje 0 € mesečno. Umesto da prvo uložim veliki novac, radim obrnuto: pravim najmanji mogući parking test, postavljam ponudu online i merim da li ljudi stvarno pitaju za mesta. AI mi pomaže da ubrzam analizu i ponudu — ali kupca i odluku ne može da izmisli."
-
-End card: `CASE 01 · DANININET.COM`
-
-### Short 02 — `Ne ulaži prvo`
-Duration: 20–30 s.
-
-VO:
-"Najskuplja greška kod male biznis ideje može da bude da je prvo izgradiš. Na ovom placu prvo testiramo potražnju: sajt, upit, broj mesta, firme i privatni korisnici. Ako nema ozbiljnih upita, upravo smo uštedeli mnogo veći trošak."
-
-End card: `PRVO POTRAŽNJA. ONDA ULAGANJE.`
-
-### Short 03 — `AI nije biznis model`
-Duration: 25–40 s.
-
-VO:
-"AI nije biznis model. Ne može da napravi kupca tamo gde problem ne postoji. Ali može mnogo brže da istraži opcije, izračuna scenarije, napravi ponudu, sajt i sistem za merenje. Čovek i dalje odlučuje šta vredi pokušati i koliko novca sme da rizikuje."
-
-End card: `AI = UBRZANJE · ČOVEK = ODLUKA`
+### Short 03 — `AI ne rešava plac`
+"AI ne može da poseče šiblje, izvadi panj niti izda dozvolu. Ali može da skrati put do ljudi, informacija i odluke. Na ovom projektu ćemo meriti koliko nam je to stvarno uštedelo vremena i novca."
 
 ## Editing rules
+- current lot first; future concept later
+- never present archive images as current
+- Google Maps/Earth attribution must remain visible
 - first visible change within 1.5–2 seconds
 - no intro animation before hook
-- average visual change every 3–6 seconds in the first minute
-- subtitles burned in for key phrases, not every word if the frame becomes crowded
-- real footage before stock imagery
-- maps/screenshots only where they clarify the story
-- no copyrighted music unless licensed; voice must remain dominant
-- do not fabricate demand, user testimonials, occupancy or revenue
+- average visual change every 3–6 seconds during first minute
+- real project evidence before generic stock
+- no fake demand, occupancy, testimonials or revenue
+- no fabricated permit status
 
-## Success metrics for Video 01
-Primary: qualified visits and enquiries, not ad revenue.
+## Success metrics
+Primary: progress from attention to verified action.
 Track:
-- CTR thumbnail/title
+- title/thumbnail CTR
 - first 30-second retention
-- average view duration
+- contractor replies / comparable quotes
+- administrative submission and response dates
 - Case 01 clicks
-- Opportunity Map clicks
-- Parking clicks
+- Parking and Opportunity Map clicks
 - qualified enquiries
+- physical project milestones
 - first attributed revenue
-
-Initial learning thresholds are not promises; use them only as diagnostic triggers. If first-30-second retention is weak, rewrite the hook before producing more episodes. If clicks occur but enquiries do not, inspect the landing offer before blaming YouTube traffic.
