@@ -1,1 +1,1 @@
-export { default } from "../../pocni/page";
+export { default } from "../pocni/page";
