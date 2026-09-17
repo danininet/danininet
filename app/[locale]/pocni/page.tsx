@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SiteShell } from "@/components/layout/SiteShell";
+import { ZeroToOneIntake } from "@/components/leads/ZeroToOneIntake";
 
 type Locale = "sr" | "de" | "en";
 
@@ -78,6 +79,7 @@ export default async function StartPage({ params }: { params: Promise<{ locale: 
 
   return <SiteShell locale={lang} currentPath={`/${lang}/${lang === "sr" ? "pocni" : "start"}`}>
     <section className="bg-[#07142b] text-white"><div className="mx-auto max-w-5xl px-6 py-20"><p className="text-sm uppercase tracking-[0.24em] text-[#c9a85f]">{t.eyebrow}</p><h1 className="mt-6 text-5xl font-semibold leading-tight md:text-6xl">{t.title}</h1><p className="mt-7 max-w-4xl text-lg leading-9 text-slate-300">{t.intro}</p></div></section>
+    <ZeroToOneIntake locale={lang} />
     <section className="mx-auto max-w-5xl px-6 py-16"><div className="grid gap-6">{t.sections.map(([title,questions]) => <article key={title as string} className="rounded-3xl border border-black/10 bg-[#fffaf0] p-7"><h2 className="text-2xl font-semibold">{title}</h2><ul className="mt-5 grid gap-3 text-[#706a5d]">{(questions as readonly string[]).map(q => <li key={q} className="rounded-2xl bg-white p-4 leading-7">{q}</li>)}</ul></article>)}</div>
       <div className="mt-12 rounded-3xl bg-[#efe6d6] p-8"><h2 className="text-3xl font-semibold">{t.outputTitle}</h2><ul className="mt-6 grid gap-3">{t.output.map(item => <li key={item} className="rounded-2xl bg-white/70 p-4 leading-7">{item}</li>)}</ul></div>
       <div className="mt-12 rounded-3xl bg-[#07142b] p-8 text-white"><h2 className="text-3xl font-semibold">{t.promptTitle}</h2><p className="mt-6 rounded-2xl border border-white/10 bg-white/[0.05] p-6 leading-8 text-slate-200">{t.prompt}</p><Link href={method} className="mt-7 inline-flex rounded-full bg-[#f4efe5] px-6 py-3 font-semibold text-[#07142b]">{t.method}</Link></div>
