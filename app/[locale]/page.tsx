@@ -1,274 +1,80 @@
 import Link from "next/link";
-import { SiteShell } from "@/components/layout/SiteShell";
+import { SiteShell, normalizeLocale } from "@/components/layout/SiteShell";
 
-type Locale = "sr" | "de" | "en";
+type Locale="sr"|"de"|"en";
 
-type Copy = {
-  eyebrow: string;
-  title: string;
-  subtitle: string;
-  primary: string;
-  secondary: string;
-  signals: string[];
-  problemTitle: string;
-  problemText: string;
-  flowTitle: string;
-  flow: { n: string; title: string; text: string }[];
-  forPeopleTitle: string;
-  forPeopleText: string;
-  forCompaniesTitle: string;
-  forCompaniesText: string;
-  proofTitle: string;
-  proofText: string;
-  calijeTitle: string;
-  calijeText: string;
-  calijeCta: string;
-  principleTitle: string;
-  principles: string[];
-  finalTitle: string;
-  finalText: string;
-  finalCta: string;
-};
-
-const copy: Record<Locale, Copy> = {
-  sr: {
-    eyebrow: "DaniniNet · AI za stvarni život, rad i prihod",
-    title: "Ne traži još jednu online šemu. Počni od onoga što već imaš.",
-    subtitle:
-      "DaniniNet pomaže ljudima da prepoznaju svoje znanje, iskustvo, vreme, kontakte i imovinu — i da uz AI pronađu realan način da od toga naprave posao, uslugu ili dodatni prihod. Firmama pomaže da jasnije vide koje ljude, veštine i procese im nedostaju.",
-    primary: "Počni od sebe",
-    secondary: "Pogledaj metod",
-    signals: ["Bez guru obećanja", "Stvarni slučajevi", "AI kao alat, ne autoritet", "Merimo rezultat"],
-    problemTitle: "Problem nije što ljudi nemaju vrednost. Problem je što često ne znaju gde je njihova vrednost tržišno korisna.",
-    problemText:
-      "Jedan čovek ima iskustvo. Drugi ima slobodno vreme. Treći ima plac, kombi, računar, zanat ili mrežu kontakata. Firma ima problem koji ne ume jasno da opiše. DaniniNet pokušava da te dve strane prevede u konkretan sledeći korak.",
-    flowTitle: "Od onoga što imaš do tržišnog testa.",
-    flow: [
-      { n: "01", title: "Inventura", text: "Šta znaš, šta imaš, koliko vremena i kapitala možeš realno da koristiš?" },
-      { n: "02", title: "Problem", text: "Koji konkretan problem možeš da rešiš osobi ili firmi?" },
-      { n: "03", title: "Ponuda", text: "Pretvaramo sposobnost ili resurs u jasnu uslugu, proizvod ili model prihoda." },
-      { n: "04", title: "AI ubrzanje", text: "AI pomaže u istraživanju, strukturi, učenju, sadržaju, automatizaciji i pripremi." },
-      { n: "05", title: "Tržišni test", text: "Ne nagađamo mesecima. Objavimo, ponudimo, merimo interesovanje i korigujemo." },
-      { n: "06", title: "Dokaz", text: "Vrednost dokazujemo upitima, kupcima, uštedom vremena ili stvarnim prihodom." },
+const copy={
+  sr:{
+    eyebrow:"DaniniNet · Autonomous Revenue OS",
+    title:"Ne gradimo još jedan sajt. Gradimo sistem koji mora da pronađe razlog da neko plati.",
+    lead:"DaniniNet pronalazi realan problem, pravi ponudu, testira je na tržištu i meri dokaz: upit, rezervaciju, uplatu i ponovljenu uplatu. AI vodi digitalni rad; čovek potvrđuje važne odluke.",
+    cta:"Pošalji resurs ili problem", caseCta:"Otvori Case 01 — Čalije",
+    whyTitle:"Jedno pravilo pre svega", why:"Ništa ne proglašavamo uspehom dok tržište ne da merljiv signal. Poseta nije prihod. Ideja nije proizvod. Automatizacija nije rezultat.",
+    flowTitle:"Operativni tok",
+    flow:[
+      ["01","SIGNAL","Tražimo problem za koji kupac već troši vreme, novac ili živce."],
+      ["02","OFFER","Pravimo najkraću ponudu koju možemo testirati bez velikog ulaganja."],
+      ["03","SELL","Izlazimo pred stvarne kupce pre izgradnje velike platforme."],
+      ["04","EXECUTE","AI agenti izvršavaju istraživanje, pripremu, follow-up i operativne korake."],
+      ["05","APPROVE","Čovek potvrđuje novac, ugovore, pravno važne i rizične radnje."],
+      ["06","EVIDENCE","Sistem meri rezultat i odlučuje: SCALE, CHANGE ili KILL."]
     ],
-    forPeopleTitle: "Za ljude koji ne znaju odakle da počnu",
-    forPeopleText:
-      "Ne guramo svakoga u affiliate marketing, programiranje ili YouTube. Prvo tražimo gde se tvoja postojeća životna i radna iskustva seku sa realnim problemom tržišta.",
-    forCompaniesTitle: "Za firme koje imaju rupu u sistemu",
-    forCompaniesText:
-      "Firma često ne treba još jednu veliku platformu. Treba joj prava osoba, prava veština ili bolji proces. Cilj je da se potreba firme opiše dovoljno precizno da se može spojiti sa odgovarajućim čovekom ili AI podržanim rešenjem.",
-    proofTitle: "Nećemo predavati teoriju koju sami nismo proverili.",
-    proofText:
-      "DaniniNet će svoje metode pokazivati kroz stvarne projekte, sa stvarnim ograničenjima, troškovima i rezultatima — uključujući neuspehe. Prvi veliki javni slučaj je monetizacija postojeće lokacije u Nišu.",
-    calijeTitle: "Case study #1 · Čalije: može li neiskorišćena parcela početi da pravi prihod?",
-    calijeText:
-      "Od ideje i analize lokacije, preko jednostavnog parking modela i digitalne prezentacije, do testiranja stvarne potražnje. Ne prodajemo rezultat unapred — dokumentujemo proces i brojke.",
-    calijeCta: "Pogledaj Čalije projekat",
-    principleTitle: "Naša pravila",
-    principles: [
-      "Ne obećavamo zaradu.",
-      "Ne pravimo sadržaj samo da bismo izgledali zauzeto.",
-      "Ne gradimo proizvod pre nego što proverimo problem.",
-      "AI predlaže i ubrzava; čovek odlučuje.",
-      "Svaki projekat mora imati merljiv sledeći korak.",
-    ],
-    finalTitle: "Ako ne znaš šta bi mogao da radiš — to je upravo početna tačka.",
-    finalText:
-      "Počni inventurom: iskustvo, znanje, vreme, resursi, ograničenja i cilj. Od toga pravimo mapu realnih mogućnosti, a ne listu internet trendova.",
-    finalCta: "Pokreni Opportunity Map",
+    rolesTitle:"Podela odgovornosti", aiTitle:"AI operator", aiText:"Istraživanje tržišta, analiza konkurencije, prospecting, personalizacija ponude, sadržaj, CRM logika, praćenje i optimizacija.", humanTitle:"Human controller", humanText:"Budžet, ugovori, identitet, pravno važne radnje, konačna cena i odluke sa stvarnim posledicama.",
+    firstTitle:"Prvi tržišni pravac", firstText:"Početna hipoteza je AI Office 24/7 za lokalne DACH firme: prijem i kvalifikacija upita, booking, follow-up i uredniji tok do ponude. Ne gradimo SaaS unapred; prvo tražimo prve kupce.",
+    caseTitle:"Case 01 ostaje živ dokaz", caseText:"Čalije parking ostaje odvojen realni asset: isti metod, druga vrsta resursa. Administrativna potvrda, test potražnje, minimalni MVP, prva transakcija, pa tek onda ulaganje i širenje.",
+    closeTitle:"Ulaz u sistem", closeText:"Počni od onoga što već postoji: znanje, plac, oprema, proces, kontakt, publika ili problem. Sistem treba da pronađe najkraći put do tržišne provere.",
+    status:"Sistem se trenutno konsoliduje na jednu javnu operativnu tačku."
   },
-  de: {
-    eyebrow: "DaniniNet · KI für echtes Leben, Arbeit und Einkommen",
-    title: "Suche nicht nach dem nächsten Online-Trick. Starte mit dem, was du bereits hast.",
-    subtitle:
-      "DaniniNet hilft Menschen, Wissen, Erfahrung, Zeit, Kontakte und vorhandene Ressourcen in realistische Arbeit, Dienstleistungen oder zusätzliche Einnahmen zu übersetzen. Unternehmen hilft es, fehlende Menschen, Fähigkeiten und Prozesse klarer zu erkennen.",
-    primary: "Bei dir selbst starten",
-    secondary: "Methode ansehen",
-    signals: ["Keine Guru-Versprechen", "Reale Fälle", "KI als Werkzeug", "Messbare Ergebnisse"],
-    problemTitle: "Menschen fehlt oft nicht der Wert, sondern die Klarheit, wo dieser Wert am Markt gebraucht wird.",
-    problemText:
-      "Erfahrung, freie Zeit, Grundstück, Fahrzeug, Computer, Handwerk oder Kontakte können wirtschaftlichen Wert haben. Gleichzeitig haben Unternehmen Probleme, die sie oft nicht präzise genug beschreiben. DaniniNet übersetzt beides in einen konkreten nächsten Schritt.",
-    flowTitle: "Vom vorhandenen Potenzial zum Markttest.",
-    flow: [
-      { n: "01", title: "Inventur", text: "Was kannst du, was besitzt du und wie viel Zeit oder Kapital ist realistisch?" },
-      { n: "02", title: "Problem", text: "Welches konkrete Problem kannst du für Menschen oder Unternehmen lösen?" },
-      { n: "03", title: "Angebot", text: "Fähigkeit oder Ressource wird zu einer klaren Dienstleistung, einem Produkt oder Einkommensmodell." },
-      { n: "04", title: "KI-Beschleunigung", text: "KI unterstützt Recherche, Lernen, Struktur, Content, Automatisierung und Vorbereitung." },
-      { n: "05", title: "Markttest", text: "Veröffentlichen, anbieten, Interesse messen und schnell korrigieren." },
-      { n: "06", title: "Beleg", text: "Wert zeigt sich in Anfragen, Kunden, Zeitersparnis oder echtem Umsatz." },
-    ],
-    forPeopleTitle: "Für Menschen, die nicht wissen, wo sie anfangen sollen",
-    forPeopleText:
-      "Nicht jeder muss Affiliate-Marketer, Programmierer oder YouTuber werden. Wir suchen zuerst die Schnittstelle zwischen deiner realen Erfahrung und einem realen Marktproblem.",
-    forCompaniesTitle: "Für Unternehmen mit einer Lücke im System",
-    forCompaniesText:
-      "Oft braucht ein Unternehmen keine weitere große Plattform, sondern die richtige Person, Fähigkeit oder einen besseren Ablauf. Der Bedarf muss so klar werden, dass er mit einem passenden Menschen oder einer KI-gestützten Lösung verbunden werden kann.",
-    proofTitle: "Wir lehren keine Theorie, die wir selbst nicht getestet haben.",
-    proofText:
-      "DaniniNet dokumentiert reale Projekte mit Grenzen, Kosten, Ergebnissen und auch Fehlversuchen. Der erste große öffentliche Fall ist die Monetarisierung einer vorhandenen Fläche in Niš.",
-    calijeTitle: "Case Study #1 · Čalije: Kann ein ungenutztes Grundstück Einnahmen erzeugen?",
-    calijeText:
-      "Von der Standortanalyse über ein einfaches Parkplatzmodell und digitale Präsentation bis zum Test echter Nachfrage. Keine Ergebnisgarantie — dokumentierter Prozess und Zahlen.",
-    calijeCta: "Čalije Projekt ansehen",
-    principleTitle: "Unsere Regeln",
-    principles: [
-      "Keine Einkommensgarantien.",
-      "Kein Content nur um beschäftigt zu wirken.",
-      "Kein Produkt vor Problemvalidierung.",
-      "KI unterstützt; der Mensch entscheidet.",
-      "Jedes Projekt braucht einen messbaren nächsten Schritt.",
-    ],
-    finalTitle: "Wenn du nicht weißt, was du tun könntest, ist genau das der Startpunkt.",
-    finalText:
-      "Beginne mit Erfahrung, Wissen, Zeit, Ressourcen, Grenzen und Ziel. Daraus entsteht eine realistische Opportunity Map statt einer Liste von Internet-Trends.",
-    finalCta: "Opportunity Map starten",
+  de:{
+    eyebrow:"DaniniNet · Autonomous Revenue OS",
+    title:"Wir bauen nicht noch eine Website. Wir bauen ein System, das einen Grund finden muss, warum jemand bezahlt.",
+    lead:"DaniniNet findet ein reales Problem, baut ein Angebot, testet es am Markt und misst Beweise: Anfrage, Reservierung, Zahlung und Wiederholung. KI führt die digitale Arbeit; der Mensch bestätigt wichtige Entscheidungen.",
+    cta:"Ressource oder Problem senden",caseCta:"Case 01 — Čalije öffnen",
+    whyTitle:"Eine Regel zuerst",why:"Nichts gilt als Erfolg, bevor der Markt ein messbares Signal liefert. Traffic ist kein Umsatz. Eine Idee ist kein Produkt. Automatisierung ist kein Ergebnis.",
+    flowTitle:"Operativer Ablauf",
+    flow:[["01","SIGNAL","Ein Problem finden, für das Kunden bereits Zeit, Geld oder Nerven verlieren."],["02","OFFER","Das kleinste testbare Angebot bauen."],["03","SELL","Vor einer großen Plattform mit echten Käufern testen."],["04","EXECUTE","KI-Agenten übernehmen Recherche, Vorbereitung, Follow-up und operative Schritte."],["05","APPROVE","Der Mensch bestätigt Geld, Verträge sowie rechtlich wichtige und riskante Aktionen."],["06","EVIDENCE","Das System misst und entscheidet: SCALE, CHANGE oder KILL."]],
+    rolesTitle:"Verantwortung",aiTitle:"AI operator",aiText:"Marktrecherche, Wettbewerbsanalyse, Prospecting, Personalisierung, Inhalte, CRM-Logik, Tracking und Optimierung.",humanTitle:"Human controller",humanText:"Budget, Verträge, Identität, rechtlich wichtige Aktionen, Endpreis und Entscheidungen mit realen Folgen.",
+    firstTitle:"Erste Markthypothese",firstText:"AI Office 24/7 für lokale DACH-Betriebe: Anfragen annehmen und qualifizieren, Termine buchen, Follow-up und ein sauberer Weg bis zum Angebot. Kein SaaS vor dem Verkauf; zuerst echte Kunden.",
+    caseTitle:"Case 01 bleibt der reale Beweis",caseText:"Čalije Parking bleibt ein separater realer Vermögenswert: gleiche Methode, andere Ressource. Verwaltungsweg, Nachfrage, Minimal-MVP und erste Transaktion vor größerem Investment.",
+    closeTitle:"Eingang ins System",closeText:"Starte mit dem, was bereits existiert: Wissen, Grundstück, Ausrüstung, Prozess, Kontakte, Publikum oder Problem. Das System sucht den kürzesten Weg zum Markttest.",
+    status:"Das System wird derzeit auf einen öffentlichen operativen Einstieg konsolidiert."
   },
-  en: {
-    eyebrow: "DaniniNet · AI for real life, work and income",
-    title: "Stop chasing the next online scheme. Start with what you already have.",
-    subtitle:
-      "DaniniNet helps people turn existing knowledge, experience, time, contacts and assets into realistic work, services or additional income. For companies, it helps clarify which people, skills or processes are actually missing.",
-    primary: "Start with yourself",
-    secondary: "See the method",
-    signals: ["No guru promises", "Real cases", "AI as a tool", "Measured outcomes"],
-    problemTitle: "People often do not lack value. They lack clarity about where that value is useful in the market.",
-    problemText:
-      "Experience, spare time, land, a vehicle, a computer, a trade or a network can all carry economic value. Companies also have problems they cannot always describe precisely. DaniniNet turns both sides into a concrete next step.",
-    flowTitle: "From what you have to a market test.",
-    flow: [
-      { n: "01", title: "Inventory", text: "What do you know, own and realistically have time or capital to use?" },
-      { n: "02", title: "Problem", text: "What concrete problem can you solve for a person or company?" },
-      { n: "03", title: "Offer", text: "Turn a capability or asset into a clear service, product or income model." },
-      { n: "04", title: "AI acceleration", text: "Use AI for research, learning, structure, content, automation and preparation." },
-      { n: "05", title: "Market test", text: "Publish, offer, measure demand and correct quickly instead of guessing for months." },
-      { n: "06", title: "Proof", text: "Value is proven through inquiries, customers, time saved or real revenue." },
-    ],
-    forPeopleTitle: "For people who do not know where to start",
-    forPeopleText:
-      "We do not push everyone into affiliate marketing, coding or YouTube. We first look for the intersection between your real-world experience and a real market problem.",
-    forCompaniesTitle: "For companies with a gap in the system",
-    forCompaniesText:
-      "A company often does not need another large platform. It needs the right person, skill or process. The goal is to define the need well enough to match it with a suitable person or AI-supported solution.",
-    proofTitle: "We will not teach theory we have not tested ourselves.",
-    proofText:
-      "DaniniNet will document real projects with constraints, costs, outcomes and failures. The first major public case is monetising an existing property in Niš.",
-    calijeTitle: "Case study #1 · Čalije: can an unused plot start generating income?",
-    calijeText:
-      "From location analysis and a simple parking model to digital presentation and testing actual demand. No guaranteed outcome — just a documented process and numbers.",
-    calijeCta: "View the Čalije project",
-    principleTitle: "Our rules",
-    principles: [
-      "No income guarantees.",
-      "No content just to look busy.",
-      "No product before problem validation.",
-      "AI supports and accelerates; humans decide.",
-      "Every project needs a measurable next step.",
-    ],
-    finalTitle: "If you do not know what you could do, that is exactly the starting point.",
-    finalText:
-      "Start with experience, knowledge, time, resources, constraints and a goal. We turn that into a realistic opportunity map rather than a list of internet trends.",
-    finalCta: "Start the Opportunity Map",
-  },
-};
+  en:{
+    eyebrow:"DaniniNet · Autonomous Revenue OS",
+    title:"We are not building another website. We are building a system that must find a reason for someone to pay.",
+    lead:"DaniniNet finds a real problem, creates an offer, tests it in the market and measures evidence: inquiry, reservation, payment and repeat payment. AI runs the digital work; humans approve important decisions.",
+    cta:"Send a resource or problem",caseCta:"Open Case 01 — Čalije",
+    whyTitle:"One rule first",why:"Nothing counts as success until the market produces a measurable signal. Traffic is not revenue. An idea is not a product. Automation is not an outcome.",
+    flowTitle:"Operating flow",
+    flow:[["01","SIGNAL","Find a problem already costing buyers time, money or friction."],["02","OFFER","Build the smallest offer worth testing."],["03","SELL","Test with real buyers before building a large platform."],["04","EXECUTE","AI agents handle research, preparation, follow-up and operating steps."],["05","APPROVE","Humans approve money, contracts, legally important and risky actions."],["06","EVIDENCE","Measure the outcome and decide: SCALE, CHANGE or KILL."]],
+    rolesTitle:"Responsibility split",aiTitle:"AI operator",aiText:"Market research, competitor analysis, prospecting, offer personalization, content, CRM logic, tracking and optimization.",humanTitle:"Human controller",humanText:"Budget, contracts, identity, legally important actions, final pricing and decisions with real-world consequences.",
+    firstTitle:"First market direction",firstText:"The opening hypothesis is AI Office 24/7 for local DACH service firms: intake and qualification, booking, follow-up and a cleaner path to quotes. We do not build SaaS first; we look for paying customers first.",
+    caseTitle:"Case 01 remains the real-world proof",caseText:"Čalije parking remains a separate physical asset: same method, different resource. Administrative confirmation, demand validation, minimal MVP and first transaction before larger investment.",
+    closeTitle:"Enter the system",closeText:"Start with something that already exists: knowledge, land, equipment, a process, contacts, an audience or a problem. The system looks for the shortest path to market evidence.",
+    status:"The system is currently being consolidated into one public operating entry point."
+  }
+} as const;
 
-function localePath(lang: Locale, sr: string, de: string, en: string) {
-  const slug = lang === "de" ? de : lang === "en" ? en : sr;
-  return `/${lang}/${slug}`;
-}
+export default async function Home({params}:{params:Promise<{locale:string}>}){
+  const {locale}=await params; const lang:Locale=normalizeLocale(locale); const t=copy[lang];
+  const start=lang==="sr"?"/sr/pocni":`/${lang}/start`;
+  return <SiteShell locale={lang} currentPath={`/${lang}`}>
+    <section className="bg-[#07142b] text-white"><div className="mx-auto max-w-7xl px-6 py-24">
+      <p className="text-sm uppercase tracking-[.24em] text-[#c9a85f]">{t.eyebrow}</p>
+      <h1 className="mt-7 max-w-6xl text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">{t.title}</h1>
+      <p className="mt-8 max-w-4xl text-xl leading-9 text-slate-300">{t.lead}</p>
+      <div className="mt-10 flex flex-wrap gap-4"><Link href={start} className="rounded-full bg-white px-7 py-4 font-semibold text-[#07142b]">{t.cta}</Link><a href="https://calije.daninihub.com/" className="rounded-full border border-white/20 px-7 py-4 font-semibold text-white">{t.caseCta}</a></div>
+      <p className="mt-10 max-w-3xl border-l border-[#c9a85f] pl-5 text-sm leading-7 text-slate-400">{t.status}</p>
+    </div></section>
 
-export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  const lang: Locale = locale === "de" || locale === "en" ? locale : "sr";
-  const t = copy[lang];
-  const startPath = localePath(lang, "pocni", "start", "start");
-  const methodPath = localePath(lang, "daninihub-metod", "methode", "method");
+    <section className="mx-auto max-w-7xl px-6 py-16"><p className="text-sm uppercase tracking-[.2em] text-[#8b6a2e]">{t.whyTitle}</p><p className="mt-5 max-w-5xl text-3xl font-medium leading-12">{t.why}</p></section>
 
-  return (
-    <SiteShell locale={lang} currentPath={`/${lang}`}>
-      <section className="bg-[#07142b] text-white">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
-          <p className="text-sm uppercase tracking-[0.24em] text-[#c9a85f]">{t.eyebrow}</p>
-          <h1 className="mt-6 max-w-5xl text-5xl font-semibold leading-[1.04] tracking-tight md:text-7xl">{t.title}</h1>
-          <p className="mt-8 max-w-4xl text-lg leading-9 text-slate-300 md:text-xl">{t.subtitle}</p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link href={startPath} className="rounded-full bg-[#f4efe5] px-6 py-3 font-semibold text-[#07142b]">{t.primary}</Link>
-            <Link href={methodPath} className="rounded-full border border-white/20 px-6 py-3 font-semibold">{t.secondary}</Link>
-          </div>
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {t.signals.map((signal) => <div key={signal} className="rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-4 text-sm text-slate-200">{signal}</div>)}
-          </div>
-        </div>
-      </section>
+    <section className="border-y border-black/10 bg-[#efe6d6]"><div className="mx-auto max-w-7xl px-6 py-16"><h2 className="text-4xl font-semibold">{t.flowTitle}</h2><div className="mt-10 divide-y divide-black/10 border-y border-black/10">{t.flow.map(([n,k,d])=><div key={n} className="grid gap-3 py-6 md:grid-cols-[80px_180px_1fr] md:items-start"><span className="text-sm font-semibold text-[#8b6a2e]">{n}</span><strong>{k}</strong><p className="max-w-3xl leading-7 text-[#625d52]">{d}</p></div>)}</div></div></section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-          <h2 className="text-4xl font-semibold leading-tight md:text-5xl">{t.problemTitle}</h2>
-          <p className="text-lg leading-9 text-[#706a5d]">{t.problemText}</p>
-        </div>
-      </section>
+    <section className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-2"><div><p className="text-sm uppercase tracking-[.2em] text-[#8b6a2e]">{t.rolesTitle}</p><h2 className="mt-4 text-4xl font-semibold">{t.aiTitle}</h2><p className="mt-5 text-lg leading-8 text-[#625d52]">{t.aiText}</p></div><div className="border-l border-black/15 pl-0 lg:pl-10"><h2 className="text-4xl font-semibold">{t.humanTitle}</h2><p className="mt-5 text-lg leading-8 text-[#625d52]">{t.humanText}</p></div></section>
 
-      <section className="bg-white/55">
-        <div className="mx-auto max-w-7xl px-6 py-16">
-          <h2 className="text-4xl font-semibold md:text-5xl">{t.flowTitle}</h2>
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {t.flow.map((item) => (
-              <article key={item.n} className="rounded-3xl border border-black/10 bg-[#fffaf0] p-6">
-                <span className="text-sm font-semibold text-[#9a7430]">{item.n}</span>
-                <h3 className="mt-3 text-2xl font-semibold">{item.title}</h3>
-                <p className="mt-3 leading-7 text-[#706a5d]">{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+    <section className="bg-white"><div className="mx-auto max-w-7xl px-6 py-16"><div className="max-w-4xl"><p className="text-sm uppercase tracking-[.2em] text-[#226bbf]">REVENUE UNIT #1</p><h2 className="mt-4 text-4xl font-semibold">{t.firstTitle}</h2><p className="mt-6 text-lg leading-8 text-[#625d52]">{t.firstText}</p></div><div className="mt-14 max-w-4xl border-t border-black/10 pt-10"><p className="text-sm uppercase tracking-[.2em] text-[#226bbf]">REAL ASSET · CASE 01</p><h2 className="mt-4 text-4xl font-semibold">{t.caseTitle}</h2><p className="mt-6 text-lg leading-8 text-[#625d52]">{t.caseText}</p></div></div></section>
 
-      <section className="mx-auto grid max-w-7xl gap-6 px-6 py-16 lg:grid-cols-2">
-        <article className="rounded-[2rem] bg-[#07142b] p-8 text-white">
-          <p className="text-xs uppercase tracking-[0.22em] text-[#c9a85f]">B2C</p>
-          <h2 className="mt-4 text-4xl font-semibold">{t.forPeopleTitle}</h2>
-          <p className="mt-5 leading-8 text-slate-300">{t.forPeopleText}</p>
-        </article>
-        <article className="rounded-[2rem] border border-black/10 bg-[#fffaf0] p-8">
-          <p className="text-xs uppercase tracking-[0.22em] text-[#9a7430]">B2B</p>
-          <h2 className="mt-4 text-4xl font-semibold">{t.forCompaniesTitle}</h2>
-          <p className="mt-5 leading-8 text-[#706a5d]">{t.forCompaniesText}</p>
-        </article>
-      </section>
-
-      <section className="bg-[#efe6d6]">
-        <div className="mx-auto max-w-7xl px-6 py-16">
-          <div className="max-w-4xl">
-            <h2 className="text-4xl font-semibold md:text-5xl">{t.proofTitle}</h2>
-            <p className="mt-6 text-lg leading-9 text-[#706a5d]">{t.proofText}</p>
-          </div>
-          <div className="mt-10 rounded-[2rem] border border-black/10 bg-white p-8">
-            <p className="text-xs uppercase tracking-[0.22em] text-[#9a7430]">REAL WORLD PROOF</p>
-            <h3 className="mt-4 max-w-4xl text-3xl font-semibold">{t.calijeTitle}</h3>
-            <p className="mt-5 max-w-4xl leading-8 text-[#706a5d]">{t.calijeText}</p>
-            <a href="https://calije.daninihub.com" className="mt-7 inline-flex rounded-full bg-[#07142b] px-6 py-3 font-semibold text-white">{t.calijeCta}</a>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-16">
-        <h2 className="text-4xl font-semibold md:text-5xl">{t.principleTitle}</h2>
-        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
-          {t.principles.map((item, index) => (
-            <div key={item} className="rounded-3xl border border-black/10 bg-[#fffaf0] p-5">
-              <span className="text-sm font-semibold text-[#9a7430]">0{index + 1}</span>
-              <p className="mt-3 font-semibold leading-7">{item}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-[#07142b] text-white">
-        <div className="mx-auto max-w-7xl px-6 py-16">
-          <h2 className="max-w-4xl text-4xl font-semibold md:text-5xl">{t.finalTitle}</h2>
-          <p className="mt-6 max-w-3xl text-lg leading-9 text-slate-300">{t.finalText}</p>
-          <Link href={startPath} className="mt-8 inline-flex rounded-full bg-[#f4efe5] px-6 py-3 font-semibold text-[#07142b]">{t.finalCta}</Link>
-        </div>
-      </section>
-    </SiteShell>
-  );
+    <section className="mx-auto max-w-7xl px-6 py-20"><h2 className="max-w-4xl text-5xl font-semibold leading-tight">{t.closeTitle}</h2><p className="mt-6 max-w-3xl text-xl leading-9 text-[#625d52]">{t.closeText}</p><Link href={start} className="mt-9 inline-flex rounded-full bg-[#07142b] px-8 py-4 font-semibold text-white">{t.cta} →</Link></section>
+  </SiteShell>;
 }
