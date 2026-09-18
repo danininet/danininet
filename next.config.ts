@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         has: [{ type: "host", value: "danininet.daninihub.com" }],
-        destination: "https://daninihub.com/:path*",
+        destination: "https://daninihub.com/",
         permanent: true,
       },
       { source: legacyA, destination: "/:locale/legal/rueckgabe", permanent: true },
